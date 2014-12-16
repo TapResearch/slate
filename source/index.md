@@ -12,10 +12,10 @@ includes:
   - introduction
   - getting_started
   - authentication
-  - answer_type
   - campaign
   - campaign_quota
   - qualification
+  - answer_type
   - errors
   - contact_us
 

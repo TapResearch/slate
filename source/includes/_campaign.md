@@ -61,7 +61,7 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
     "name": "Test Survey",
     "cpi": "2.50",
     "length_of_interview": 10,
-    "supplier_link": "https://www.tapresearch.com/surveys/23423?id=",
+    "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
     "incidence": 50,
     "supported_devices": [
       0,
@@ -81,7 +81,7 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
     "length_of_interview": 10,
     "name": "Test Survey",
     "status": 5,
-    "supplier_link": "https://www.tapresearch.com/surveys/23423?id=",
+    "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
     "total_remaining": null,
     "supported_devices": [
         0,
@@ -108,7 +108,7 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 ### Optional Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
-supported_devices | Integer Array | Pass in 0(tablet), 1(mobile), and/or 2(desktop).
+supported_devices | Integer Array | Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).
 
 ## Update a campaign
 
@@ -123,15 +123,14 @@ supported_devices | Integer Array | Pass in 0(tablet), 1(mobile), and/or 2(deskt
 }
 ```
 
-> Update campaign to active and allow for only mobile respondents.
+> Set a campaign to active and allow for only mobile respondents.
 
 ```json
-"asdfasdf"
 {
   "campaign": {
     "status": 2,
     "supported_devices": [
-      1
+      0
     ]
   }
 }
@@ -145,7 +144,7 @@ supported_devices | Integer Array | Pass in 0(tablet), 1(mobile), and/or 2(deskt
     "name": "Test Survey",
     "cpi": "2.50",
     "length_of_interview": 10,
-    "supplier_link": "https://www.tapresearch.com/surveys/23423?id=",
+    "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
     "incidence": 50,
     "supported_devices": [
       0,
@@ -166,9 +165,9 @@ Parameter | Type | Description
 --------- | ---- | -----------
 name | String | Name of the campaign
 cpi | String | This is the amount you will payout per complete.
-status | Integer | Only 2(Active), 3(Complete), 5(Paused) will be accepted.
+status | Integer | Only 2 (Active), 3 (Complete), 5 (Paused) will be accepted.
 supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
-supported_devices | Integer Array | Pass in 0(tablet), 1(mobile), and/or 2(desktop).
+supported_devices | Integer Array | Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).
 
 ## Get a specific campaign
 
@@ -182,7 +181,7 @@ supported_devices | Integer Array | Pass in 0(tablet), 1(mobile), and/or 2(deskt
     "length_of_interview": 20,
     "name": "Cint-83372",
     "status": 2,
-    "supplier_link": "https://api.cint.com",
+    "supplier_link": "https://api.samplecompany.com/surveys/234230?id=",
     "total_remaining": 6,
     "supported_devices": [
         0,
