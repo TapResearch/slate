@@ -46,8 +46,8 @@
       <div class="content">
         
           <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the TapResearch API documentation! Our API enables you to push survey metadata along with associated quotas
-so we can screen respondents before sending them over to you.</p>
+<p>Welcome to the TapResearch API documentation! Our API enables you to create and modify sampling projects on our platform,
+start/stop the flow of sample and reconcile completes.</p>
 
           <h1 id='getting-started'>Getting Started</h1>
 <p>Before you can begin consuming our API, you will need to contact <strong>api_support@tapresearch.com</strong> for an API token. This token will be used
@@ -100,29 +100,6 @@ the value passed in the &lsquo;Authorization&rsquo; header to make sure you have
 <p><aside class="info">
 The authorization header is <strong>required</strong> for every request.
 </aside></p>
-
-          <h1 id='answer-types'>Answer Types</h1>
-<p>When you make a request to our qualifications route, there will be an answer_type field returned with every object.
-The answer_type value will determine how the campaign_qualifications pre_codes array is constructed.</p>
-<h3 id='when-answer_type-is-a-0-or-1'>When answer_type is a 0 or 1</h3>
-<p>Pass in every pre code that qualifies a respondent. For example, the gender qualification has two accept answers,
-male and female, with pre codes of 1 and 2, respectively.</p>
-
-<p>If you passed in:</p>
-
-<ul>
-<li>1: target only males</li>
-<li>2: target only females</li>
-<li>1 and 2: target both males and females</li>
-</ul>
-<h3 id='when-answer_type-is-equal-to-5'>When answer_type is equal to 5</h3>
-<p>Qualifications with answer_type 5 will return with an empty qualification_answers array. You will need to construct
-an array of customer values.</p>
-
-<ul>
-<li>Age: Pass in an array of ages. <code class="prettyprint">I.E. Pass in [ 18, 19, 20, 21, 22, 23, 24 ] if you are looking to target respondents that are between the ages of 18 and 24.</code></li>
-<li>Zip: Pass in an array of zip codes. <code class="prettyprint">I.E. [ &quot;95120&quot;, &quot;94089&quot; ]</code></li>
-</ul>
 
           <h1 id='campaigns'>Campaigns</h1><h2 id='list-your-campaigns'>List your campaigns</h2>
 <blockquote>
@@ -215,7 +192,7 @@ an array of customer values.</p>
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -235,7 +212,7 @@ an array of customer values.</p>
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -292,7 +269,7 @@ an array of customer values.</p>
 <tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
-<td>Pass in 0(tablet), 1(mobile), and/or 2(desktop).</td>
+<td>Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-campaign'>Update a campaign</h2>
@@ -308,14 +285,13 @@ an array of customer values.</p>
 </span></code></pre>
 
 <blockquote>
-<p>Update campaign to active and allow for only mobile respondents.</p>
+<p>Set a campaign to active and allow for only mobile respondents.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="s2">"asdfasdf"</span><span class="w">
-</span><span class="p">{</span><span class="w">
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"campaign"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">1</span><span class="w">
+      </span><span class="mi">0</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -329,7 +305,7 @@ an array of customer values.</p>
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -363,7 +339,7 @@ an array of customer values.</p>
 <tr>
 <td>status</td>
 <td>Integer</td>
-<td>Only 2(Active), 3(Complete), 5(Paused) will be accepted.</td>
+<td>Only 2 (Active), 3 (Complete), 5 (Paused) will be accepted.</td>
 </tr>
 <tr>
 <td>supplier_link</td>
@@ -373,7 +349,7 @@ an array of customer values.</p>
 <tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
-<td>Pass in 0(tablet), 1(mobile), and/or 2(desktop).</td>
+<td>Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-campaign'>Get a specific campaign</h2>
@@ -387,7 +363,7 @@ an array of customer values.</p>
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cint-83372"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.cint.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/234230?id="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -648,6 +624,29 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 <td>This is value you will be passing into the campaign_qualifications pre_codes array to describe which respondents qualify for a survey.</td>
 </tr>
 </tbody></table>
+
+          <h1 id='answer-types'>Answer Types</h1>
+<p>When you make a request to our qualifications route, there will be an answer_type field returned with every object.
+The answer_type value will determine how the campaign_qualifications pre_codes array is constructed.</p>
+<h3 id='when-answer_type-is-a-0-or-1'>When answer_type is a 0 or 1</h3>
+<p>Pass in every pre code that qualifies a respondent. For example, the gender qualification has two accept answers,
+male and female, with pre codes of 1 and 2, respectively.</p>
+
+<p>If you passed in:</p>
+
+<ul>
+<li>1: target only males</li>
+<li>2: target only females</li>
+<li>1 and 2: target both males and females</li>
+</ul>
+<h3 id='when-answer_type-is-equal-to-5'>When answer_type is equal to 5</h3>
+<p>Qualifications with answer_type 5 will return with an empty qualification_answers array. You will need to construct
+an array of customer values.</p>
+
+<ul>
+<li>Age: Pass in an array of ages. <code class="prettyprint">I.E. Pass in [ 18, 19, 20, 21, 22, 23, 24 ] if you are looking to target respondents that are between the ages of 18 and 24.</code></li>
+<li>Zip: Pass in an array of zip codes. <code class="prettyprint">I.E. [ &quot;95120&quot;, &quot;94089&quot; ]</code></li>
+</ul>
 
           <h1 id='errors'>Errors</h1>
 <p>The TapResearch API uses the following error codes:</p>
