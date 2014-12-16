@@ -314,7 +314,7 @@ The authorization header is <strong>required</strong> for every request.
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -334,7 +334,7 @@ The authorization header is <strong>required</strong> for every request.
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -391,7 +391,7 @@ The authorization header is <strong>required</strong> for every request.
 <tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
-<td>Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).</td>
+<td>Pass in 0(tablet), 1(mobile), and/or 2(desktop).</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-campaign'>Update a campaign</h2>
@@ -407,13 +407,14 @@ The authorization header is <strong>required</strong> for every request.
 </span></code></pre>
 
 <blockquote>
-<p>Set a campaign to active and allow for only mobile respondents.</p>
+<p>Update campaign to active and allow for only mobile respondents.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre><code class="highlight json"><span class="s2">"asdfasdf"</span><span class="w">
+</span><span class="p">{</span><span class="w">
   </span><span class="s2">"campaign"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">0</span><span class="w">
+      </span><span class="mi">1</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -427,7 +428,7 @@ The authorization header is <strong>required</strong> for every request.
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
     </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -461,7 +462,7 @@ The authorization header is <strong>required</strong> for every request.
 <tr>
 <td>status</td>
 <td>Integer</td>
-<td>Only 2 (Active), 3 (Complete), 5 (Paused) will be accepted.</td>
+<td>Only 2(Active), 3(Complete), 5(Paused) will be accepted.</td>
 </tr>
 <tr>
 <td>supplier_link</td>
@@ -471,7 +472,7 @@ The authorization header is <strong>required</strong> for every request.
 <tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
-<td>Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).</td>
+<td>Pass in 0(tablet), 1(mobile), and/or 2(desktop).</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-campaign'>Get a specific campaign</h2>
@@ -485,7 +486,7 @@ The authorization header is <strong>required</strong> for every request.
     </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cint-83372"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/234230?id="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.cint.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="mi">0</span><span class="p">,</span><span class="w">
