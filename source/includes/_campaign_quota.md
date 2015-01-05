@@ -53,7 +53,7 @@ Update a quota for a specific campaign.
 `PUT https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id`
 
 <aside class=warning>
-Since we current don't allow you to destroy a campaign_qualification, all campaign_qualifications will be replaced
+Since we currently don't allow you to destroy a campaign_qualification, all campaign_qualifications will be replaced
 unless the campaign_qualifications array is empty.
 </aside>
 
