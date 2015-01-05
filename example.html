@@ -287,7 +287,7 @@ The authorization header is <strong>required</strong> for every request.
 <tr>
 <td>status</td>
 <td>Integer</td>
-<td>This value will be returned as a 2(Active), 3(Complete), 5(Paused).</td>
+<td>This value will be returned as a 2(Active), 3(Complete), or 5(Paused).</td>
 </tr>
 <tr>
 <td>length_of_interview</td>
@@ -343,7 +343,11 @@ The authorization header is <strong>required</strong> for every request.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Create a campaign with campaign-only metadata. Quotas and qualifications can be added through other routes.</p>
+<p>Create a campaign with campaign-only metadata. Quotas and qualifications will need to be added through other routes.</p>
+
+<p><aside class="info">
+Campaigns will be a paused state after creation. You will need to manually update the campaign to set it to active.
+</aside></p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
@@ -680,9 +684,9 @@ unless the campaign_qualifications array is empty.
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications</code></p>
 
 <p><aside class="warning">
-Qualifications that are sourced from <strong>staging.tapresearch.com</strong> will having different ids than the qualifications sourced from <strong>www.tapresearch.com.</strong> <strong>Do not store staging data inside your production database!</strong>
+Qualifications that are sourced from <strong>staging.tapresearch.com</strong> may have different question_ids than the qualifications sourced from <strong>www.tapresearch.com.</strong>
 </aside></p>
-<h3 id='required-parameters'>Required Parameters</h3>
+<h3 id='response-parameters'>Response Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -698,7 +702,7 @@ Qualifications that are sourced from <strong>staging.tapresearch.com</strong> wi
 <tr>
 <td>question_id</td>
 <td>Integer</td>
-<td>This value does not change between our staging and production server.</td>
+<td>This value will be used to fetch qualification details.</td>
 </tr>
 <tr>
 <td>question_text</td>
@@ -724,9 +728,10 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 <pre><code class="highlight json"><span class="w">
 </span></code></pre>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications/:id</code></p>
+<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications/:question_id</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
-<p><code class="prettyprint">NONE</code></p>
+<p>&mdash;&mdash;&mdash; | &mdash;- | &mdash;&mdash;&mdash;&ndash;
+question_id | Integer | This value will be returned with each record through the /qualifications route.</p>
 <h3 id='response'>Response</h3><h3 id='qualification-answers'>Qualification Answers</h3>
 <table><thead>
 <tr>
