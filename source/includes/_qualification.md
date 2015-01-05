@@ -45,6 +45,7 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 `GET https://www.tapresearch.com/api/v1/qualifications/:question_id`
 
 ### Required Parameters
+Parameter | Type | Description
 --------- | ---- | -----------
 question_id | Integer | This value will be returned with each record through the /qualifications route.
 
