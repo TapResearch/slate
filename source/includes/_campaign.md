@@ -46,7 +46,7 @@ id | Integer | This is the unique campaign identifier. You will need to use this
 name | String | Name of the campaign
 cpi | String | This is the amount you will payout per complete.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
-status | Integer | This value will be returned as a 2(Active), 3(Complete), 5(Paused).
+status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5(Paused).
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents in associated campaign_quotas.
 supplier_link | String | The redirect URL when a respondent has qualified for the survey.
@@ -90,7 +90,11 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 }
 ```
 
-Create a campaign with campaign-only metadata. Quotas and qualifications can be added through other routes.
+Create a campaign with campaign-only metadata. Quotas and qualifications will need to be added through other routes.
+
+<aside class="info">
+Campaigns will be a paused state after creation. You will need to manually update the campaign to set it to active.
+</aside>
 
 ### HTTP Request
 
