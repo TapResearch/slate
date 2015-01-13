@@ -835,6 +835,21 @@ unless the campaign_qualifications array is empty.
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
 <p><code class="prettyprint">NONE</code></p>
+<h2 id='feasibility'>Feasibility</h2>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"estimated_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"over_num_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get the estimated number of completes based on your targeting criteria and days_in_field.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id/feasibility</code></p>
+<h3 id='required-parameters'>Required Parameters</h3>
+<p><code class="prettyprint">NONE</code></p>
 
           <h1 id='qualifications'>Qualifications</h1><h2 id='list-all-qualifications'>List all qualifications</h2>
 <p>Get a list of supported targeting criteria.</p>
