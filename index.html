@@ -38,6 +38,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
+            <li><a href='http://docs.tapresearch.com/?shell#versions'>API v1.10</a></li>
             <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -108,6 +109,7 @@ The authorization header is <strong>required</strong> for every request.
 <pre><code class="highlight json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
       </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.15"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14706</span><span class="p">,</span><span class="w">
       </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
       </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
@@ -118,6 +120,7 @@ The authorization header is <strong>required</strong> for every request.
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
       </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.69"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14707</span><span class="p">,</span><span class="w">
       </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
       </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
@@ -158,6 +161,11 @@ The authorization header is <strong>required</strong> for every request.
 <td>This is the amount you will payout per complete.</td>
 </tr>
 <tr>
+<td>days_in_field</td>
+<td>Integer</td>
+<td>Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.</td>
+</tr>
+<tr>
 <td>incidence</td>
 <td>Integer</td>
 <td>The percentage chance that a random respondent will qualify and complete the survey.</td>
@@ -190,6 +198,7 @@ The authorization header is <strong>required</strong> for every request.
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
@@ -205,6 +214,7 @@ The authorization header is <strong>required</strong> for every request.
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14724</span><span class="p">,</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
@@ -269,6 +279,11 @@ Campaigns will be a paused state after creation. You will need to manually updat
 </tr>
 </thead><tbody>
 <tr>
+<td>days_in_field</td>
+<td>Integer</td>
+<td>Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.</td>
+</tr>
+<tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
 <td>Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).</td>
@@ -300,7 +315,8 @@ Campaigns will be a paused state after creation. You will need to manually updat
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+  </span><span class="s2">"cpi"</span><span class="err">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
@@ -343,6 +359,11 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <td>The redirect URL when a respondent has qualified for the survey. You will need to append &lsquo;id=&rsquo; to the end of the redirect url so we can pass-through a sesssion identifier.</td>
 </tr>
 <tr>
+<td>days_in_field</td>
+<td>Integer</td>
+<td>Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.</td>
+</tr>
+<tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
 <td>Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).</td>
@@ -354,6 +375,7 @@ Campaigns will be a paused state after creation. You will need to manually updat
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.15"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14706</span><span class="p">,</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
@@ -939,6 +961,48 @@ an array of customer values.</p>
 <td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
+
+          <h1 id='versions'>Versions</h1><h2 id='v1-02'>v1.02</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>Added days_in_field as an optional attribute. Default value is 5.</li>
+</ul></li>
+<li>Campaign Quotas
+
+<ul>
+<li>Added /feasibility route which will return the estimated number of completes based on days_in_field.</li>
+</ul></li>
+</ul>
+<h2 id='v1-01'>v1.01</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>Added /reject_completes route.</li>
+</ul></li>
+</ul>
+<h2 id='v1-00'>v1.00</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>Get a list of campaigns that belong to you.</li>
+<li>Create, update, and show a campaign.</li>
+</ul></li>
+<li>Campaign Quotas
+
+<ul>
+<li>Create, update, and show a campaign_quota</li>
+</ul></li>
+<li>Qualifications
+
+<ul>
+<li>Get a list of accepted targeting criteria.</li>
+<li>Get answer options for a specific qualification.</li>
+</ul></li>
+</ul>
 
           <h1 id='contact-us'>Contact Us</h1>
 <p>Please email <strong>api_support@tapresearch.com</strong> for any questions or concerns.</p>
