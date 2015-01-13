@@ -197,3 +197,23 @@ Get quota details along with associated campaign_qualifications.
 
 ### Required Parameters
 `NONE`
+
+## Feasibility
+
+> Sample Response
+
+```json
+{
+  "estimated_completes": 72,
+  "over_num_days": 5
+}
+```
+
+Get the estimated number of completes based on your targeting criteria and days_in_field.
+
+### HTTP Request
+
+`GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id/feasibility`
+
+### Required Parameters
+`NONE`
