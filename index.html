@@ -271,12 +271,12 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
-<td>Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).</td>
+<td>Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-campaign'>Update a campaign</h2>
 <blockquote>
-<p>Sample Request Payload</p>
+<p>Sample Request Payload - Change name and length of interview for a campaign.</p>
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Survey Name"</span><span class="p">,</span><span class="w">
@@ -285,12 +285,12 @@ Campaigns will be a paused state after creation. You will need to manually updat
 </span></code></pre>
 
 <blockquote>
-<p>Set a campaign to active and allow for only mobile respondents.</p>
+<p>Sample Request Payload - Set a campaign to active and allow for only mobile respondents.</p>
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="mi">0</span><span class="w">
+    </span><span class="mi">1</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -345,7 +345,7 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <tr>
 <td>supported_devices</td>
 <td>Integer Array</td>
-<td>Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).</td>
+<td>Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-campaign'>Get a specific campaign</h2>
@@ -353,51 +353,51 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <p>Sample Response</p>
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.15"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14706</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cint-83372"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/234230?id="</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="mi">2</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.15"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14706</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cint-83372"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/234230?id="</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="mi">2</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">273057</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Campaign Quota"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">273057</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Campaign Quota"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                        </span><span class="mi">30</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">31</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">32</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">33</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">34</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">35</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">36</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">37</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">38</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">39</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">40</span><span class="w">
-                    </span><span class="p">]</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                        </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                        </span><span class="mi">2</span><span class="w">
-                    </span><span class="p">]</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+          </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">30</span><span class="p">,</span><span class="w">
+            </span><span class="mi">31</span><span class="p">,</span><span class="w">
+            </span><span class="mi">32</span><span class="p">,</span><span class="w">
+            </span><span class="mi">33</span><span class="p">,</span><span class="w">
+            </span><span class="mi">34</span><span class="p">,</span><span class="w">
+            </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="mi">36</span><span class="p">,</span><span class="w">
+            </span><span class="mi">37</span><span class="p">,</span><span class="w">
+            </span><span class="mi">38</span><span class="p">,</span><span class="w">
+            </span><span class="mi">39</span><span class="p">,</span><span class="w">
+            </span><span class="mi">40</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="mi">2</span><span class="w">
+          </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -464,14 +464,70 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 <p>Create a quota for a specific campaign.</p>
 
 <blockquote>
-<p>Sample Request Payload</p>
+<p>Sample Request Payload - 32 respondents who are between the ages of 18-24, 30-34 and male.</p>
 </blockquote>
-<pre><code class="highlight json"></code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="mi">19</span><span class="p">,</span><span class="w">
+        </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="mi">21</span><span class="p">,</span><span class="w">
+        </span><span class="mi">22</span><span class="p">,</span><span class="w">
+        </span><span class="mi">23</span><span class="p">,</span><span class="w">
+        </span><span class="mi">24</span><span class="p">,</span><span class="w">
+        </span><span class="mi">30</span><span class="p">,</span><span class="w">
+        </span><span class="mi">31</span><span class="p">,</span><span class="w">
+        </span><span class="mi">32</span><span class="p">,</span><span class="w">
+        </span><span class="mi">33</span><span class="p">,</span><span class="w">
+        </span><span class="mi">34</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <blockquote>
-<p>Sample Response</p>
+<p>Sample Response - Remember to record the id that is returned.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="w">
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="mi">19</span><span class="p">,</span><span class="w">
+        </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="mi">21</span><span class="p">,</span><span class="w">
+        </span><span class="mi">22</span><span class="p">,</span><span class="w">
+        </span><span class="mi">23</span><span class="p">,</span><span class="w">
+        </span><span class="mi">24</span><span class="p">,</span><span class="w">
+        </span><span class="mi">30</span><span class="p">,</span><span class="w">
+        </span><span class="mi">31</span><span class="p">,</span><span class="w">
+        </span><span class="mi">32</span><span class="p">,</span><span class="w">
+        </span><span class="mi">33</span><span class="p">,</span><span class="w">
+        </span><span class="mi">34</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas</code></p>
@@ -517,14 +573,40 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 <p>Update a quota for a specific campaign.</p>
 
 <blockquote>
-<p>Sample Request Payload</p>
+<p>Sample Request Payload - 50 respondents who are hispanic and live in specific zip code areas.</p>
 </blockquote>
-<pre><code class="highlight json"></code></pre>
-
-<blockquote>
-<p>Sample Response</p>
-</blockquote>
-<pre><code class="highlight json"></code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"95120"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"94089"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"94115"</span><span class="p">,</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="mi">13</span><span class="p">,</span><span class="w">
+        </span><span class="mi">14</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">PUT https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></p>
 
@@ -576,7 +658,35 @@ unless the campaign_qualifications array is empty.
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="w">
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="mi">19</span><span class="p">,</span><span class="w">
+        </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="mi">21</span><span class="p">,</span><span class="w">
+        </span><span class="mi">22</span><span class="p">,</span><span class="w">
+        </span><span class="mi">23</span><span class="p">,</span><span class="w">
+        </span><span class="mi">24</span><span class="p">,</span><span class="w">
+        </span><span class="mi">30</span><span class="p">,</span><span class="w">
+        </span><span class="mi">31</span><span class="p">,</span><span class="w">
+        </span><span class="mi">32</span><span class="p">,</span><span class="w">
+        </span><span class="mi">33</span><span class="p">,</span><span class="w">
+        </span><span class="mi">34</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">1</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></p>
@@ -584,12 +694,43 @@ unless the campaign_qualifications array is empty.
 <p><code class="prettyprint">NONE</code></p>
 
           <h1 id='qualifications'>Qualifications</h1><h2 id='list-all-qualifications'>List all qualifications</h2>
-<p>Get quota details along with associated campaign_qualifications.</p>
+<p>Get a list of supported targeting criteria.</p>
 
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="w">
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AGE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your age?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GENDER"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your gender?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZIP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your zip or postal code?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HISPANIC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you of Hispanic, Latino, or Spanish origin?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your state?"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications</code></p>
@@ -627,7 +768,7 @@ Qualifications that are sourced from <strong>staging.tapresearch.com</strong> ma
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-qualification'>Get a specific qualification</h2>
-<p>Get quota details along with associated campaign_qualifications.</p>
+<p>Get answer options to a specific qualification.</p>
 
 <p><aside class=info>
 Qualifications with an answer_type = 5 will have an empty qualification_answer array.
@@ -636,7 +777,74 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="w">
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HISPANIC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you of Hispanic, Latino, or Spanish origin?"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"qualification_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No , not of Hispanic, Latino, or Spanish origin"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, Mexican, Mexican American, Chicano"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, Cuban"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Argentina "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Colombia "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Ecuador "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** El Salvadore "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Guatemala "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Nicaragua "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Panama "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Peru "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Spain "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Venezuela "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Other Country"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prefer not to answer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications/:question_id</code></p>
