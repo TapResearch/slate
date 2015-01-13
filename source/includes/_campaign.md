@@ -8,6 +8,7 @@
 [
   {
       "cpi": "3.15",
+      "days_in_field": 3,
       "id": 14706,
       "incidence": 10,
       "length_of_interview": 20,
@@ -18,6 +19,7 @@
   },
   {
       "cpi": "3.69",
+      "days_in_field": 10,
       "id": 14707,
       "incidence": 20,
       "length_of_interview": 15,
@@ -45,6 +47,7 @@ Parameter | Type | Description
 id | Integer | This is the unique campaign identifier. You will need to use this parameter to get campaign details or update a specific campaign.
 name | String | Name of the campaign
 cpi | String | This is the amount you will payout per complete.
+days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5(Paused).
 length_of_interview | Integer | How many minutes will it take to complete the survey?
@@ -59,6 +62,7 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 {
   "name": "Test Survey",
   "cpi": "2.50",
+  "days_in_field": 3,
   "length_of_interview": 10,
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "incidence": 50,
@@ -74,6 +78,7 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 ``` json
 {
   "cpi": "2.5",
+  "days_in_field": 3,
   "id": 14724,
   "incidence": 50,
   "length_of_interview": 10,
@@ -110,6 +115,7 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 ### Optional Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
+days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
 supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
 
 ## Update a campaign
@@ -139,6 +145,7 @@ supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (de
 ```json
 {
   "name": "Test Survey",
+  "days_in_field": 8
   "cpi": "2.50",
   "length_of_interview": 10,
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
@@ -163,6 +170,7 @@ name | String | Name of the campaign
 cpi | String | This is the amount you will payout per complete.
 status | Integer | Only 2 (Active), 3 (Complete), 5 (Paused) will be accepted.
 supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
+days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
 supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
 
 ## Get a specific campaign
@@ -172,6 +180,7 @@ supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (de
 ```json
 {
   "cpi": "3.15",
+  "days_in_field": 12,
   "id": 14706,
   "incidence": 20,
   "length_of_interview": 20,
