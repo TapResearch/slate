@@ -110,11 +110,11 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 ### Optional Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
-supported_devices | Integer Array | Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).
+supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
 
 ## Update a campaign
 
-> Sample Request Payload
+> Sample Request Payload - Change name and length of interview for a campaign.
 
 ```json
 {
@@ -123,13 +123,13 @@ supported_devices | Integer Array | Pass in 0 (mobile), 1 (tablet), and/or 2 (de
 }
 ```
 
-> Set a campaign to active and allow for only mobile respondents.
+> Sample Request Payload - Set a campaign to active and allow for only mobile respondents.
 
 ```json
 {
   "status": 2,
   "supported_devices": [
-    0
+    1
   ]
 }
 ```
@@ -163,7 +163,7 @@ name | String | Name of the campaign
 cpi | String | This is the amount you will payout per complete.
 status | Integer | Only 2 (Active), 3 (Complete), 5 (Paused) will be accepted.
 supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
-supported_devices | Integer Array | Pass in 0 (mobile), 1 (tablet), and/or 2 (desktop).
+supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
 
 ## Get a specific campaign
 
@@ -171,51 +171,51 @@ supported_devices | Integer Array | Pass in 0 (mobile), 1 (tablet), and/or 2 (de
 
 ```json
 {
-    "cpi": "3.15",
-    "id": 14706,
-    "incidence": 20,
-    "length_of_interview": 20,
-    "name": "Cint-83372",
-    "status": 2,
-    "supplier_link": "https://api.samplecompany.com/surveys/234230?id=",
-    "total_remaining": 6,
-    "supported_devices": [
-        0,
-        1,
-        2
-    ],
-    "campaign_quotas": [
+  "cpi": "3.15",
+  "id": 14706,
+  "incidence": 20,
+  "length_of_interview": 20,
+  "name": "Cint-83372",
+  "status": 2,
+  "supplier_link": "https://api.samplecompany.com/surveys/234230?id=",
+  "total_remaining": 6,
+  "supported_devices": [
+    0,
+    1,
+    2
+  ],
+  "campaign_quotas": [
+    {
+      "id": 273057,
+      "name": "Test Campaign Quota",
+      "num_respondents": 6,
+      "campaign_qualifications": [
         {
-            "id": 273057,
-            "name": "Test Campaign Quota",
-            "num_respondents": 6,
-            "campaign_qualifications": [
-                {
-                    "question_id": 42,
-                    "pre_codes": [
-                        30,
-                        31,
-                        32,
-                        33,
-                        34,
-                        35,
-                        36,
-                        37,
-                        38,
-                        39,
-                        40
-                    ]
-                },
-                {
-                    "question_id": 43,
-                    "pre_codes": [
-                        1,
-                        2
-                    ]
-                }
-            ]
+          "question_id": 42,
+          "pre_codes": [
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40
+          ]
+        },
+        {
+          "question_id": 43,
+          "pre_codes": [
+            1,
+            2
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 

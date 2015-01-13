@@ -4,15 +4,71 @@
 
 Create a quota for a specific campaign.
 
-> Sample Request Payload
+> Sample Request Payload - 32 respondents who are between the ages of 18-24, 30-34 and male.
 
 ```json
+{
+  "num_respondents": 32,
+  "campaign_qualifications": [
+    {
+      "question_id": 42,
+      "pre_codes": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "question_id": 43,
+      "pre_codes": [
+        1
+      ]
+    }
+  ]
+}
 ```
 
-> Sample Response
+> Sample Response - Remember to record the id that is returned.
 
 ```json
-
+{
+  "id": 274771,
+  "num_respondents": 32,
+  "campaign_qualifications": [
+    {
+      "question_id": 42,
+      "pre_codes": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "question_id": 43,
+      "pre_codes": [
+        1
+      ]
+    }
+  ]
+}
 ```
 
 ### HTTP Request
@@ -38,14 +94,40 @@ pre_codes | Integer Array | A list of accepted pre-codes or values. See **Answer
 
 Update a quota for a specific campaign.
 
-> Sample Request Payload
+> Sample Request Payload - 50 respondents who are hispanic and live in specific zip code areas.
 
 ```json
-```
-
-> Sample Response
-
-```json
+{
+  "num_respondents": 50,
+  "campaign_qualifications": [
+    {
+      "question_id": 45,
+      "pre_codes": [
+        "95120",
+        "94089",
+        "94115",
+      ]
+    },
+    {
+      "question_id": 47,
+      "pre_codes": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    }
+  ]
+}
 ```
 
 ### HTTP Request
@@ -78,7 +160,35 @@ Get quota details along with associated campaign_qualifications.
 > Sample Response
 
 ```json
-
+{
+  "id": 274771,
+  "num_respondents": 32,
+  "campaign_qualifications": [
+    {
+      "question_id": 42,
+      "pre_codes": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "question_id": 43,
+      "pre_codes": [
+        1
+      ]
+    }
+  ]
+}
 ```
 
 ### HTTP Request
