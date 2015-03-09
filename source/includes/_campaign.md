@@ -270,3 +270,23 @@ respondent_ids | Array of strings | Respondent ids that were attached to the id 
 <aside class="warning">
 Respondents can qualify for multiple quotas. Hence, you will need to manually update num_respondents for quotas after rejecting completes.
 </aside>
+
+## Feasibility
+
+> Sample Response
+
+```json
+{
+  "estimated_completes": 72,
+  "over_num_days": 5
+}
+```
+
+Get the total estimated number of completes based on your campaign quotas.
+
+### HTTP Request
+
+`GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/feasibility`
+
+### Required Parameters
+`NONE`

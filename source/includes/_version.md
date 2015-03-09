@@ -1,5 +1,11 @@
 # Versions
 
+## v1.03
+- Campaigns
+  - Added the campaign level /feasibility route.
+- Callbacks
+  - Added callback URLs.
+
 ## v1.02
 - Campaigns
   - Added days_in_field as an optional attribute. Default value is 5.

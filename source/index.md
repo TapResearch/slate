@@ -17,6 +17,7 @@ includes:
   - campaign_quota
   - qualification
   - answer_type
+  - callback
   - errors
   - version
   - contact_us
