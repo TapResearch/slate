@@ -481,6 +481,21 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <p><aside class="warning">
 Respondents can qualify for multiple quotas. Hence, you will need to manually update num_respondents for quotas after rejecting completes.
 </aside></p>
+<h2 id='feasibility'>Feasibility</h2>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"estimated_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"over_num_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get the total estimated number of completes based on your campaign quotas.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/feasibility</code></p>
+<h3 id='required-parameters'>Required Parameters</h3>
+<p><code class="prettyprint">NONE</code></p>
 
           <h1 id='campaign-quotas'>Campaign Quotas</h1><h2 id='create-a-campaign-quota'>Create a campaign quota</h2>
 <p>Create a quota for a specific campaign.</p>
@@ -942,6 +957,19 @@ an array of customer values.</p>
 <li>Zip: Pass in an array of zip codes. <code class="prettyprint">I.E. [ &quot;95120&quot;, &quot;94089&quot; ]</code></li>
 </ul>
 
+          <h1 id='callbacks'>Callbacks</h1>
+<p>These are the routes you will need to use when you redirect a respondent back to TapResearch.</p>
+
+<ul>
+<li>Complete: https://www.tapresearch.com/routers/status_cb?status=1&amp;id=</li>
+<li>Over Quota: https://www.tapresearch.com/routers/status_cb?status=3&amp;id=</li>
+<li>Everything else: https://www.tapresearch.com/routers/status_cb?status=2&amp;id=</li>
+</ul>
+
+<p><aside class=info>
+Every campaign supplier_link attribute requires an &ldquo;id=&rdquo; to be appended at the end of the URL. We will be setting the &ldquo;id&rdquo; parameter with a session identifier, which we will need you to return on callback.
+</aside></p>
+
           <h1 id='errors'>Errors</h1>
 <p>The TapResearch API uses the following error codes:</p>
 
@@ -977,7 +1005,20 @@ an array of customer values.</p>
 </tr>
 </tbody></table>
 
-          <h1 id='versions'>Versions</h1><h2 id='v1-02'>v1.02</h2>
+          <h1 id='versions'>Versions</h1><h2 id='v1-03'>v1.03</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>Added the campaign level /feasibility route.</li>
+</ul></li>
+<li>Callbacks
+
+<ul>
+<li>Added callback URLs.</li>
+</ul></li>
+</ul>
+<h2 id='v1-02'>v1.02</h2>
 <ul>
 <li>Campaigns
 
