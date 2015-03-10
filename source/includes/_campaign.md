@@ -277,8 +277,15 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 
 ```json
 {
-  "estimated_completes": 72,
-  "over_num_days": 5
+  "campaign_quotas": [
+    {
+        "id": 446003,
+        "estimated_completes": 32
+    }
+  ],
+  "estimated_completes": 32,
+  "over_num_days": 5,
+  "id": 30309
 }
 ```
 
