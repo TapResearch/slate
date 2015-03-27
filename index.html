@@ -197,7 +197,6 @@ The authorization header is <strong>required</strong> for every request.
 </blockquote>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
@@ -248,11 +247,6 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <td>name</td>
 <td>String</td>
 <td>Name of the campaign</td>
-</tr>
-<tr>
-<td>cpi</td>
-<td>String</td>
-<td>This is the amount you will payout per complete.</td>
 </tr>
 <tr>
 <td>incidence</td>
@@ -342,11 +336,6 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <td>name</td>
 <td>String</td>
 <td>Name of the campaign</td>
-</tr>
-<tr>
-<td>cpi</td>
-<td>String</td>
-<td>This is the amount you will payout per complete.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -1012,7 +1001,15 @@ Every campaign supplier_link attribute requires an &ldquo;id=&rdquo; to be appen
 </tr>
 </tbody></table>
 
-          <h1 id='versions'>Versions</h1><h2 id='v1-03'>v1.03</h2>
+          <h1 id='versions'>Versions</h1><h2 id='v1-04'>v1.04</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>The CPI parameter is now read-only. We will generate the CPI value using our rate card.</li>
+</ul></li>
+</ul>
+<h2 id='v1-03'>v1.03</h2>
 <ul>
 <li>Campaigns
 
