@@ -61,7 +61,6 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 ```json
 {
   "name": "Test Survey",
-  "cpi": "2.50",
   "days_in_field": 3,
   "length_of_interview": 10,
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
@@ -107,7 +106,6 @@ Campaigns will be a paused state after creation. You will need to manually updat
 Parameter | Type | Description
 --------- | ---- | -----------
 name | String | Name of the campaign
-cpi | String | This is the amount you will payout per complete.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
@@ -167,7 +165,6 @@ Update a campaign that belongs to the authenticated user.
 Parameter | Type | Description
 --------- | ---- | -----------
 name | String | Name of the campaign
-cpi | String | This is the amount you will payout per complete.
 status | Integer | Only 2 (Active), 3 (Complete), 5 (Paused) will be accepted.
 supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.

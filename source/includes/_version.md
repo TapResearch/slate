@@ -1,5 +1,9 @@
 # Versions
 
+## v1.04
+- Campaigns
+  - The CPI parameter is now read-only. We will generate the CPI value using our rate card.
+
 ## v1.03
 - Campaigns
   - Added the campaign level /feasibility route.
