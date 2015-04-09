@@ -38,7 +38,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='http://docs.tapresearch.com/?shell#versions'>API v1.02</a></li>
+            <li><a href='http://docs.tapresearch.com/?shell#versions'>API v1.05</a></li>
             <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -492,6 +492,105 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/feasibility</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
 <p><code class="prettyprint">NONE</code></p>
+<h2 id='realtime-feasibility'>Realtime Feasibility</h2>
+<blockquote>
+<p>Sample Request</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"incidence"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"length_of_interview"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_in_field"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_quotas"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">97</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">662</span><span class="p">,</span><span class="w">
+            </span><span class="mi">525</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="mi">18</span><span class="p">,</span><span class="w">
+              </span><span class="mi">19</span><span class="p">,</span><span class="w">
+              </span><span class="mi">20</span><span class="p">,</span><span class="w">
+              </span><span class="mi">21</span><span class="p">,</span><span class="w">
+              </span><span class="mi">22</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"estimated_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"estimated_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"estimated_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"over_num_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get the total estimated number of completes without having to create a campaign.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility</code></p>
+<h3 id='required-parameters'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>incidence</td>
+<td>Integer</td>
+<td>The percentage chance that a random respondent will qualify and complete the survey.</td>
+</tr>
+<tr>
+<td>length_of_interview</td>
+<td>Integer</td>
+<td>How many minutes will it take to complete the survey?</td>
+</tr>
+<tr>
+<td>campaign_quotas</td>
+<td>Array</td>
+<td>See &ldquo;create a campaign quota&rdquo; subsection.</td>
+</tr>
+</tbody></table>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>days_in_field</td>
+<td>Integer</td>
+<td>Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.</td>
+</tr>
+</tbody></table>
 
           <h1 id='campaign-quotas'>Campaign Quotas</h1><h2 id='create-a-campaign-quota'>Create a campaign quota</h2>
 <p>Create a quota for a specific campaign.</p>
@@ -1001,7 +1100,15 @@ Every campaign supplier_link attribute requires an &ldquo;id=&rdquo; to be appen
 </tr>
 </tbody></table>
 
-          <h1 id='versions'>Versions</h1><h2 id='v1-04'>v1.04</h2>
+          <h1 id='versions'>Versions</h1><h2 id='v1-05'>v1.05</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>Added /realtime_feasibility route.</li>
+</ul></li>
+</ul>
+<h2 id='v1-04'>v1.04</h2>
 <ul>
 <li>Campaigns
 
