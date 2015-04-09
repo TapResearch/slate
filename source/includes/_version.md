@@ -1,5 +1,9 @@
 # Versions
 
+## v1.05
+- Campaigns
+  - Added /realtime_feasibility route.
+
 ## v1.04
 - Campaigns
   - The CPI parameter is now read-only. We will generate the CPI value using our rate card.

@@ -294,3 +294,80 @@ Get the total estimated number of completes based on your campaign quotas.
 
 ### Required Parameters
 `NONE`
+
+## Realtime Feasibility
+
+> Sample Request
+
+```json
+{
+  "incidence":20,
+  "length_of_interview" : 10,
+  "days_in_field" : 5,
+  "campaign_quotas" : [
+    {
+      "num_respondents": 10,
+      "campaign_qualifications": [
+        {
+          "question_id": 97,
+          "pre_codes": [
+            662,
+            525
+          ]
+        }
+      ]
+    },
+    {
+      "num_respondents": 20,
+      "campaign_qualifications": [
+        {
+          "question_id": 42,
+          "pre_codes": [
+              18,
+              19,
+              20,
+              21,
+              22
+          ]
+        }
+      ]
+    }
+  ]
+
+}
+```
+
+> Sample Response
+
+```json
+{
+  "campaign_quotas": [
+    {
+      "estimated_completes": 3
+    },
+    {
+      "estimated_completes": 20
+    }
+  ],
+  "estimated_completes": 23,
+  "over_num_days": 5
+}
+```
+
+Get the total estimated number of completes without having to create a campaign.
+
+### HTTP Request
+
+`GET https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility`
+
+### Required Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
+length_of_interview | Integer | How many minutes will it take to complete the survey?
+campaign_quotas | Array | See "create a campaign quota" subsection.
+
+### Optional Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
