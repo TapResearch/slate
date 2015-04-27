@@ -358,7 +358,7 @@ Get the total estimated number of completes without having to create a campaign.
 
 ### HTTP Request
 
-`GET https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility`
+`POST https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility`
 
 ### Required Parameters
 Parameter | Type | Description
