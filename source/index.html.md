@@ -15,6 +15,7 @@ includes:
   - authentication
   - campaign
   - campaign_quota
+  - campaign_retargeting
   - qualification
   - answer_type
   - callback

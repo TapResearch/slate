@@ -1,5 +1,9 @@
 # Versions
 
+## v1.06
+- Campaigns
+  - Added /retarging route.
+
 ## v1.05
 - Campaigns
   - Added /realtime_feasibility route.

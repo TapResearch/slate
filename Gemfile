@@ -2,7 +2,7 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~>3.3.0"
+gem "middleman" 
 
 # For syntax highlighting
 gem "middleman-syntax"
@@ -10,10 +10,13 @@ gem "middleman-syntax"
 # Plugin for middleman to generate Github pages
 gem 'middleman-gh-pages'
 
-# Live-reloading plugin
-gem "middleman-livereload", "~> 3.3.0"
+gem "middleman-sprockets"
+gem "middleman-compass"
 
-gem 'redcarpet', '~> 3.1.1'
+# Live-reloading plugin
+gem "middleman-livereload"
+
+gem 'redcarpet'
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
