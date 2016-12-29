@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>TapResearch API Docs</title>
 
-    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <link href="stylesheets/highlighting.css" rel="stylesheet" />
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="javascripts/all.js" type="text/javascript"></script>
+      <script src="javascripts/all.js"></script>
 
       <script>
         $(function() {
@@ -22,11 +23,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" />
+        <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
-      <img src="images/logo.png" />
+      <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="ruby">ruby</a>
@@ -64,14 +65,13 @@ your base URL until you are ready to go live.</p>
 <li>Replace <code class="prettyprint">http://staging.tapresearch.com</code> with <code class="prettyprint">https://www.tapresearch.com</code> for all routes.</li>
 </ol>
 
-          <h1 id='authentication'>Authentication</h1><pre><code class="highlight shell">
+          <h1 id='authentication'>Authentication</h1><pre class="highlight shell"><code>
 Example Request
 
 <span class="gp">$ </span>curl -D- -X GET -H <span class="s2">"Authorization: Basic dGVzdEB0YXByZXNlYXJjaC5jb206NGMzMTg2Mjg4YWUyM2ZkOTY2MWNiNWRmY2NlMTkzMGU="</span>
 -H <span class="s2">"Content-Type: application/json"</span> http://staging.tapresearch.com/api/v1/campaigns
 
-</code></pre>
-<pre><code class="highlight ruby">
+</code></pre><pre class="highlight ruby"><code>
 <span class="no">Example</span> <span class="no">Request</span>
 
 <span class="c1"># Attach this to your Authorization header.</span>
@@ -79,7 +79,6 @@ Example Request
 
 
 </code></pre>
-
 <p>We use HTTP basic authentication combined with HTTPS to enforce access controls to secure resources. This means that we will check
 the value passed in the &lsquo;Authorization&rsquo; header to make sure you have access to the resource you are requesting.</p>
 
@@ -98,15 +97,15 @@ the value passed in the &lsquo;Authorization&rsquo; header to make sure you have
 <code class="prettyprint">Example: Basic dGVzdEB0YXByZXNlYXJjaC5jb206NGMzMTg2Mjg4YWUyM2ZkOTY2MWNiNWRmY2NlMTkzMGU=</code></p></li>
 </ol>
 
-<p><aside class="info">
-The authorization header is <strong>required</strong> for every request.
-</aside></p>
+<aside class="info">
+The authorization header is **required** for every request.
+</aside>
 
           <h1 id='campaigns'>Campaigns</h1><h2 id='list-your-campaigns'>List your campaigns</h2>
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">[</span><span class="w">
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
       </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.15"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -131,7 +130,6 @@ The authorization header is <strong>required</strong> for every request.
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-
 <p>Get a list of campaigns that are accessible by the authenticated user.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns</code></p>
@@ -195,7 +193,7 @@ The authorization header is <strong>required</strong> for every request.
 <blockquote>
 <p>Sample Request Payload</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
@@ -207,11 +205,10 @@ The authorization header is <strong>required</strong> for every request.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.5"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14724</span><span class="p">,</span><span class="w">
@@ -227,12 +224,11 @@ The authorization header is <strong>required</strong> for every request.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>Create a campaign with campaign-only metadata. Quotas and qualifications will need to be added through other routes.</p>
 
-<p><aside class="info">
+<aside class="info">
 Campaigns will be a paused state after creation. You will need to manually update the campaign to set it to active.
-</aside></p>
+</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
@@ -287,30 +283,28 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <blockquote>
 <p>Sample Request Payload - Change name and length of interview for a campaign.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Survey Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <blockquote>
 <p>Sample Request Payload - Set a campaign to active and allow for only mobile respondents.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="mi">1</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Survey"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-  </span><span class="s2">"cpi"</span><span class="err">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.50"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
@@ -320,7 +314,6 @@ Campaigns will be a paused state after creation. You will need to manually updat
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>Update a campaign that belongs to the authenticated user.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">PUT https://www.tapresearch.com/api/v1/campaigns/:campaign_id</code></p>
@@ -372,7 +365,7 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.15"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14706</span><span class="p">,</span><span class="w">
@@ -421,7 +414,6 @@ Campaigns will be a paused state after creation. You will need to manually updat
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>Retrieve campaign metadata along with associated quotas and qualifications.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:id</code></p>
@@ -443,7 +435,7 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <blockquote>
 <p>Sample Request</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"respondent_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"30c60dbff51a9b8155609534f27de291"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"22d2dccca27f438876613c46e6d50db3"</span><span class="p">,</span><span class="w">
@@ -453,7 +445,6 @@ Campaigns will be a paused state after creation. You will need to manually updat
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>Reject completes that did not meet your quality standards.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/:id/reject_completes</code></p>
@@ -477,14 +468,14 @@ Campaigns will be a paused state after creation. You will need to manually updat
 </tr>
 </tbody></table>
 
-<p><aside class="warning">
+<aside class="warning">
 Respondents can qualify for multiple quotas. Hence, you will need to manually update num_respondents for quotas after rejecting completes.
-</aside></p>
+</aside>
 <h2 id='feasibility'>Feasibility</h2>
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">446003</span><span class="p">,</span><span class="w">
@@ -496,7 +487,6 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30309</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>Get the total estimated number of completes based on your campaign quotas.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/feasibility</code></p>
@@ -506,7 +496,7 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 <blockquote>
 <p>Sample Request</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
   </span><span class="s2">"length_of_interview"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"days_in_field"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
@@ -542,11 +532,10 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"estimated_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
@@ -559,7 +548,6 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
   </span><span class="s2">"over_num_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>Get the total estimated number of completes without having to create a campaign.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility</code></p>
@@ -608,7 +596,7 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 <blockquote>
 <p>Sample Request Payload - 32 respondents who are between the ages of 18-24, 30-34 and male.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -637,11 +625,10 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <blockquote>
 <p>Sample Response - Remember to record the id that is returned.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -670,8 +657,7 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas</code></p>
 <h3 id='required-parameters'>Required Parameters</h3><h3 id='campaign-quota'>Campaign Quota</h3>
 <table><thead>
@@ -717,7 +703,7 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 <blockquote>
 <p>Sample Request Payload - 50 respondents who are hispanic and live in specific zip code areas.</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -748,14 +734,13 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">PUT https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></p>
 
-<p><aside class=warning>
+<aside class=warning>
 Since we currently don&rsquo;t allow you to destroy a campaign_qualification, all campaign_qualifications will be replaced
 unless the campaign_qualifications array is empty.
-</aside></p>
+</aside>
 <h3 id='optional-parameters'>Optional Parameters</h3><h3 id='campaign-quota'>Campaign Quota</h3>
 <table><thead>
 <tr>
@@ -800,7 +785,7 @@ unless the campaign_qualifications array is empty.
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -829,8 +814,7 @@ unless the campaign_qualifications array is empty.
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
 <p><code class="prettyprint">NONE</code></p>
@@ -838,17 +822,236 @@ unless the campaign_qualifications array is empty.
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"estimated_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
   </span><span class="s2">"over_num_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
 <p>Get the estimated number of completes based on your targeting criteria and days_in_field.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id/feasibility</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
 <p><code class="prettyprint">NONE</code></p>
+
+          <h1 id='campaign-retargeting'>Campaign Retargeting</h1><h2 id='add-players'>Add Players</h2>
+<blockquote>
+<p>Sample Request Payload</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"player_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"e2c479d73ff8a256317356a2be25aed4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"47427850ed299431ad173ec32868dbe9"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eeb784b657985398f24707e3f0969227"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"69ca1702f0c1b9f508687e37b243e928"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"1b240e62c891524bf62dab9dc18db028"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"6385e12881c8ed49070411f309b43058"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"b9ca3b32adb35b601aba7b27e2bdc947"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"7ce6d249900ea6c0b955ad6867f81d79"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"64cf2c3733202397fc6738b6570a7d17"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"b1fb936f4ab42a537192d43bda0f5679"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.75"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">365</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_retarget"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO1607074800517"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/survey/1?id="</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add players to a campaign for retargeting.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_retarget</code></p>
+<h3 id='required-parameters'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>player_ids</td>
+<td>Array</td>
+<td>List of player ids to add to campaign retargeting.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>This is the unique campaign identifier. You will need to use this parameter to get campaign details or update a specific campaign.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of the campaign</td>
+</tr>
+<tr>
+<td>cpi</td>
+<td>String</td>
+<td>This is the amount you will payout per complete.</td>
+</tr>
+<tr>
+<td>days_in_field</td>
+<td>Integer</td>
+<td>Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.</td>
+</tr>
+<tr>
+<td>incidence</td>
+<td>Integer</td>
+<td>The percentage chance that a random respondent will qualify and complete the survey.</td>
+</tr>
+<tr>
+<td>is_retarget</td>
+<td>Boolean</td>
+<td>True if the campaign has players to retarget to.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>This value will be returned as a 2(Active), 3(Complete), or 5(Paused).</td>
+</tr>
+<tr>
+<td>length_of_interview</td>
+<td>Integer</td>
+<td>How many minutes will it take to complete the survey?</td>
+</tr>
+<tr>
+<td>total_remaining</td>
+<td>Integer</td>
+<td>This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.</td>
+</tr>
+<tr>
+<td>supplier_link</td>
+<td>String</td>
+<td>The redirect URL when a respondent has qualified for the survey.</td>
+</tr>
+</tbody></table>
+<h2 id='remove-players'>Remove Players</h2>
+<blockquote>
+<p>Sample Request Payload</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"player_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"e2c479d73ff8a256317356a2be25aed4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"47427850ed299431ad173ec32868dbe9"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.75"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_in_field"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">365</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_retarget"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO1607074800517"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/survey/1?id="</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add players to a campaign for retargeting.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_retarget</code></p>
+
+<aside class=info>
+When removing players from a retargeting campaign, you can specify one, several, or all of the players. If there are players left on the campaign, 
+The campaign will still be in retarget mode.
+</aside>
+<h3 id='required-parameters'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>player_ids</td>
+<td>Array</td>
+<td>List of player ids to remove to campaign retargeting.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>This is the unique campaign identifier. You will need to use this parameter to get campaign details or update a specific campaign.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of the campaign</td>
+</tr>
+<tr>
+<td>cpi</td>
+<td>String</td>
+<td>This is the amount you will payout per complete.</td>
+</tr>
+<tr>
+<td>days_in_field</td>
+<td>Integer</td>
+<td>Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.</td>
+</tr>
+<tr>
+<td>incidence</td>
+<td>Integer</td>
+<td>The percentage chance that a random respondent will qualify and complete the survey.</td>
+</tr>
+<tr>
+<td>is_retarget</td>
+<td>Boolean</td>
+<td>False if the campaign has no players to retarget to.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td>This value will be returned as a 2(Active), 3(Complete), or 5(Paused).</td>
+</tr>
+<tr>
+<td>length_of_interview</td>
+<td>Integer</td>
+<td>How many minutes will it take to complete the survey?</td>
+</tr>
+<tr>
+<td>total_remaining</td>
+<td>Integer</td>
+<td>This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.</td>
+</tr>
+<tr>
+<td>supplier_link</td>
+<td>String</td>
+<td>The redirect URL when a respondent has qualified for the survey.</td>
+</tr>
+</tbody></table>
 
           <h1 id='qualifications'>Qualifications</h1><h2 id='list-all-qualifications'>List all qualifications</h2>
 <p>Get a list of supported targeting criteria.</p>
@@ -856,7 +1059,7 @@ unless the campaign_qualifications array is empty.
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">[</span><span class="w">
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AGE"</span><span class="p">,</span><span class="w">
@@ -888,13 +1091,12 @@ unless the campaign_qualifications array is empty.
     </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your state?"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications</code></p>
 
-<p><aside class="warning">
-Qualifications that are sourced from <strong>staging.tapresearch.com</strong> may have different question_ids than the qualifications sourced from <strong>www.tapresearch.com.</strong>
-</aside></p>
+<aside class="warning">
+Qualifications that are sourced from **staging.tapresearch.com** may have different question_ids than the qualifications sourced from **www.tapresearch.com.**
+</aside>
 <h3 id='response-parameters'>Response Parameters</h3>
 <table><thead>
 <tr>
@@ -927,14 +1129,14 @@ Qualifications that are sourced from <strong>staging.tapresearch.com</strong> ma
 <h2 id='get-a-specific-qualification'>Get a specific qualification</h2>
 <p>Get answer options to a specific qualification.</p>
 
-<p><aside class=info>
+<aside class=info>
 Qualifications with an answer_type = 5 will have an empty qualification_answer array.
-</aside></p>
+</aside>
 
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HISPANIC"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
@@ -1002,8 +1204,7 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications/:question_id</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
 <table><thead>
@@ -1071,9 +1272,9 @@ an array of customer values.</p>
 <li>Everything else: https://www.tapresearch.com/routers/status_cb?status=2&amp;id=</li>
 </ul>
 
-<p><aside class=info>
+<aside class=info>
 Every campaign supplier_link attribute requires an &ldquo;id=&rdquo; to be appended at the end of the URL. We will be setting the &ldquo;id&rdquo; parameter with a session identifier, which we will need you to return on callback.
-</aside></p>
+</aside>
 
           <h1 id='errors'>Errors</h1>
 <p>The TapResearch API uses the following error codes:</p>
@@ -1110,7 +1311,15 @@ Every campaign supplier_link attribute requires an &ldquo;id=&rdquo; to be appen
 </tr>
 </tbody></table>
 
-          <h1 id='versions'>Versions</h1><h2 id='v1-05'>v1.05</h2>
+          <h1 id='versions'>Versions</h1><h2 id='v1-06'>v1.06</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>Added /retarging route.</li>
+</ul></li>
+</ul>
+<h2 id='v1-05'>v1.05</h2>
 <ul>
 <li>Campaigns
 
