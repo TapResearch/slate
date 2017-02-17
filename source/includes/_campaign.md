@@ -15,7 +15,8 @@
       "name": "Test Survey 1",
       "status": 2,
       "supplier_link": "https://api.samplecompany.com/survey/1?id=",
-      "total_remaining": 6
+      "total_remaining": 6,
+      "max_daily_completes": null 
   },
   {
       "cpi": "3.69",
@@ -26,7 +27,8 @@
       "name": "Test Survey 2",
       "status": 2,
       "supplier_link": "https://api.samplecompany.com/survey/2?id=",
-      "total_remaining": 37
+      "total_remaining": 37,
+      "max_daily_completes": null
   }
 ]
 ```
@@ -53,6 +55,7 @@ status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.
 supplier_link | String | The redirect URL when a respondent has qualified for the survey.
+max_daily_completes | Integer | Total completes allowed each day.
 
 ## Create a campaign
 
@@ -85,6 +88,7 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
   "status": 5,
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "total_remaining": 0,
+  "max_daily_completes": null,
   "supported_devices": [
       0,
       2
@@ -115,6 +119,7 @@ Parameter | Type | Description
 --------- | ---- | -----------
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
 supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
+max_daily_completes | Integer | Number of completes that will be allowed per day for this campaign.
 
 ## Update a campaign
 
@@ -127,11 +132,12 @@ supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (de
 }
 ```
 
-> Sample Request Payload - Set a campaign to active and allow for only mobile respondents.
+> Sample Request Payload - Set a campaign to active, allow mobile respondents, and set a maximum complete amount for 250.
 
 ```json
 {
   "status": 2,
+  "max_daily_completes": 250,
   "supported_devices": [
     1
   ]
@@ -148,6 +154,7 @@ supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (de
   "length_of_interview": 10,
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "incidence": 50,
+  "max_daily_completes": 250,
   "supported_devices": [
     0,
     2
@@ -171,6 +178,7 @@ length_of_interview | Integer | How many minutes will it take to complete the su
 supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
 supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
+max_daily_completes | Integer | Number of completes that will be allowed per day for this campaign.
 
 ## Get a specific campaign
 
@@ -187,6 +195,7 @@ supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (de
   "status": 2,
   "supplier_link": "https://api.samplecompany.com/surveys/234230?id=",
   "total_remaining": 6,
+  "max_daily_completes": 250
   "supported_devices": [
     0,
     1,
