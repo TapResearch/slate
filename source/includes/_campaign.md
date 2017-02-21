@@ -99,7 +99,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
 }
 ```
 
-Create a campaign with campaign-only metadata. Quotas and qualifications will need to be added through other routes.
+Create a campaign with campaign-only metadata. Quotas, exclusions, and qualifications will need to be added through other routes.
 
 <aside class="info">
 Campaigns will be a paused state after creation. You will need to manually update the campaign to set it to active.
@@ -167,6 +167,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "incidence": 50,
   "max_daily_completes": 250,
+  "reentry_interval": 5,
   "supported_devices": [
     0,
     2
@@ -208,12 +209,18 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
   "status": 2,
   "supplier_link": "https://api.samplecompany.com/surveys/234230?id=",
   "total_remaining": 6,
-  "max_daily_completes": 250
+  "max_daily_completes": 250,
+  "reentry_interval": 5,
   "supported_devices": [
     0,
     1,
     2
   ],
+  "campaign_relationships" : [
+    "campaign_id": 14706,
+    "related_campaign_id": 14709,
+    "id": 538
+  ]
   "campaign_quotas": [
     {
       "id": 273057,
@@ -249,7 +256,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
 }
 ```
 
-Retrieve campaign metadata along with associated quotas and qualifications.
+Retrieve campaign metadata along with associated quotas, exclusions, and qualifications.
 
 ### HTTP Request
 
@@ -357,7 +364,6 @@ Get the total estimated number of completes based on your campaign quotas.
       ]
     }
   ]
-
 }
 ```
 
