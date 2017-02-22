@@ -79,7 +79,7 @@ Add respondent/device ID targeting to a campaign
 ### Required Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
-retargeting_type | Integer | Specify the type of retargeting identifiers passed in. 0 (Device), 1 (Player), 2(Campaign Player Score)
+retargeting_type | Integer | Specify the type of retargeting identifiers passed in. 0 (Device ID), 1 (Respondent ID), 2(Transaction ID)
 retargeting_ids | Array | A list of objects that specify the following criteria.
 
 ### Retargeting Ids
