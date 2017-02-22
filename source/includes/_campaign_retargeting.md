@@ -6,32 +6,51 @@
 
 ```json
 {
-  "respondent_ids": [
-    "e2c479d73ff8a256317356a2be25aed4",
-    "47427850ed299431ad173ec32868dbe9",
-    "eeb784b657985398f24707e3f0969227",
-    "69ca1702f0c1b9f508687e37b243e928",
-    "1b240e62c891524bf62dab9dc18db028",
-    "6385e12881c8ed49070411f309b43058",
-    "b9ca3b32adb35b601aba7b27e2bdc947",
-    "7ce6d249900ea6c0b955ad6867f81d79",
-    "64cf2c3733202397fc6738b6570a7d17",
-    "b1fb936f4ab42a537192d43bda0f5679"
+  "retargeting_type": 1,
+  "retargeting_ids": [
+    {
+      "id": "e2c479d73ff8a256317356a2be25aed4"
+    }, {
+      "id": "47427850ed299431ad173ec32868dbe9"
+    }, {
+      "id": "eeb784b657985398f24707e3f0969227"
+    }, {
+      "id": "69ca1702f0c1b9f508687e37b243e928"
+    }, {
+      "id": "1b240e62c891524bf62dab9dc18db028"
+    }, {
+      "id": "6385e12881c8ed49070411f309b43058"
+    }
   ]
 }
 ```
 
 ```json
 {
-  "device_ids": [
-    "748F63F4-A2FA-4971-8154-11FE4D03C0C9",
-    "DAFFA6A9-A37A-441E-9E65-73B79FC7B4B6",
-    "82ACEFDA-06C1-4023-B897-F08ECBA330BB",
-    "00000000-0000-0000-0000-000000000000",
-    "8A7D2593-4835-4F04-BEBD-59FC2C3F3272",
-    "C4FBAAB9-A853-498E-8843-6F6A4831C34B"
+  "retargeting_type": 0,
+  "retargeting_ids": [
+    {
+      "id": "748F63F4-A2FA-4971-8154-11FE4D03C0C9",
+      "replacement_id": "device_1"
+    }, {
+      "id": "DAFFA6A9-A37A-441E-9E65-73B79FC7B4B6",
+      "replacement_id": "device_2"
+    }, {
+      "id": "82ACEFDA-06C1-4023-B897-F08ECBA330BB",
+      "replacement_id": "device_3"
+    }, {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "replacement_id": "device_4"
+    }, {
+      "id": "8A7D2593-4835-4F04-BEBD-59FC2C3F3272",
+      "replacement_id": "device_5"
+    }, {
+      "id": "C4FBAAB9-A853-498E-8843-6F6A4831C34B",
+      "replacement_id": "device_6"
+    }
   ]
 }
+
 ```
 
 > Sample Response
@@ -60,7 +79,14 @@ Add respondent/device ID targeting to a campaign
 ### Required Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
-respondent_ids / device_ids | Array | List of respondent or device IDs you want to target
+retargeting_type | Integer | Specify the type of retargeting identifiers passed in. 0 (Device), 1 (Player), 2(Campaign Player Score)
+retargeting_ids | Array | A list of objects that specify the following criteria.
+
+### Retargeting Ids
+Parameter | Type | Description
+--------- | ---- | -----------
+id | String | Required identifier used to target a respondent in a campaign.
+replacement_id | String | Optional replacement value that is subsituted in the entry url. See campaign for details. 
 
 ### Response
 Parameter | Type | Description
@@ -82,7 +108,8 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
 
 ```json
 {
-  "respondent_ids": [
+  "retargeting_type": 1,
+  "retargeting_ids": [
     "e2c479d73ff8a256317356a2be25aed4",
     "47427850ed299431ad173ec32868dbe9"
   ]
@@ -120,7 +147,8 @@ The campaign will still be in retarget mode.
 ### Required Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
-respondent_ids / device_ids | Array | List of respondent or device ids you want to target
+retargeting_type | Integer | Specify the type of retargeting identifiers passed in. 0 (Device), 1 (Player), 2(Campaign Player Score)
+retargeting_ids | String Array | List of retargeting identifiers to remove.
 
 ### Response
 Parameter | Type | Description

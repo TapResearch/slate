@@ -1,5 +1,16 @@
 # Versions
 
+## 1.07
+- Campaigns
+  - Added max_daily_completes as an optional attribute.
+  - Added reenetry_interval as an optional attribute.
+  - Added {RETARGETING_IDENTIFIER} substitution value to supplier link attribute.
+- Campaign Retargeting
+  - Update request payload structure. Allow replacement identifier as optional value for 
+    each retarget.
+- Campaign Relationships
+  - Added /campaign_relationships route which will exlcude two campaigns from flow.
+
 ## v1.06
 - Campaigns
   - Added /retarging route.

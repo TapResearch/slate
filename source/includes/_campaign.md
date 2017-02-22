@@ -115,7 +115,7 @@ Parameter | Type | Description
 name | String | Name of the campaign
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
-supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
+supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier. If this is a retargeting campaign, append parameter {RETARGET_IDENTIFIER}. This will be subsituted on entry.
 
 ### Optional Parameters
 Parameter | Type | Description
