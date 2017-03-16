@@ -14,7 +14,7 @@ $ curl -D- -X GET -H "Authorization: Basic dGVzdEB0YXByZXNlYXJjaC5jb206NGMzMTg2M
 Example Request
 
 # Attach this to your Authorization header.
-auth = "Basic" + Base64::encode64("test@tapresearch.com:4c3186288ae23fd9661cb5dfcce1930e")
+auth = "Basic" + Base64::strict_encode64("test@tapresearch.com:4c3186288ae23fd9661cb5dfcce1930e")
 
 
 ```
