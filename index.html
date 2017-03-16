@@ -75,7 +75,7 @@ Example Request
 <span class="no">Example</span> <span class="no">Request</span>
 
 <span class="c1"># Attach this to your Authorization header.</span>
-<span class="n">auth</span> <span class="o">=</span> <span class="s2">"Basic"</span> <span class="o">+</span> <span class="no">Base64</span><span class="o">::</span><span class="n">encode64</span><span class="p">(</span><span class="s2">"test@tapresearch.com:4c3186288ae23fd9661cb5dfcce1930e"</span><span class="p">)</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="s2">"Basic"</span> <span class="o">+</span> <span class="no">Base64</span><span class="o">::</span><span class="n">strict_encode64</span><span class="p">(</span><span class="s2">"test@tapresearch.com:4c3186288ae23fd9661cb5dfcce1930e"</span><span class="p">)</span>
 
 
 </code></pre>
