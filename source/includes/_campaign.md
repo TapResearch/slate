@@ -56,7 +56,7 @@ incidence | Integer | The percentage chance that a random respondent will qualif
 status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5(Paused).
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.
-supplier_link | String | The redirect URL when a respondent has qualified for the survey.
+supplier_link | String | The entry URL when a respondent has qualified for the survey.
 max_daily_completes | Integer | Total completes allowed per day.
 reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number
 
@@ -115,7 +115,37 @@ Parameter | Type | Description
 name | String | Name of the campaign
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
-supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier. If this is a retargeting campaign, append parameter {RETARGET_IDENTIFIER}. This will be subsituted on entry.
+supplier_link | String | The entry URL when a respondent has qualified for the survey. This URL can be configured to accept various respondent values. See below:
+
+
+### supplier_link formatting
+
+**Transaction ID (required)**
+
+Specify where you want this ID to appear using {ID}:
+https://api.samplecompany.com/surveys/23423?id={ID}
+
+OR
+
+It will be automatically appended to the end of the URL:
+https://api.samplecompany.com/surveys/23423?&id=
+
+This value must be passed back in the [status callback URLs](#callbacks).
+
+**Respondent ID**
+
+https://api.samplecompany.com/surveys/23423?respondent_id={RESPONDENT_ID}&id={ID}
+
+This is the unique alphanumeric ID for this respondent.
+
+**Retarget Identifier**
+
+https://api.samplecompany.com/surveys/23423?retarget_id={RETARGET_IDENTIFIER}&id={ID}
+
+{RETARGET_IDENTIFIER} will be replaced with the retargeting_id as provided in [Campaign Retargeting](#campaign-retargeting).
+
+If a replacement_id is specified in [Campaign Retargeting](#campaign-retargeting), that value will be used instead.
+
 
 ### Optional Parameters
 Parameter | Type | Description
@@ -184,15 +214,9 @@ Update a campaign that belongs to the authenticated user.
 ### Optional Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
-name | String | Name of the campaign
 status | Integer | Only 2 (Active), 3 (Complete), 5 (Paused) will be accepted.
-incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
-length_of_interview | Integer | How many minutes will it take to complete the survey?
-supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier.
-days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
-supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
-max_daily_completes | Integer | Number of completes that will be allowed per day for this campaign.
-reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number (in seconds)
+
+See [Create Campaign](#create-a-campaign) for additional parameters
 
 ## Get a specific campaign
 
