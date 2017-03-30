@@ -58,7 +58,7 @@ length_of_interview | Integer | How many minutes will it take to complete the su
 total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.
 supplier_link | String | The entry URL when a respondent has qualified for the survey.
 max_daily_completes | Integer | Total completes allowed per day.
-reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number
+reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Minutes - number
 
 ## Create a campaign
 
@@ -153,7 +153,7 @@ Parameter | Type | Description
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
 supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
 max_daily_completes | Integer | Number of completes that will be allowed per day for this campaign.
-reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number
+reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Minutes - number
 
 ## Update a campaign
 
@@ -182,7 +182,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
 
 ```json
 {
-  "reentry_internval": 5
+  "reentry_internval": 7200
 }
 ```
 
@@ -197,7 +197,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "incidence": 50,
   "max_daily_completes": 250,
-  "reentry_interval": 5,
+  "reentry_interval": 7200,
   "supported_devices": [
     0,
     2
@@ -229,12 +229,12 @@ See [Create Campaign](#create-a-campaign) for additional parameters
   "id": 14706,
   "incidence": 20,
   "length_of_interview": 20,
-  "name": "Cint-83372",
+  "name": "Test Survey #123",
   "status": 2,
   "supplier_link": "https://api.samplecompany.com/surveys/234230?id=",
   "total_remaining": 6,
   "max_daily_completes": 250,
-  "reentry_interval": 5,
+  "reentry_interval": 7200,
   "supported_devices": [
     0,
     1,
