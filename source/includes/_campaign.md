@@ -17,7 +17,8 @@
       "supplier_link": "https://api.samplecompany.com/survey/1?id=",
       "total_remaining": 6,
       "max_daily_completes": null,
-      "renentry_interval": null 
+      "renentry_interval": null,
+      "country_language_id": 1
   },
   {
       "cpi": "3.69",
@@ -31,6 +32,7 @@
       "total_remaining": 37,
       "max_daily_completes": null,
       "renentry_interval": null
+      "country_language_id": 1
   }
 ]
 ```
@@ -43,6 +45,12 @@ Get a list of campaigns that are accessible by the authenticated user.
 
 ### Required Parameters
 `NONE`
+
+
+### Optional Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+country_language_id | Integer | Optional id value used to specify which set of campaigns to get by country language code.
 
 ### Response
 
@@ -59,6 +67,7 @@ total_remaining | Integer | This is the number of completes left before the surv
 supplier_link | String | The redirect URL when a respondent has qualified for the survey.
 max_daily_completes | Integer | Total completes allowed per day.
 reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number
+country_language_id | Integer | Which country_language this campaign belongs to.
 
 ## Create a campaign
 
@@ -71,6 +80,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
   "length_of_interview": 10,
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "incidence": 50,
+  "country_language_id": 1,
   "supported_devices": [
     0,
     2
@@ -92,6 +102,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "total_remaining": 0,
   "max_daily_completes": null,
+  "country_language_id": 1,
   "supported_devices": [
       0,
       2
@@ -105,6 +116,7 @@ Create a campaign with campaign-only metadata. Quotas, exclusions, and qualifica
 Campaigns will be a paused state after creation. You will need to manually update the campaign to set it to active.
 </aside>
 
+
 ### HTTP Request
 
 `POST https://www.tapresearch.com/api/v1/campaigns`
@@ -116,6 +128,7 @@ name | String | Name of the campaign
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 supplier_link | String | The redirect URL when a respondent has qualified for the survey. You will need to append 'id=' to the end of the redirect url so we can pass-through a sesssion identifier. If this is a retargeting campaign, append parameter {RETARGET_IDENTIFIER}. This will be subsituted on entry.
+country_language_id | Integer | Id value used to specify which country_language code this campaign should belong to.
 
 ### Optional Parameters
 Parameter | Type | Description
@@ -177,6 +190,10 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
 
 Update a campaign that belongs to the authenticated user.
 
+<aside class="info">
+You can not update the country_language code after creating a campaign. Please create a new one if you need to change your campaign's country_language.
+</aside>
+
 ### HTTP Request
 
 `PUT https://www.tapresearch.com/api/v1/campaigns/:campaign_id`
@@ -211,6 +228,7 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
   "total_remaining": 6,
   "max_daily_completes": 250,
   "reentry_interval": 5,
+  "country_language_id" : 1,
   "supported_devices": [
     0,
     1,

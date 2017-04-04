@@ -13,11 +13,11 @@ includes:
   - introduction
   - getting_started
   - authentication
+  - lookups
   - campaign
   - campaign_quota
   - campaign_retargeting
   - campaign_relationships
-  - qualification
   - answer_type
   - callback
   - errors

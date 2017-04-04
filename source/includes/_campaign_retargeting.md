@@ -27,7 +27,7 @@
 
 ```json
 {
-  "retargeting_type": 0,
+  "retargeting_type": 2,
   "retargeting_ids": [
     {
       "id": "748F63F4-A2FA-4971-8154-11FE4D03C0C9",
@@ -74,7 +74,7 @@ Add respondent/device ID targeting to a campaign
 
 ### HTTP Request
 
-`POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_retarget`
+`POST https://www.tapresearch.com/api/v1/campaigns/:id/campaign_retargets`
 
 ### Required Parameters
 Parameter | Type | Description
@@ -137,7 +137,7 @@ Remove respondent/device ID targeting to a campaign
 
 ### HTTP Request
 
-`DELETE https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_retarget`
+`DELETE https://www.tapresearch.com/api/v1/campaigns/:id/campaign_retargets`
 
 <aside class=info>
 When removing respondents from a retargeting campaign, you can specify one, several, or all of the respondents. If there are respondents left on the campaign,

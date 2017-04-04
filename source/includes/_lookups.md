@@ -1,4 +1,34 @@
-# Qualifications
+# Lookups 
+
+## List all country languages 
+
+### HTTP Request
+
+`GET https://www.tapresearch.com/api/v1/country_languages`
+
+
+> Sample Response
+
+```json
+[
+  {
+    "id": 1,
+    "abbr": "en-US"
+  },
+  {
+    "id": 2,
+    "abbr": "en-CA"
+  },
+  {
+    "id": 5,
+    "abbr": "en-GB"
+  },
+  {
+    "id": 9,
+    "abbr": "en-AU"
+  }
+]
+```
 
 ## List all qualifications
 
