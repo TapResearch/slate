@@ -101,6 +101,236 @@ the value passed in the &lsquo;Authorization&rsquo; header to make sure you have
 The authorization header is **required** for every request.
 </aside>
 
+          <h1 id='lookups'>Lookups</h1><h2 id='list-all-country-languages'>List all country languages</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/country_languages</code></p>
+
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"abbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"abbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-CA"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"abbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-GB"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"abbr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-AU"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='list-all-qualifications'>List all qualifications</h2>
+<p>Get a list of supported targeting criteria.</p>
+
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AGE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your age?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GENDER"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your gender?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZIP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your zip or postal code?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HISPANIC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you of Hispanic, Latino, or Spanish origin?"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your state?"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications?country_language_id=1</code></p>
+
+<aside class="warning">
+Qualifications that are sourced from **staging.tapresearch.com** may have different question_ids than the qualifications sourced from **www.tapresearch.com.**
+</aside>
+<h3 id='required-parameters'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country_language_id</td>
+<td>integer</td>
+<td>Id value used to specify which set of qualifications to get by country language code.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Qualification name</td>
+</tr>
+<tr>
+<td>question_id</td>
+<td>Integer</td>
+<td>This value will be used to fetch qualification details.</td>
+</tr>
+<tr>
+<td>question_text</td>
+<td>String</td>
+<td>This is the question text that will be served to our respondents.</td>
+</tr>
+<tr>
+<td>answer_type</td>
+<td>Integer</td>
+<td>This will determine how campaign_qualifications pre-codes are generated for quotas. See <strong>Answer Types</strong> section for more information.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-qualification'>Get a specific qualification</h2>
+<p>Get answer options to a specific qualification.</p>
+
+<aside class=info>
+Qualifications with an answer_type = 5 will have an empty qualification_answer array.
+</aside>
+
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HISPANIC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you of Hispanic, Latino, or Spanish origin?"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"qualification_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No , not of Hispanic, Latino, or Spanish origin"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, Mexican, Mexican American, Chicano"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, Cuban"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Argentina "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Colombia "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Ecuador "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** El Salvadore "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Guatemala "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Nicaragua "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Panama "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Peru "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Spain "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Venezuela "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Other Country"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prefer not to answer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications/:question_id?country_language_id=1</code></p>
+<h3 id='required-parameters'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>question_id</td>
+<td>Integer</td>
+<td>This value will be returned with each record through the /qualifications route.</td>
+</tr>
+<tr>
+<td>country_language_id</td>
+<td>Integer</td>
+<td>Id value used to specify which qualification to get by country language code.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><h3 id='qualification-answers'>Qualification Answers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>option_text</td>
+<td>String</td>
+<td>The answer text that is shown to our respondents.</td>
+</tr>
+<tr>
+<td>pre_code</td>
+<td>Integer</td>
+<td>This is value you will be passing into the campaign_qualifications pre_codes array to describe which respondents qualify for a survey.</td>
+</tr>
+</tbody></table>
+
           <h1 id='campaigns'>Campaigns</h1><h2 id='list-your-campaigns'>List your campaigns</h2>
 <blockquote>
 <p>Sample Response</p>
@@ -117,7 +347,8 @@ The authorization header is **required** for every request.
       </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/survey/1?id="</span><span class="p">,</span><span class="w">
       </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
       </span><span class="s2">"max_daily_completes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"renentry_interval"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> 
+      </span><span class="s2">"renentry_interval"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
       </span><span class="s2">"cpi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.69"</span><span class="p">,</span><span class="w">
@@ -131,6 +362,7 @@ The authorization header is **required** for every request.
       </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
       </span><span class="s2">"max_daily_completes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"renentry_interval"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -139,6 +371,20 @@ The authorization header is **required** for every request.
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/campaigns</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
 <p><code class="prettyprint">NONE</code></p>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country_language_id</td>
+<td>Integer</td>
+<td>Optional id value used to specify which set of campaigns to get by country language code.</td>
+</tr>
+</tbody></table>
 <h3 id='response'>Response</h3>
 <table><thead>
 <tr>
@@ -200,7 +446,12 @@ The authorization header is **required** for every request.
 <tr>
 <td>reentry_interval</td>
 <td>Integer</td>
-<td>Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Minutes - number</td>
+<td>Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number</td>
+</tr>
+<tr>
+<td>country_language_id</td>
+<td>Integer</td>
+<td>Which country_language this campaign belongs to.</td>
 </tr>
 </tbody></table>
 <h2 id='create-a-campaign'>Create a campaign</h2>
@@ -213,6 +464,7 @@ The authorization header is **required** for every request.
   </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="mi">2</span><span class="w">
@@ -233,6 +485,7 @@ The authorization header is **required** for every request.
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
   </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"max_daily_completes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="mi">2</span><span class="w">
@@ -268,6 +521,11 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <td>length_of_interview</td>
 <td>Integer</td>
 <td>How many minutes will it take to complete the survey?</td>
+</tr>
+<tr>
+<td>country_language_id</td>
+<td>Integer</td>
+<td>Id value used to specify which country_language code this campaign should belong to.</td>
 </tr>
 <tr>
 <td>supplier_link</td>
@@ -376,6 +634,10 @@ https://api.samplecompany.com/surveys/23423?&amp;id=</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update a campaign that belongs to the authenticated user.</p>
+
+<aside class="info">
+You can not update the country_language code after creating a campaign. Please create a new one if you need to change your campaign&rsquo;s country_language.
+</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">PUT https://www.tapresearch.com/api/v1/campaigns/:campaign_id</code></p>
 <h3 id='optional-parameters'>Optional Parameters</h3>
@@ -409,7 +671,7 @@ https://api.samplecompany.com/surveys/23423?&amp;id=</p>
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/234230?id="</span><span class="p">,</span><span class="w">
   </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
   </span><span class="s2">"max_daily_completes"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reentry_interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country_language_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -895,7 +1157,7 @@ unless the campaign_qualifications array is empty.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"retargeting_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retargeting_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"retargeting_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"748F63F4-A2FA-4971-8154-11FE4D03C0C9"</span><span class="p">,</span><span class="w">
@@ -937,7 +1199,7 @@ unless the campaign_qualifications array is empty.
 </span></code></pre>
 <p>Add respondent/device ID targeting to a campaign</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_retarget</code></p>
+<p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/:id/campaign_retargets</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
 <table><thead>
 <tr>
@@ -1064,7 +1326,7 @@ unless the campaign_qualifications array is empty.
 </span></code></pre>
 <p>Remove respondent/device ID targeting to a campaign</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">DELETE https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_retarget</code></p>
+<p><code class="prettyprint">DELETE https://www.tapresearch.com/api/v1/campaigns/:id/campaign_retargets</code></p>
 
 <aside class=info>
 When removing respondents from a retargeting campaign, you can specify one, several, or all of the respondents. If there are respondents left on the campaign, the campaign will still be in retarget mode.
@@ -1169,193 +1431,6 @@ When removing respondents from a retargeting campaign, you can specify one, seve
 <td>id</td>
 <td>Integer</td>
 <td>Unique campaign relationship id. Used to identify the relationship between campaigns.</td>
-</tr>
-</tbody></table>
-
-          <h1 id='qualifications'>Qualifications</h1><h2 id='list-all-qualifications'>List all qualifications</h2>
-<p>Get a list of supported targeting criteria.</p>
-
-<blockquote>
-<p>Sample Response</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AGE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your age?"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GENDER"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your gender?"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZIP"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your zip or postal code?"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HISPANIC"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you of Hispanic, Latino, or Spanish origin?"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is your state?"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications</code></p>
-
-<aside class="warning">
-Qualifications that are sourced from **staging.tapresearch.com** may have different question_ids than the qualifications sourced from **www.tapresearch.com.**
-</aside>
-<h3 id='response-parameters'>Response Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>Qualification name</td>
-</tr>
-<tr>
-<td>question_id</td>
-<td>Integer</td>
-<td>This value will be used to fetch qualification details.</td>
-</tr>
-<tr>
-<td>question_text</td>
-<td>String</td>
-<td>This is the question text that will be served to our respondents.</td>
-</tr>
-<tr>
-<td>answer_type</td>
-<td>Integer</td>
-<td>This will determine how campaign_qualifications pre-codes are generated for quotas. See <strong>Answer Types</strong> section for more information.</td>
-</tr>
-</tbody></table>
-<h2 id='get-a-specific-qualification'>Get a specific qualification</h2>
-<p>Get answer options to a specific qualification.</p>
-
-<aside class=info>
-Qualifications with an answer_type = 5 will have an empty qualification_answer array.
-</aside>
-
-<blockquote>
-<p>Sample Response</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HISPANIC"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you of Hispanic, Latino, or Spanish origin?"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"qualification_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No , not of Hispanic, Latino, or Spanish origin"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, Mexican, Mexican American, Chicano"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, Cuban"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Argentina "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Colombia "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Ecuador "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** El Salvadore "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Guatemala "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Nicaragua "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Panama "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Peru "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Spain "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Venezuela "</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes, another Hispanic, Latino, or Spanish origin *** Other Country"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"option_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prefer not to answer"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications/:question_id</code></p>
-<h3 id='required-parameters'>Required Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>question_id</td>
-<td>Integer</td>
-<td>This value will be returned with each record through the /qualifications route.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><h3 id='qualification-answers'>Qualification Answers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>option_text</td>
-<td>String</td>
-<td>The answer text that is shown to our respondents.</td>
-</tr>
-<tr>
-<td>pre_code</td>
-<td>Integer</td>
-<td>This is value you will be passing into the campaign_qualifications pre_codes array to describe which respondents qualify for a survey.</td>
 </tr>
 </tbody></table>
 
