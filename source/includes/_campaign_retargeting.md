@@ -61,7 +61,6 @@
   "days_in_field": 5,
   "id": 365,
   "incidence": 10,
-  "is_retarget": true,
   "length_of_interview": 20,
   "name": "PO1607074800517",
   "status": 2,
@@ -96,11 +95,11 @@ name | String | Name of the campaign
 cpi | String | This is the amount you will payout per complete.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
-is_retarget | Boolean | True if the campaign has respondent/device ID targeting.
+is_retarget | Boolean | Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.
 status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5(Paused).
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.
-supplier_link | String | The redirect URL when a respondent has qualified for the survey.
+supplier_link | String | The entry URL when a respondent has qualified for the survey.
 
 ## Remove Respondents
 
@@ -124,7 +123,6 @@ supplier_link | String | The redirect URL when a respondent has qualified for th
   "days_in_field": 5,
   "id": 365,
   "incidence": 10,
-  "is_retarget": true,
   "length_of_interview": 20,
   "name": "PO1607074800517",
   "status": 2,
@@ -140,8 +138,7 @@ Remove respondent/device ID targeting to a campaign
 `DELETE https://www.tapresearch.com/api/v1/campaigns/:id/campaign_retargets`
 
 <aside class=info>
-When removing respondents from a retargeting campaign, you can specify one, several, or all of the respondents. If there are respondents left on the campaign,
-The campaign will still be in retarget mode.
+When removing respondents from a retargeting campaign, you can specify one, several, or all of the respondents. If there are respondents left on the campaign, the campaign will still be in retarget mode.
 </aside>
 
 ### Required Parameters
@@ -149,17 +146,3 @@ Parameter | Type | Description
 --------- | ---- | -----------
 retargeting_type | Integer | Specify the type of retargeting identifiers passed in. 0 (Transaction ID), 1 (Respondent ID), 2(Device ID)
 retargeting_ids | String Array | List of retargeting identifiers to remove.
-
-### Response
-Parameter | Type | Description
---------- | ---- | -----------
-id | Integer | This is the unique campaign identifier. You will need to use this parameter to get campaign details or update a specific campaign.
-name | String | Name of the campaign
-cpi | String | This is the amount you will payout per complete.
-days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.
-incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
-is_retarget | Boolean | True if the campaign has respondent/device ID targeting.
-status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5(Paused).
-length_of_interview | Integer | How many minutes will it take to complete the survey?
-total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.
-supplier_link | String | The redirect URL when a respondent has qualified for the survey.
