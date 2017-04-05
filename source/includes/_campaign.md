@@ -437,6 +437,7 @@ Parameter | Type | Description
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 campaign_quotas | Array | See "create a campaign quota" subsection.
+cpi | Decimal | This is the amount you will payout per complete.
 
 
 ### Optional Parameters
