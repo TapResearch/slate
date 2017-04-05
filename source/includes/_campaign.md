@@ -129,6 +129,7 @@ incidence | Integer | The percentage chance that a random respondent will qualif
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 country_language_id | Integer | Id value used to specify which country_language code this campaign should belong to.
 supplier_link | String | The entry URL when a respondent has qualified for the survey. This URL can be configured to accept various respondent values. See below:
+cpi | Decimal | This is the amount you will payout per complete.
 
 
 ### supplier_link formatting
@@ -436,6 +437,7 @@ Parameter | Type | Description
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 campaign_quotas | Array | See "create a campaign quota" subsection.
+
 
 ### Optional Parameters
 Parameter | Type | Description
