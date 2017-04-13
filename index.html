@@ -62,14 +62,14 @@ your base URL until you are ready to go live.</p>
 
 <ol>
 <li>Contact us for a live api token.</li>
-<li>Replace <code class="prettyprint">http://staging.tapresearch.com</code> with <code class="prettyprint">https://www.tapresearch.com</code> for all routes.</li>
+<li>Replace <code class="prettyprint">https://staging.tapresearch.com</code> with <code class="prettyprint">https://www.tapresearch.com</code> for all routes.</li>
 </ol>
 
           <h1 id='authentication'>Authentication</h1><pre class="highlight shell"><code>
 Example Request
 
 <span class="gp">$ </span>curl -D- -X GET -H <span class="s2">"Authorization: Basic dGVzdEB0YXByZXNlYXJjaC5jb206NGMzMTg2Mjg4YWUyM2ZkOTY2MWNiNWRmY2NlMTkzMGU="</span>
--H <span class="s2">"Content-Type: application/json"</span> http://staging.tapresearch.com/api/v1/campaigns
+-H <span class="s2">"Content-Type: application/json"</span> https://staging.tapresearch.com/api/v1/campaigns
 
 </code></pre><pre class="highlight ruby"><code>
 <span class="no">Example</span> <span class="no">Request</span>
@@ -167,7 +167,7 @@ The authorization header is **required** for every request.
 <p><code class="prettyprint">GET https://www.tapresearch.com/api/v1/qualifications?country_language_id=1</code></p>
 
 <aside class="warning">
-Qualifications that are sourced from **staging.tapresearch.com** may have different question_ids than the qualifications sourced from **www.tapresearch.com.**
+Qualifications that are sourced from **https://staging.tapresearch.com** may have different question_ids than the qualifications sourced from **www.tapresearch.com.**
 </aside>
 <h3 id='required-parameters'>Required Parameters</h3>
 <table><thead>
