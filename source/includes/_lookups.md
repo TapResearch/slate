@@ -76,7 +76,7 @@ Get a list of supported targeting criteria.
 `GET https://www.tapresearch.com/api/v1/qualifications?country_language_id=1`
 
 <aside class="warning">
-Qualifications that are sourced from **staging.tapresearch.com** may have different question_ids than the qualifications sourced from **www.tapresearch.com.**
+Qualifications that are sourced from **https://staging.tapresearch.com** may have different question_ids than the qualifications sourced from **www.tapresearch.com.**
 </aside>
 
 ### Required Parameters

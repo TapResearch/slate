@@ -5,7 +5,7 @@
 Example Request
 
 $ curl -D- -X GET -H "Authorization: Basic dGVzdEB0YXByZXNlYXJjaC5jb206NGMzMTg2Mjg4YWUyM2ZkOTY2MWNiNWRmY2NlMTkzMGU="
--H "Content-Type: application/json" http://staging.tapresearch.com/api/v1/campaigns
+-H "Content-Type: application/json" https://staging.tapresearch.com/api/v1/campaigns
 
 ```
 

@@ -9,4 +9,4 @@ your base URL until you are ready to go live.
 When you are read to go live, please follow the steps below:
 
 1. Contact us for a live api token.
-2. Replace `http://staging.tapresearch.com` with `https://www.tapresearch.com` for all routes.
+2. Replace `https://staging.tapresearch.com` with `https://www.tapresearch.com` for all routes.
