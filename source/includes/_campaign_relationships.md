@@ -7,7 +7,7 @@
 ```json
 {
   "campaign_id": 1234,
-  "related_campaing_id": 5678
+  "related_campaign_id": 5678
 }
 ```
 
