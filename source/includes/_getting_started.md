@@ -1,5 +1,8 @@
 # Getting Started
 
+Sign up for a researcher account at 
+[https://staging.tapresearch.com/customers/sign_up](https://staging.tapresearch.com/customers/sign_up).
+
 Before you can begin consuming our API, you will need to contact **api_support@tapresearch.com** for an API token. This token will be used
  for authentication purposes described in the section below.
 
