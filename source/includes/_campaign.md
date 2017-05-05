@@ -258,9 +258,11 @@ See [Create Campaign](#create-a-campaign) for additional parameters
     2
   ],
   "campaign_relationships" : [
-    "campaign_id": 14706,
-    "related_campaign_id": 14709,
-    "id": 538
+    {
+      "campaign_id": 14706,
+      "related_campaign_id": 14709,
+      "id": 538
+    }
   ]
   "campaign_quotas": [
     {
