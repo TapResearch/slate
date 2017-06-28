@@ -500,7 +500,7 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 <p>Create a campaign with campaign-only metadata. Quotas, exclusions, and qualifications will need to be added through other routes.</p>
 
 <aside class="info">
-Campaigns will be a paused state after creation. You will need to manually update the campaign to set it to active.
+Campaigns will be in a paused state after creation. You will need to manually update the campaign to set it to active.
 </aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns</code></p>
@@ -541,6 +541,20 @@ Campaigns will be a paused state after creation. You will need to manually updat
 <td>cpi</td>
 <td>Decimal</td>
 <td>This is the amount you will payout per complete.</td>
+</tr>
+</tbody></table>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>is_retarget</td>
+<td>Boolean</td>
+<td>Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.</td>
 </tr>
 </tbody></table>
 <h3 id='supplier_link-formatting'>supplier_link formatting</h3>
