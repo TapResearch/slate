@@ -113,7 +113,7 @@ country_language_id | Integer | Which country_language this campaign belongs to.
 Create a campaign with campaign-only metadata. Quotas, exclusions, and qualifications will need to be added through other routes.
 
 <aside class="info">
-Campaigns will be a paused state after creation. You will need to manually update the campaign to set it to active.
+Campaigns will be in a paused state after creation. You will need to manually update the campaign to set it to active.
 </aside>
 
 
@@ -130,6 +130,12 @@ length_of_interview | Integer | How many minutes will it take to complete the su
 country_language_id | Integer | Id value used to specify which country_language code this campaign should belong to.
 supplier_link | String | The entry URL when a respondent has qualified for the survey. This URL can be configured to accept various respondent values. See below:
 cpi | Decimal | This is the amount you will payout per complete.
+
+
+### Optional Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+is_retarget | Boolean | Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.
 
 
 ### supplier_link formatting
