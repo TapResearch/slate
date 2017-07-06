@@ -368,7 +368,6 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
 {
   "campaign_quotas": [
       {
-          "estimated_completes": 0,
           "message": "We can't estimate feasibility for question ids: ( 723 )",
           "id": 959323
       }
