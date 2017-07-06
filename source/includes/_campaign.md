@@ -364,6 +364,20 @@ Respondents can qualify for multiple quotas. Hence, you will need to manually up
   "over_num_days": 5,
   "id": 30309
 }
+
+{
+  "campaign_quotas": [
+      {
+          "estimated_completes": 0,
+          "message": "We can't estimate feasibility for question ids: ( 723 )",
+          "id": 959323
+      }
+  ],
+  "estimated_completes": 0,
+  "over_num_days": 5,
+  "id": 153547
+}
+
 ```
 
 Get the total estimated number of completes based on your campaign quotas.
@@ -374,6 +388,10 @@ Get the total estimated number of completes based on your campaign quotas.
 
 ### Required Parameters
 `NONE`
+
+<aside class=warning>
+Feasibility is unavailable for quotas created with certain question ids. In those cases, feasibility will return an appropriate message.
+</aside>
 
 ## Realtime Feasibility
 
