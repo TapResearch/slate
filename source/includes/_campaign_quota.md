@@ -198,6 +198,20 @@ Get quota details along with associated campaign_qualifications.
 ### Required Parameters
 `NONE`
 
+## Delete a campaign quota
+
+Remove a quota for a specific campaign
+
+### HTTP Request
+
+`DELETE https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id`
+
+
+### Required Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+id | Integer | Unique quota id
+
 ## Feasibility
 
 > Sample Response
