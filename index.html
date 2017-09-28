@@ -543,20 +543,6 @@ Campaigns will be in a paused state after creation. You will need to manually up
 <td>This is the amount you will payout per complete.</td>
 </tr>
 </tbody></table>
-<h3 id='optional-parameters'>Optional Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>is_retarget</td>
-<td>Boolean</td>
-<td>Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.</td>
-</tr>
-</tbody></table>
 <h3 id='supplier_link-formatting'>supplier_link formatting</h3>
 <p><strong>Transaction ID (required)</strong></p>
 
@@ -591,6 +577,11 @@ https://api.samplecompany.com/surveys/23423?&amp;id=</p>
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>is_retarget</td>
+<td>Boolean</td>
+<td>Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.</td>
+</tr>
 <tr>
 <td>days_in_field</td>
 <td>Integer</td>
