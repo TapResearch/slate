@@ -132,12 +132,6 @@ supplier_link | String | The entry URL when a respondent has qualified for the s
 cpi | Decimal | This is the amount you will payout per complete.
 
 
-### Optional Parameters
-Parameter | Type | Description
---------- | ---- | -----------
-is_retarget | Boolean | Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.
-
-
 ### supplier_link formatting
 
 **Transaction ID (required)**
@@ -169,6 +163,7 @@ If a replacement_id is specified in [Campaign Retargeting](#campaign-retargeting
 ### Optional Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
+is_retarget | Boolean | Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
 supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
 max_daily_completes | Integer | Number of completes that will be allowed per day for this campaign.
