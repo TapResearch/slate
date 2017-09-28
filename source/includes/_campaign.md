@@ -322,7 +322,7 @@ id | Integer | This is the unique campaign identifier.
 
 ```json
 {
-   "respondent_ids": [
+   "transaction_ids": [
     "30c60dbff51a9b8155609534f27de291",
     "22d2dccca27f438876613c46e6d50db3",
     "904895ae97e7412530746b3b709ee9e0",
@@ -342,7 +342,7 @@ Reject completes that did not meet your quality standards.
 Parameter | Type | Description
 --------- | ---- | -----------
 id | Integer | This is the unique campaign identifier.
-respondent_ids | Array of strings | Respondent ids that were attached to the id parameter when we sent the respondent into your survey.
+transaction_ids | Array of strings | Transaction ids that were attached to the id parameter when we sent the respondent into your survey.
 
 <aside class="warning">
 Respondents can qualify for multiple quotas. Hence, you will need to manually update num_respondents for quotas after rejecting completes.
