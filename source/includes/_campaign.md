@@ -339,8 +339,8 @@ Parameter | Type | Description
 id | Integer | This is the unique campaign identifier.
 transaction_ids | Array of strings | Transaction ids that were attached to the id parameter when we sent the respondent into your survey.
 
-<aside class="warning">
-Respondents can qualify for multiple quotas. Hence, you will need to manually update num_respondents for quotas after rejecting completes.
+<aside class="info">
+The target number of completes for respective quotas will be auto-incremented based on the number of rejected completes.
 </aside>
 
 ## Feasibility
