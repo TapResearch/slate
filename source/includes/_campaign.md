@@ -68,6 +68,7 @@ supplier_link | String | The entry URL when a respondent has qualified for the s
 max_daily_completes | Integer | Total completes allowed per day.
 reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number
 country_language_id | Integer | Which country_language this campaign belongs to.
+retarget_count | Integer | Total number of recontact records associated with the campaign.
 
 ## Create a campaign
 
