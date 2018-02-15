@@ -574,6 +574,16 @@ https://api.samplecompany.com/surveys/23423?&amp;id=</p>
 <p>{RETARGET_IDENTIFIER} will be replaced with the retargeting_id as provided in <a href="#campaign-retargeting">Campaign Retargeting</a>.</p>
 
 <p>If a replacement_id is specified in <a href="#campaign-retargeting">Campaign Retargeting</a>, that value will be used instead.</p>
+
+<p><strong>Respondent Demographics</strong></p>
+
+<p>https://api.samplecompany.com/surveys/23423?id={ID}&amp;age={AGE}&amp;gender={GENDER}&amp;zip={ZIP_CODE}</p>
+
+<p>{AGE} will be an integer.</p>
+
+<p>{GENDER} will be either M (male) or F (female).</p>
+
+<p>{ZIP_CODE} will be an alphanumeric string. </p>
 <h3 id='optional-parameters'>Optional Parameters</h3>
 <table><thead>
 <tr>
@@ -1431,7 +1441,7 @@ When removing respondents from a retargeting campaign, you can specify one, seve
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">222</span><span class="w"> 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Exlcudes campaigns from being shown together for a user.</p>
+<p>Excludes campaigns from being shown together for a user.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaign_relationships/</code></p>
 <h3 id='required-parameters'>Required Parameters</h3>
