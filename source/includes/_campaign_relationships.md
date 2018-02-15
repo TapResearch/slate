@@ -21,7 +21,7 @@
 }
 ```
 
-Exlcudes campaigns from being shown together for a user.
+Excludes campaigns from being shown together for a user.
 
 ### HTTP Request
 

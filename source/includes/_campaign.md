@@ -161,6 +161,16 @@ https://api.samplecompany.com/surveys/23423?retarget_id={RETARGET_IDENTIFIER}&id
 
 If a replacement_id is specified in [Campaign Retargeting](#campaign-retargeting), that value will be used instead.
 
+**Respondent Demographics**
+
+https://api.samplecompany.com/surveys/23423?id={ID}&age={AGE}&gender={GENDER}&zip={ZIP_CODE}
+
+{AGE} will be an integer.
+
+{GENDER} will be either M (male) or F (female).
+
+{ZIP_CODE} will be an alphanumeric string. 
+
 ### Optional Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
