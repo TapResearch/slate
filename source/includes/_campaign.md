@@ -475,3 +475,37 @@ cpi | Decimal | This is the amount you will payout per complete.
 Parameter | Type | Description
 --------- | ---- | -----------
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
+
+## Reconciliation
+
+> Sample Request
+
+```json
+{
+   "purchase_order":"tt489m900",
+   "accepted_ids": [
+    "30c60dbff51a9b8155609534f27de291",
+    "22d2dccca27f438876613c46e6d50db3",
+    "904895ae97e7412530746b3b709ee9e0",
+    "751b36f52152bc765803e65aefe4ace7",
+    "b41f02bed5a07fd69b1675f938bdcd05"
+  ]
+}
+```
+
+Reconcile a campaign using accepted survey complete ids.
+
+### HTTP Request
+
+`POST https://www.tapresearch.com/api/v1/campaigns/:id/reconcile`
+
+### Required Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+id | Integer | This is the unique campaign identifier.
+accepted_ids | Array of strings | Transaction ids of survey completes that were accepted.
+
+### Optional Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+purchase_order | String | Purchase order associated with the campaign.
