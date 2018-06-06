@@ -944,6 +944,57 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 <td>Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.</td>
 </tr>
 </tbody></table>
+<h2 id='reconciliation'>Reconciliation</h2>
+<blockquote>
+<p>Sample Request</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"purchase_order"</span><span class="p">:</span><span class="s2">"tt489m900"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"accepted_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"30c60dbff51a9b8155609534f27de291"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"22d2dccca27f438876613c46e6d50db3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"904895ae97e7412530746b3b709ee9e0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"751b36f52152bc765803e65aefe4ace7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"b41f02bed5a07fd69b1675f938bdcd05"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Reconcile a campaign using accepted survey complete ids.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://www.tapresearch.com/api/v1/campaigns/:id/reconcile</code></p>
+<h3 id='required-parameters'>Required Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>This is the unique campaign identifier.</td>
+</tr>
+<tr>
+<td>accepted_ids</td>
+<td>Array of strings</td>
+<td>Transaction ids of survey completes that were accepted.</td>
+</tr>
+</tbody></table>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>purchase_order</td>
+<td>String</td>
+<td>Purchase order associated with the campaign.</td>
+</tr>
+</tbody></table>
 
           <h1 id='campaign-quotas'>Campaign Quotas</h1><h2 id='create-a-campaign-quota'>Create a campaign quota</h2>
 <p>Create a quota for a specific campaign.</p>
