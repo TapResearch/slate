@@ -67,7 +67,7 @@ total_remaining | Integer | This is the number of completes left before the surv
 supplier_link | String | The entry URL when a respondent has qualified for the survey.
 max_daily_completes | Integer | Total completes allowed per day.
 reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number
-country_language_id | Integer | Which country_language this campaign belongs to.
+country_language_id | Integer | Country language targeting for this campaign. 
 retarget_count | Integer | Total number of recontact records associated with the campaign.
 
 ## Create a campaign
@@ -128,7 +128,7 @@ Parameter | Type | Description
 name | String | Name of the campaign
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
-country_language_id | Integer | Id value used to specify which country_language code this campaign should belong to.
+country_language_id | Integer | Country language targeting for this campaign. 
 supplier_link | String | The entry URL when a respondent has qualified for the survey. This URL can be configured to accept various respondent values. See below:
 cpi | Decimal | This is the amount you will payout per complete.
 
@@ -469,6 +469,7 @@ incidence | Integer | The percentage chance that a random respondent will qualif
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 campaign_quotas | Array | See "create a campaign quota" subsection.
 cpi | Decimal | This is the amount you will payout per complete.
+country_language_id | Integer | Country language targeting for this campaign.  
 
 
 ### Optional Parameters
