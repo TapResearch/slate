@@ -1535,10 +1535,10 @@ an array of customer values.</p>
 </ul>
 
           <h1 id='callbacks'>Callbacks</h1><pre class="highlight ruby"><code>
-<span class="c1"># Sample request URL</span>
+<span class="c1"># Sample redirect URL</span>
 <span class="n">redirect_url</span> <span class="o">=</span> <span class="s2">"https://www.tapresearch.com/router/customers/fdbe1666a0146f54d85dbc90a5f12552/cps/complete?tid=53b183dd1a729fa04acd9ba2283af896"</span>
 
-<span class="c1"># Generate HMAC-MD5</span>
+<span class="c1"># Generate HMAC-SHA1</span>
 <span class="n">api_secret</span> <span class="o">=</span> <span class="s2">"f81324b50c807cd7118ffe32a34a6681"</span>
 <span class="n">digest</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Digest</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"sha1"</span><span class="p">)</span>
 <span class="n">sha1</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">HMAC</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="n">digest</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">,</span> <span class="n">redirect_url</span><span class="p">)</span>
