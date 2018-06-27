@@ -2,10 +2,10 @@
 
 ``` ruby
 
-# Sample request URL
+# Sample redirect URL
 redirect_url = "https://www.tapresearch.com/router/customers/fdbe1666a0146f54d85dbc90a5f12552/cps/complete?tid=53b183dd1a729fa04acd9ba2283af896"
 
-# Generate HMAC-MD5
+# Generate HMAC-SHA1
 api_secret = "f81324b50c807cd7118ffe32a34a6681"
 digest = OpenSSL::Digest.new("sha1")
 sha1 = OpenSSL::HMAC.hexdigest(digest, api_secret, redirect_url)
