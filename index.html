@@ -1534,7 +1534,20 @@ an array of customer values.</p>
 <li>Zip: Pass in an array of zip codes. <code class="prettyprint">I.E. [ &quot;95120&quot;, &quot;94089&quot; ]</code></li>
 </ul>
 
-          <h1 id='callbacks'>Callbacks</h1>
+          <pre class="highlight ruby"><code>
+<span class="c1"># Sample request URL</span>
+<span class="n">redirect_url</span> <span class="o">=</span> <span class="s2">"https://www.tapresearch.com/router/customers/fdbe1666a0146f54d85dbc90a5f12552/cps/complete?tid=53b183dd1a729fa04acd9ba2283af896"</span>
+
+<span class="c1"># Generate HMAC-MD5</span>
+<span class="n">api_secret</span> <span class="o">=</span> <span class="s2">"f81324b50c807cd7118ffe32a34a6681"</span>
+<span class="n">digest</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Digest</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"sha1"</span><span class="p">)</span>
+<span class="n">sha1</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">HMAC</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="n">digest</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">,</span> <span class="n">redirect_url</span><span class="p">)</span>
+
+<span class="nb">puts</span> <span class="n">sha1</span> <span class="c1"># e48ad262a413283078f5841cb3beb8d75def03a2</span>
+
+<span class="n">redirect_url</span> <span class="o">+=</span> <span class="s2">"&amp;tr_sech=</span><span class="si">#{</span><span class="n">sha1</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre><h1 id='callbacks'>Callbacks</h1>
 <aside class=info>
 Your customer ID and API secret can be found via the dashboard after you log into your account on the TapResearch website.
 </aside>
@@ -1570,20 +1583,7 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <td>HMAC-SHA1 security hash generated using the redirect URL (less the tr_sech parameter) and your API secret.</td>
 </tr>
 </tbody></table>
-<pre class="highlight ruby"><code>
-<span class="c1"># Sample request URL</span>
-<span class="n">redirect_url</span> <span class="o">=</span> <span class="s2">"https://www.tapresearch.com/router/customers/fdbe1666a0146f54d85dbc90a5f12552/cps/complete?tid=53b183dd1a729fa04acd9ba2283af896"</span>
 
-<span class="c1"># Generate HMAC-MD5</span>
-<span class="n">api_secret</span> <span class="o">=</span> <span class="s2">"f81324b50c807cd7118ffe32a34a6681"</span>
-<span class="n">digest</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Digest</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"sha1"</span><span class="p">)</span>
-<span class="n">sha1</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">HMAC</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="n">digest</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">,</span> <span class="n">redirect_url</span><span class="p">)</span>
-
-<span class="nb">puts</span> <span class="n">sha1</span> <span class="c1"># e48ad262a413283078f5841cb3beb8d75def03a2</span>
-
-<span class="n">redirect_url</span> <span class="o">+=</span> <span class="s2">"&amp;tr_sech=</span><span class="si">#{</span><span class="n">sha1</span><span class="si">}</span><span class="s2">"</span>
-
-</code></pre>
           <h1 id='errors'>Errors</h1>
 <p>The TapResearch API uses the following error codes:</p>
 
