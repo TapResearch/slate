@@ -1,3 +1,5 @@
+# Callbacks
+
 ``` ruby
 
 # Sample request URL
@@ -13,8 +15,6 @@ puts sha1 # e48ad262a413283078f5841cb3beb8d75def03a2
 redirect_url += "&tr_sech=#{sha1}"
 
 ```
-
-# Callbacks
 
 <aside class=info>
 Your customer ID and API secret can be found via the dashboard after you log into your account on the TapResearch website.
