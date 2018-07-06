@@ -53,6 +53,28 @@
 
 ```
 
+> Hashed MAIDs retargeting type identifiers should be generated using UPPER(SHA1(UPPER(REAL_MAID))
+
+```json
+{
+  "retargeting_type": 3,
+  "retargeting_ids": [
+    {
+      "id": "9ed0d5fe11b11fd29fce8c1bdd593b3a35be5728"
+    }, {
+      "id": "f7e227a9751a68c2c7ec254b88f189aa37e76bc3"
+    }, {
+      "id": "1ede8b7aafa7dfee06912a9105664fcfaefad484"
+    }, {
+      "id": "07b552be2546b724e0aecefb10b4468d81d1d1cf"
+    }, {
+      "id": "2145473a23f6ba30bf2c5e80c48ed5272603d84e"
+    }
+  ]
+}
+
+```
+
 > Sample Response
 
 ```json
@@ -78,7 +100,7 @@ Add respondent/device ID targeting to a campaign
 ### Required Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
-retargeting_type | Integer | Specify the type of retargeting identifiers passed in. 0 (Transaction ID), 1 (Respondent ID), 2(Device ID)
+retargeting_type | Integer | Specify the type of retargeting identifiers passed in. 0 (Transaction ID), 1 (Respondent ID), 2(Device ID), 3(Hashed Mobile Ad ID)
 retargeting_ids | Array | A list of objects that specify the following criteria.
 
 ### Retargeting Ids
