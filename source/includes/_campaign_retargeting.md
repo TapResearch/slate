@@ -28,6 +28,7 @@
 ```json
 {
   "retargeting_type": 2,
+  "expiration_date": "09-28-2019",
   "retargeting_ids": [
     {
       "id": "748F63F4-A2FA-4971-8154-11FE4D03C0C9",
@@ -109,6 +110,11 @@ Parameter | Type | Description
 id | String | Required identifier used to target a respondent in a campaign.
 replacement_id | String | Optional replacement value that is subsituted in the entry url. See campaign for details. 
 
+### Optional Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+expiration_date | String | Pass this parameter to override the default expiration date of 30 days. The format must be specified as "month-day-year", for example "08-17-2019".
+
 ### Response
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -122,6 +128,7 @@ status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.
 supplier_link | String | The entry URL when a respondent has qualified for the survey.
+
 
 ## Remove Respondents
 
