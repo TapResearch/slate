@@ -1317,6 +1317,7 @@ unless the campaign_qualifications array is empty.
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"retargeting_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expiration_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09-28-2019"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"retargeting_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"748F63F4-A2FA-4971-8154-11FE4D03C0C9"</span><span class="p">,</span><span class="w">
@@ -1416,6 +1417,20 @@ unless the campaign_qualifications array is empty.
 <td>replacement_id</td>
 <td>String</td>
 <td>Optional replacement value that is subsituted in the entry url. See campaign for details.</td>
+</tr>
+</tbody></table>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>expiration_date</td>
+<td>String</td>
+<td>Pass this parameter to override the default expiration date of 30 days. The format must be specified as &ldquo;month-day-year&rdquo;, for example &ldquo;08-17-2019&rdquo;.</td>
 </tr>
 </tbody></table>
 <h3 id='response'>Response</h3>
