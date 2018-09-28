@@ -275,7 +275,30 @@ See [Create Campaign](#create-a-campaign) for additional parameters
       "related_campaign_id": 14709,
       "id": 538
     }
-  ]
+  ],
+  "custom_campaign_qualifications": [
+        {
+            "id": 15958433429,
+            "question_id": 100067779,
+            "pre_codes": [
+                1
+            ]
+        },
+        {
+            "id": 15958433445,
+            "question_id": 100067787,
+            "pre_codes": [
+                5
+            ]
+        },
+        {
+            "id": 15958433450,
+            "question_id": 100067795,
+            "pre_codes": [
+                2
+            ]
+        }
+    ],
   "campaign_quotas": [
     {
       "id": 273057,

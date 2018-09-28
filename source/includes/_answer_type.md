@@ -17,5 +17,8 @@ If you passed in:
 Qualifications with answer_type 5 will return with an empty qualification_answers array. You will need to construct
 an array of customer values.
 
+### When answer_type is equal to 7
+Qualifications with answer_type 7 are freeform answer qualifications.
+
 * Age: Pass in an array of ages. `I.E. Pass in [ 18, 19, 20, 21, 22, 23, 24 ] if you are looking to target respondents that are between the ages of 18 and 24.`
 * Zip: Pass in an array of zip codes. `I.E. [ "95120", "94089" ]`

@@ -18,6 +18,7 @@ includes:
   - campaign_quota
   - campaign_retargeting
   - campaign_relationships
+  - custom_qualifications
   - answer_type
   - callback
   - errors

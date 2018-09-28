@@ -86,7 +86,7 @@ campaign_qualifications | Array | A list of objects that describe the qualifying
 ### Campaign Qualification
 Parameter | Type | Description
 --------- | ---- | -----------
-qualification_id | Integer | The qualification identifier you want to associate with the quota.
+question_id | Integer | The question id of the qualification you want to associate with the quota.
 pre_codes | Integer Array | A list of accepted pre-codes or values. See **Answer Types** section.
 
 
