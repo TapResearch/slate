@@ -61,7 +61,7 @@ name | String | Name of the campaign
 cpi | String | This is the amount you will payout per complete.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
-status | Integer | This value will be returned as a 2(Active), 3(Complete), or 5(Paused).
+status | Integer | This value will be returned as a 2(Active), 3(Complete), 4(Archived), 5(Paused), 6(Reconciled) or 7(System Paused).
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 total_remaining | Integer | This is the number of completes left before the survey is complete. This value is the sum of num_respondents found inside associated campaign_quotas.
 supplier_link | String | The entry URL when a respondent has qualified for the survey.

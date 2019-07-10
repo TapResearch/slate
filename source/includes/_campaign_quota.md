@@ -9,6 +9,7 @@ Create a quota for a specific campaign.
 ```json
 {
   "num_respondents": 32,
+  "name":"Age quota",
   "campaign_qualifications": [
     {
       "question_id": 42,
@@ -42,6 +43,7 @@ Create a quota for a specific campaign.
 ```json
 {
   "id": 274771,
+  "name":"Age quota",
   "num_respondents": 32,
   "campaign_qualifications": [
     {
@@ -86,7 +88,7 @@ campaign_qualifications | Array | A list of objects that describe the qualifying
 ### Campaign Qualification
 Parameter | Type | Description
 --------- | ---- | -----------
-qualification_id | Integer | The qualification identifier you want to associate with the quota.
+question_id | Integer | The question id of the qualification you want to target on.
 pre_codes | Integer Array | A list of accepted pre-codes or values. See **Answer Types** section.
 
 
