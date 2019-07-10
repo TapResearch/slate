@@ -457,7 +457,7 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 <tr>
 <td>status</td>
 <td>Integer</td>
-<td>This value will be returned as a 2(Active), 3(Complete), or 5(Paused).</td>
+<td>This value will be returned as a 2(Active), 3(Complete), 4(Archived), 5(Paused), 6(Reconciled) or 7(System Paused).</td>
 </tr>
 <tr>
 <td>length_of_interview</td>
@@ -1040,6 +1040,7 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
@@ -1072,6 +1073,7 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1129,9 +1131,9 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 </tr>
 </thead><tbody>
 <tr>
-<td>qualification_id</td>
+<td>question_id</td>
 <td>Integer</td>
-<td>The qualification identifier you want to associate with the quota.</td>
+<td>The question id of the qualification you want to target on.</td>
 </tr>
 <tr>
 <td>pre_codes</td>
