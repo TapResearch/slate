@@ -1,31 +1,12 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+ruby '>=2.3.1'
+source 'https://rubygems.org'
 
-gem "middleman" 
-
-# For syntax highlighting
-gem "middleman-syntax"
-
-# Plugin for middleman to generate Github pages
-gem 'middleman-gh-pages'
-
-gem "middleman-sprockets"
-gem "middleman-compass"
-
-# Live-reloading plugin
-gem "middleman-livereload"
-
-gem 'redcarpet'
-
-# For faster file watcher updates on Windows:
-gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
-
-# Cross-templating language block fix for Ruby 1.8
-platforms :mri_18 do
-  gem "ruby18_source_location"
-end
-
-gem "rake", "~> 10.3.0"
-
-gem 'therubyracer', :platforms => :ruby
+# Middleman
+gem 'middleman', '~>4.3'
+gem 'middleman-syntax', '~> 3.0'
+gem 'middleman-autoprefixer', '~> 2.7'
+gem 'middleman-sprockets', '~> 4.1'
+gem 'rouge', '~> 2.0.5'
+gem 'redcarpet', '~> 3.4.0'
+gem 'nokogiri', '~> 1.10.4'
+gem 'sass'
