@@ -468,7 +468,7 @@ Parameter | Type | Description
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 campaign_quotas | Array | See "create a campaign quota" subsection.
-cpi | Decimal | This is the amount you will payout per complete.
+cpi | Decimal | This is the amount you will payout per complete. All CPI values are USD regardless of country.
 country_language_id | Integer | Country language targeting for this campaign.  
 
 
