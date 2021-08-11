@@ -4,6 +4,8 @@
 - Campaign Quotas  
   - Name parameter can now be updated.  
   - Added is_clicked_balanced parameter.  
+- Changelog  
+  - Versions is now known as changelog and updated format to use date instead of version number.
 
 ## v1.07
 - Campaigns
