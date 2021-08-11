@@ -10,7 +10,7 @@ Create a quota for a specific campaign.
 {
   "num_respondents": 32,
   "name":"Age quota",
-  "is_click_balanced": 0,
+  "is_click_balanced": false,
   "campaign_qualifications": [
     {
       "question_id": 42,
@@ -106,7 +106,7 @@ Update a quota for a specific campaign.
 {
   "num_respondents": 50,
   "name":"Updated Quota Name",
-  "is_click_balanced": 1,
+  "is_click_balanced": true,
   "campaign_qualifications": [
     {
       "question_id": 45,

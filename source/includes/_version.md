@@ -1,6 +1,11 @@
-# Versions
+# Changelog
 
-## 1.07
+## 8/9/2021
+- Campaign Quotas  
+  - Name parameter can now be updated.  
+  - Added is_clicked_balanced parameter.  
+
+## v1.07
 - Campaigns
   - Added max_daily_completes as an optional attribute.
   - Added reenetry_interval as an optional attribute.
