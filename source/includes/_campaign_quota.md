@@ -10,6 +10,7 @@ Create a quota for a specific campaign.
 {
   "num_respondents": 32,
   "name":"Age quota",
+  "is_click_balanced": false,
   "campaign_qualifications": [
     {
       "question_id": 42,
@@ -45,6 +46,7 @@ Create a quota for a specific campaign.
   "id": 274771,
   "name":"Age quota",
   "num_respondents": 32,
+  "is_click_balanced": false,
   "campaign_qualifications": [
     {
       "question_id": 42,
@@ -83,6 +85,8 @@ Create a quota for a specific campaign.
 Parameter | Type | Description
 --------- | ---- | -----------
 num_respondents | Integer | The number of completes required before the quota is closed.
+name | String | Name of the campaign quota.
+is_click_balanced | Boolean | Whether the campaign quota is [click balanced](http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts).
 campaign_qualifications | Array | A list of objects that describe the qualifying criteria for the quota.
 
 ### Campaign Qualification
@@ -101,6 +105,8 @@ Update a quota for a specific campaign.
 ```json
 {
   "num_respondents": 50,
+  "name":"Updated Quota Name",
+  "is_click_balanced": true,
   "campaign_qualifications": [
     {
       "question_id": 45,
@@ -147,6 +153,8 @@ unless the campaign_qualifications array is empty.
 Parameter | Type | Description
 --------- | ---- | -----------
 num_respondents | Integer | The number of completes required before the quota is closed.
+name | String | Name of the campaign quota.
+is_click_balanced | Boolean | Whether the campaign quota is [click balanced](http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts).
 campaign_qualifications | Array | A list of objects that describe the qualifying criteria for the quota.
 
 ### Campaign Qualification
@@ -165,6 +173,7 @@ Get quota details along with associated campaign_qualifications.
 {
   "id": 274771,
   "num_respondents": 32,
+  "is_click_balanced": true,
   "campaign_qualifications": [
     {
       "question_id": 42,
