@@ -145,10 +145,13 @@
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
           <li>
-            <a href="#versions" class="toc-h1 toc-link" data-title="Versions">Versions</a>
+            <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#1-07" class="toc-h2 toc-link" data-title="1.07">1.07</a>
+                    <a href="#8-9-2021" class="toc-h2 toc-link" data-title="8/9/2021">8/9/2021</a>
+                  </li>
+                  <li>
+                    <a href="#v1-07" class="toc-h2 toc-link" data-title="v1.07">v1.07</a>
                   </li>
                   <li>
                     <a href="#v1-06" class="toc-h2 toc-link" data-title="v1.06">v1.06</a>
@@ -1174,6 +1177,7 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
@@ -1208,6 +1212,7 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
@@ -1250,6 +1255,16 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 <td>The number of completes required before the quota is closed.</td>
 </tr>
 <tr>
+<td>name</td>
+<td>String</td>
+<td>Name of the campaign quota.</td>
+</tr>
+<tr>
+<td>is_click_balanced</td>
+<td>Boolean</td>
+<td>Whether the campaign quota is <a href="http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts">click balanced</a>.</td>
+</tr>
+<tr>
 <td>campaign_qualifications</td>
 <td>Array</td>
 <td>A list of objects that describe the qualifying criteria for the quota.</td>
@@ -1282,6 +1297,8 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Updated Quota Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
@@ -1332,6 +1349,16 @@ unless the campaign_qualifications array is empty.
 <td>The number of completes required before the quota is closed.</td>
 </tr>
 <tr>
+<td>name</td>
+<td>String</td>
+<td>Name of the campaign quota.</td>
+</tr>
+<tr>
+<td>is_click_balanced</td>
+<td>Boolean</td>
+<td>Whether the campaign quota is <a href="http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts">click balanced</a>.</td>
+</tr>
+<tr>
 <td>campaign_qualifications</td>
 <td>Array</td>
 <td>A list of objects that describe the qualifying criteria for the quota.</td>
@@ -1365,6 +1392,7 @@ unless the campaign_qualifications array is empty.
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
@@ -1886,7 +1914,21 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='versions'>Versions</h1><h2 id='1-07'>1.07</h2>
+<h1 id='changelog'>Changelog</h1><h2 id='8-9-2021'>8/9/2021</h2>
+<ul>
+<li>Campaign Quotas<br>
+
+<ul>
+<li>Name parameter can now be updated.<br></li>
+<li>Added is_clicked_balanced parameter.<br></li>
+</ul></li>
+<li>Changelog<br>
+
+<ul>
+<li>Versions is now known as changelog and updated format to use date instead of version number.</li>
+</ul></li>
+</ul>
+<h2 id='v1-07'>v1.07</h2>
 <ul>
 <li>Campaigns
 
