@@ -120,7 +120,7 @@ Parameter | Type | Description
 --------- | ---- | -----------
 id | Integer | This is the unique campaign identifier. You will need to use this parameter to get campaign details or update a specific campaign.
 name | String | Name of the campaign
-cpi | String | This is the amount you will payout per complete.
+cpi | String | All CPIs are USD. This is the amount you will be charged per complete.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 is_retarget | Boolean | Set to true for the first wave of a multi-wave recontact project. This will focus sampling on respondents who are more active, to improve recontact rates on subsequent waves.
