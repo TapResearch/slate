@@ -86,6 +86,14 @@
               </ul>
           </li>
           <li>
+            <a href="#campaign-exclusions" class="toc-h1 toc-link" data-title="Campaign Exclusions">Campaign Exclusions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-campaign-exclusion" class="toc-h2 toc-link" data-title="Create a campaign exclusion">Create a campaign exclusion</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#campaign-quotas" class="toc-h1 toc-link" data-title="Campaign Quotas">Campaign Quotas</a>
               <ul class="toc-list-h2">
                   <li>
@@ -147,6 +155,9 @@
           <li>
             <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#8-20-2021" class="toc-h2 toc-link" data-title="8/20/2021">8/20/2021</a>
+                  </li>
                   <li>
                     <a href="#8-9-2021" class="toc-h2 toc-link" data-title="8/9/2021">8/9/2021</a>
                   </li>
@@ -579,7 +590,7 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 <tr>
 <td>cpi</td>
 <td>String</td>
-<td>This is the amount you will payout per complete.</td>
+<td>All CPIs are USD. This is the amount you will be charged per complete.</td>
 </tr>
 <tr>
 <td>days_in_field</td>
@@ -713,7 +724,7 @@ Campaigns will be in a paused state after creation. You will need to manually up
 <tr>
 <td>cpi</td>
 <td>Decimal</td>
-<td>This is the amount you will payout per complete.</td>
+<td>All CPIs are USD. This is the amount you will be charged per complete.</td>
 </tr>
 </tbody></table>
 <h3 id='supplier_link-formatting'>supplier_link formatting</h3>
@@ -1095,7 +1106,7 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 <tr>
 <td>cpi</td>
 <td>Decimal</td>
-<td>This is the amount you will payout per complete. All CPI values are USD regardless of country.</td>
+<td>All CPIs are USD. This is the amount you will be charged per complete.</td>
 </tr>
 <tr>
 <td>country_language_id</td>
@@ -1168,7 +1179,7 @@ Feasibility is unavailable for quotas created with certain question ids. In thos
 <td>Purchase order associated with the campaign.</td>
 </tr>
 </tbody></table>
-<h1 id='campaign-quotas'>Campaign Quotas</h1><h2 id='create-a-campaign-quota'>Create a campaign quota</h2>
+<h1 id='campaign-exclusions'>Campaign Exclusions</h1><h2 id='create-a-campaign-exclusion'>Create a campaign exclusion</h2><h1 id='campaign-quotas'>Campaign Quotas</h1><h2 id='create-a-campaign-quota'>Create a campaign quota</h2>
 <p>Create a quota for a specific campaign.</p>
 
 <blockquote>
@@ -1616,7 +1627,7 @@ unless the campaign_qualifications array is empty.
 <tr>
 <td>cpi</td>
 <td>String</td>
-<td>This is the amount you will payout per complete.</td>
+<td>All CPIs are USD. This is the amount you will be charged per complete.</td>
 </tr>
 <tr>
 <td>days_in_field</td>
@@ -1834,6 +1845,7 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <ul>
 <li>Complete: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/complete?tid=#{TID}&amp;tr_sech=#{SECURITY_HASH}</li>
 <li>Over Quota: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/over_quota?tid=#{TID}&amp;tr_sech=#{SECURITY_HASH}</li>
+<li>Quality Term: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/quality_term?tid=#{TID}&amp;tr_sech=#{SECURITY_HASH}</li>
 <li>Everything else: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/disqualified?tid=#{TID}&amp;tr_sech=#{SECURITY_HASH}</li>
 </ul>
 
@@ -1914,7 +1926,20 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='changelog'>Changelog</h1><h2 id='8-9-2021'>8/9/2021</h2>
+<h1 id='changelog'>Changelog</h1><h2 id='8-20-2021'>8/20/2021</h2>
+<ul>
+<li>Callbacks 
+
+<ul>
+<li>Added Quality Term route.<br></li>
+</ul></li>
+<li>Campaigns
+
+<ul>
+<li>Updated verbiage around CPI parameter to indicate the currency is always USD.</li>
+</ul></li>
+</ul>
+<h2 id='8-9-2021'>8/9/2021</h2>
 <ul>
 <li>Campaign Quotas<br>
 
