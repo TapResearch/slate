@@ -58,7 +58,7 @@ Parameter | Type | Description
 --------- | ---- | -----------
 id | Integer | This is the unique campaign identifier. You will need to use this parameter to get campaign details or update a specific campaign.
 name | String | Name of the campaign
-cpi | String | This is the amount you will payout per complete.
+cpi | String | All CPIs are USD. This is the amount you will be charged per complete.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 status | Integer | This value will be returned as a 2(Active), 3(Complete), 4(Archived), 5(Paused), 6(Reconciled) or 7(System Paused).
@@ -130,7 +130,7 @@ incidence | Integer | The percentage chance that a random respondent will qualif
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 country_language_id | Integer | Country language targeting for this campaign. 
 supplier_link | String | The entry URL when a respondent has qualified for the survey. This URL can be configured to accept various respondent values. See below:
-cpi | Decimal | This is the amount you will payout per complete.
+cpi | Decimal | All CPIs are USD. This is the amount you will be charged per complete.
 
 
 ### supplier_link formatting
@@ -468,7 +468,7 @@ Parameter | Type | Description
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
 length_of_interview | Integer | How many minutes will it take to complete the survey?
 campaign_quotas | Array | See "create a campaign quota" subsection.
-cpi | Decimal | This is the amount you will payout per complete. All CPI values are USD regardless of country.
+cpi | Decimal | All CPIs are USD. This is the amount you will be charged per complete.
 country_language_id | Integer | Country language targeting for this campaign.  
 
 

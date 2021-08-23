@@ -24,6 +24,7 @@ These are the routes you will need to use when you redirect a respondent back to
 
 * Complete: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/complete?tid=#{TID}&tr_sech=#{SECURITY_HASH}
 * Over Quota: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/over_quota?tid=#{TID}&tr_sech=#{SECURITY_HASH}
+* Quality Term: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/quality_term?tid=#{TID}&tr_sech=#{SECURITY_HASH}
 * Everything else: https://www.tapresearch.com/router/customers/#{CUSTOMER_ID}/cps/disqualified?tid=#{TID}&tr_sech=#{SECURITY_HASH}
 
 Parameter | Type | Description

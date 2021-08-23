@@ -1,5 +1,11 @@
 # Changelog
 
+## 8/20/2021
+- Callbacks 
+  - Added Quality Term route.  
+- Campaigns
+  - Updated verbiage around CPI parameter to indicate the currency is always USD.
+
 ## 8/9/2021
 - Campaign Quotas  
   - Name parameter can now be updated.  
