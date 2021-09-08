@@ -79,6 +79,10 @@ Create a quota for a specific campaign.
 
 `POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas`
 
+<aside class=warning>
+When creating a campaign quota, TapResearch will use the most granular location targeting provided i.e. (Postal Code>State) and as a result we advise that <b>only one</b> type of location target be used per campaign quota.
+</aside>
+
 ### Required Parameters
 
 ### Campaign Quota

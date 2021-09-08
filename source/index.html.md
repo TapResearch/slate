@@ -17,13 +17,16 @@ includes:
   - authentication
   - lookups	
   - campaign
+  - campaign_exclusions
+  - campaign_export
   - campaign_quota
   - campaign_retargeting
   - campaign_relationships	
+  - custom_screeners
   - answer_type	
   - callback	
   - errors
-  - version	
+  - changelog
   - contact_us
 
 search: true

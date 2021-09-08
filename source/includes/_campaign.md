@@ -55,9 +55,9 @@ country_language_id | Integer | Optional id value used to specify which set of c
 ### Response
 
 Parameter | Type | Description
---------- | ---- | -----------
+--------- | ---- | ----------- 
 id | Integer | This is the unique campaign identifier. You will need to use this parameter to get campaign details or update a specific campaign.
-name | String | Name of the campaign
+name | String | Name of the campaign.
 cpi | String | All CPIs are USD. This is the amount you will be charged per complete.
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota.
 incidence | Integer | The percentage chance that a random respondent will qualify and complete the survey.
@@ -163,13 +163,15 @@ If a replacement_id is specified in [Campaign Retargeting](#campaign-retargeting
 
 **Respondent Demographics**
 
-https://api.samplecompany.com/surveys/23423?id={ID}&age={AGE}&gender={GENDER}&zip={ZIP_CODE}
+https://api.samplecompany.com/surveys/23423?id={ID}&age={AGE}&gender={GENDER}&zip={ZIP_CODE}&education={633}
 
 {AGE} will be an integer.
 
 {GENDER} will be either M (male) or F (female).
 
 {ZIP_CODE} will be an alphanumeric string. 
+
+Any {QUESTION_ID} from the [/qualifications](http://docs.tapresearch.com/#get-a-specific-qualification) route may now be used as a substitution value. Any invalid values will be safely ignored. The URL example above has been updated with an example using the Education Level question_id.
 
 ### Optional Parameters
 Parameter | Type | Description
@@ -307,7 +309,8 @@ See [Create Campaign](#create-a-campaign) for additional parameters
         }
       ]
     }
-  ]
+  ],
+"redirect_test_url" : "https://www.tapresearch.com/api/v1/campaigns/:id/redirect_test"
 }
 ```
 
@@ -316,6 +319,27 @@ Retrieve campaign metadata along with associated quotas, exclusions, and qualifi
 ### HTTP Request
 
 `GET https://www.tapresearch.com/api/v1/campaigns/:id`
+
+### Required Parameters
+Parameter | Type | Description
+--------- | ---- | -----------
+id | Integer | This is the unique campaign identifier.
+
+## Redirect URL
+
+> Sample Response
+
+```json
+{
+    "redirect_test_url": "https://www.tapresearch.com/api/v1/campaigns/:id/redirect_test"
+}
+```
+
+Retrieve the associated redirect_test_url for a specific campaign.
+
+### HTTP Request
+
+`GET https://www.tapresearch.com/api/v1/campaigns/:id/redirect_test`
 
 ### Required Parameters
 Parameter | Type | Description
