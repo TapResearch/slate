@@ -14,7 +14,7 @@
       - /custom_qualification_answers
       - /campaign_qualifications
 - Campaign Quotas
-  - Added disclaimer on usage of multipe location qualifications on a single quota.
+  - Added disclaimer on usage of multiple location qualifications on a single quota.
 
 ## 8/20/2021
 - Callbacks 
