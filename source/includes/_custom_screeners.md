@@ -54,7 +54,7 @@ Parameter | Type | Description
 name | String | Name of the custom qualification.
 question_id | Integer | This value will be used to fetch qualification details.
 question_text | String | This ans the question text that will be served to our respondents.
-answer_type | Integer | The answer format to be used for the qualification. Mapping information may be found [here](https://help.tapresearch.com/en/articles/5569336-answer-type-mappings-for-custom_qualifications-endpoint).
+answer_type | Integer | The answer format to be used for the qualification. Mapping information may be found [here](https://help.tapresearch.com/en/articles/5569336-answer-type-mappings-for-custom_qualifications-endpoint).git
 country_language_id | Integer | Country language targeting for the qualification.
 en_translation | String | The English translation of the question.
 
