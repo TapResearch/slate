@@ -39,24 +39,22 @@ Create a custom qualification question.
 Parameter | Type | Description
 --------- | ---- | -----------
 question_text | String | This is the question text that will be served to our respondents.
-answer_type | Integer | This value will determine how campaign_qualifications pre-codes are generated for quotas. See **Answer Types** section for more information.
+answer_type | Integer | The answer format to be used for the qualification. Mapping information may be found [here](https://help.tapresearch.com/en/articles/5569336-answer-type-mappings-for-custom_qualifications-endpoint).
 country_language_id | Integer | Country language targeting for the qualification.
 
 ### Optional Parameters
 Parameter | Type | Description
 --------- | ---- | -----------
 name | String | Name of the custom qualification.
-country | String | Country that is being targeted.
-country_id | Integer | Country specific ID used for internal purposes.
-customer_id | Integer | The unique identifier associated with your account. See **Callbacks** section for more information.
+customer_id | Integer | The unique identifier associated with your account. See **Callbacks** section for more information. This is set automatically and unable to be edited.
 
 ### Response
 Parameter | Type | Description
 --------- | ---- | -----------
 name | String | Name of the custom qualification.
 question_id | Integer | This value will be used to fetch qualification details.
-question_text | String | This is the question text that will be served to our respondents.
-answer_type | Integer | This value will determine how campaign_qualifications pre-codes are generated for quotas. See **Answer Types** section for more information.
+question_text | String | This ans the question text that will be served to our respondents.
+answer_type | Integer | The answer format to be used for the qualification. Mapping information may be found [here](https://help.tapresearch.com/en/articles/5569336-answer-type-mappings-for-custom_qualifications-endpoint).
 country_language_id | Integer | Country language targeting for the qualification.
 en_translation | String | The English translation of the question.
 
@@ -143,7 +141,7 @@ pre_code_values | String | The pre_code value received in the response of return
 Parameter | Type | Description
 --------- | ---- | -----------
 question_id | Integer | This value will be used to fetch qualification details.
-pre_codes | String | Values to be passed in the pre_codes array to describe which respondents qualify for a survey.
+pre_codes | Array of Integers | Values to be passed in the pre_codes array to describe which respondents qualify for a survey.
 
 ## Update a campaign qualification
 
