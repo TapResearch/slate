@@ -1,5 +1,21 @@
 # Changelog
 
+## 9/8/2021
+- Campaign Exclusions
+  - Added /campaign_exclusions route that allows for the exclusion of transaction and player ids on specified campaigns.
+- Campaign Export
+  - Added /export_demographics route that allows for an CSV export of campaign information.
+- Campaigns 
+  - Added ability to include any question_id from the /qualifications route as a substitution value to the respondents demographics portion of supplier link attribute.
+  - Added /redirect_test route that retrieves the redirect_test_url for a specific campaign.
+- Custom Screeners
+  - We now have the ability to create/edit/destroy custom screeners (qualifications) and as a result the following routes have been added.
+      - /custom_qualifications 
+      - /custom_qualification_answers
+      - /campaign_qualifications
+- Campaign Quotas
+  - Added disclaimer on usage of multiple location qualifications on a single quota.
+
 ## 8/20/2021
 - Callbacks 
   - Added Quality Term route.  
