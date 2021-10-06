@@ -1,5 +1,10 @@
 # Changelog
 
+## 10/6/2021
+- Supplier Links
+  - Added a separate section for Supplier Links to replace the supplier_link document found under Campaigns. 
+  - Added a Security section to document the new optional substitution value {LINK_HASH} used for the purpose of appending an HMAC-SHA1 security hash to the end of the Supplier Link via the security_hash parameter.
+
 ## 9/8/2021
 - Campaign Exclusions
   - Added /campaign_exclusions route that allows for the exclusion of transaction and player ids on specified campaigns.

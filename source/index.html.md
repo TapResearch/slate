@@ -23,7 +23,8 @@ includes:
   - campaign_retargeting
   - campaign_relationships	
   - custom_screeners
-  - answer_type	
+  - answer_type
+  - supplier_link	
   - callback	
   - errors
   - changelog
