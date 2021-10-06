@@ -1,13 +1,11 @@
 # Supplier Links
 
-**Transaction ID (required)**
+**Transaction ID**
 
 Specify where you want this ID to appear using {ID}:
 https://api.samplecompany.com/surveys/23423?id={ID}
 
-OR
-
-It will be automatically appended to the end of the URL:
+Here is an example upon survey entry: 
 https://api.samplecompany.com/surveys/23423?&id=46f8bb49ad688570abb84eafae38733d
 
 This value must be passed back in the [status callback URLs](#callbacks).
@@ -38,7 +36,7 @@ https://api.samplecompany.com/surveys/23423?id={ID}&age={AGE}&gender={GENDER}&zi
 
 Any {QUESTION_ID} from the [/qualifications](#get-a-specific-qualification) route may now be used as a substitution value. Any invalid values will be safely ignored. The URL example above has been updated with an example using the Education Level question_id.
 
-For the above example upon redirect the URL will look like this: https://api.samplecompany.com/surveys/23423?id=46f8bb49ad688570abb84eafae38733d&age=23&gender=M&zip=90210&education=10
+For the above example upon survey entry the URL will look like this: https://api.samplecompany.com/surveys/23423?id=46f8bb49ad688570abb84eafae38733d&age=23&gender=M&zip=90210&education=10
 
 **Security (optional)**
 
