@@ -178,6 +178,9 @@
               </ul>
           </li>
           <li>
+            <a href="#supplier-links" class="toc-h1 toc-link" data-title="Supplier Links">Supplier Links</a>
+          </li>
+          <li>
             <a href="#callbacks" class="toc-h1 toc-link" data-title="Callbacks">Callbacks</a>
           </li>
           <li>
@@ -186,6 +189,9 @@
           <li>
             <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#10-6-2021" class="toc-h2 toc-link" data-title="10/6/2021">10/6/2021</a>
+                  </li>
                   <li>
                     <a href="#9-8-2021" class="toc-h2 toc-link" data-title="9/8/2021">9/8/2021</a>
                   </li>
@@ -762,43 +768,9 @@ Campaigns will be in a paused state after creation. You will need to manually up
 </tr>
 </tbody></table>
 <h3 id='supplier_link-formatting'>supplier_link formatting</h3>
-<p><strong>Transaction ID (required)</strong></p>
-
-<p>Specify where you want this ID to appear using {ID}:
-https://api.samplecompany.com/surveys/23423?id={ID}</p>
-
-<p>OR</p>
-
-<p>It will be automatically appended to the end of the URL:
-https://api.samplecompany.com/surveys/23423?&amp;id=</p>
-
-<p>This value must be passed back in the <a href="#callbacks">status callback URLs</a>.</p>
-
-<p><strong>Respondent ID</strong></p>
-
-<p>https://api.samplecompany.com/surveys/23423?respondent_id={RESPONDENT_ID}&amp;id={ID}</p>
-
-<p>This is the unique alphanumeric ID for this respondent.</p>
-
-<p><strong>Retarget Identifier</strong></p>
-
-<p>https://api.samplecompany.com/surveys/23423?retarget_id={RETARGET_IDENTIFIER}&amp;id={ID}</p>
-
-<p>{RETARGET_IDENTIFIER} will be replaced with the retargeting_id as provided in <a href="#campaign-retargeting">Campaign Retargeting</a>.</p>
-
-<p>If a replacement_id is specified in <a href="#campaign-retargeting">Campaign Retargeting</a>, that value will be used instead.</p>
-
-<p><strong>Respondent Demographics</strong></p>
-
-<p>https://api.samplecompany.com/surveys/23423?id={ID}&amp;age={AGE}&amp;gender={GENDER}&amp;zip={ZIP_CODE}&amp;education={633}</p>
-
-<p>{AGE} will be an integer.</p>
-
-<p>{GENDER} will be either M (male) or F (female).</p>
-
-<p>{ZIP_CODE} will be an alphanumeric string. </p>
-
-<p>Any {QUESTION_ID} from the <a href="http://docs.tapresearch.com/#get-a-specific-qualification">/qualifications</a> route may now be used as a substitution value. Any invalid values will be safely ignored. The URL example above has been updated with an example using the Education Level question_id.</p>
+<aside class=info>
+More information on supplier_link formatting may be found under <a href="http://docs.tapresearch.com/#supplier-links">Supplier Links</a>.
+</aside>
 <h3 id='optional-parameters-2'>Optional Parameters</h3>
 <table><thead>
 <tr>
@@ -2329,6 +2301,80 @@ an array of customer values.</p>
 <li>Age: Pass in an array of ages. <code>I.E. Pass in [ 18, 19, 20, 21, 22, 23, 24 ] if you are looking to target respondents that are between the ages of 18 and 24.</code></li>
 <li>Zip: Pass in an array of zip codes. <code>I.E. [ &quot;95120&quot;, &quot;94089&quot; ]</code></li>
 </ul>
+<h1 id='supplier-links'>Supplier Links</h1>
+<p><strong>Transaction ID</strong></p>
+
+<p>Specify where you want this ID to appear using {ID}:
+https://api.samplecompany.com/surveys/23423?id={ID}</p>
+
+<p>Here is an example upon survey entry: 
+https://api.samplecompany.com/surveys/23423?&amp;id=46f8bb49ad688570abb84eafae38733d</p>
+
+<p>This value must be passed back in the <a href="#callbacks">status callback URLs</a>.</p>
+
+<p><strong>Respondent ID</strong></p>
+
+<p>https://api.samplecompany.com/surveys/23423?respondent_id={RESPONDENT_ID}&amp;id={ID}</p>
+
+<p>This is the unique alphanumeric ID for this respondent.</p>
+
+<p><strong>Retarget Identifier</strong></p>
+
+<p>https://api.samplecompany.com/surveys/23423?retarget_id={RETARGET_IDENTIFIER}&amp;id={ID}</p>
+
+<p>{RETARGET_IDENTIFIER} will be replaced with the retargeting_id as provided in <a href="#campaign-retargeting">Campaign Retargeting</a>.</p>
+
+<p>If a replacement_id is specified in <a href="#campaign-retargeting">Campaign Retargeting</a>, that value will be used instead.</p>
+
+<p><strong>Respondent Demographics</strong></p>
+
+<p>https://api.samplecompany.com/surveys/23423?id={ID}&amp;age={AGE}&amp;gender={GENDER}&amp;zip={ZIP_CODE}&amp;education={633}</p>
+
+<p>{AGE} will be an integer.</p>
+
+<p>{GENDER} will be either M (male) or F (female).</p>
+
+<p>{ZIP_CODE} will be an alphanumeric string. </p>
+
+<p>Any {QUESTION_ID} from the <a href="#get-a-specific-qualification">/qualifications</a> route may now be used as a substitution value. Any invalid values will be safely ignored. The URL example above has been updated with an example using the Education Level question_id.</p>
+
+<p>For the above example upon survey entry the URL will look like this: https://api.samplecompany.com/surveys/23423?id=46f8bb49ad688570abb84eafae38733d&amp;age=23&amp;gender=M&amp;zip=90210&amp;education=10</p>
+
+<p><strong>Security (optional)</strong></p>
+
+<aside class=info>
+Your API secret can be found via the dashboard after you log into your account on the TapResearch website.
+</aside>
+
+<p>We now support the creation of an HMAC-SHA1 security hash to be appended to the end of a Supplier Link using the substitution value {LINK_HASH} used in conjunction with a new parameter called security_hash.</p>
+
+<p>The HMAC-SHA1 security hash should be generated using the fully constructed Supplier Link less the {LINK_HASH} substitution value and the customer’s API secret.</p>
+
+<p>The {LINK_HASH} should always be the final value appended to a supplier link.</p>
+
+<p><strong><em>Example</em></strong></p>
+
+<p>Use the customer API secret and Fully Constructed Supplier link sans the {LINK_HASH} substitution value to generate the HMAC-SHA1 security hash. See <a href="#callbacks">Callbacks</a> for an additional example.</p>
+
+<ul>
+<li>Supplier Link Format Example: https://api.samplecompany.com/surveys/23423?id={ID}&amp;age={AGE}&amp;gender={GENDER}&amp;zip={ZIP_CODE}&amp;education={633}&amp;security_hash={LINK_HASH}</li>
+<li>Fully Constructed Supplier Link: https://api.samplecompany.com/surveys/23423?id=46f8bb49ad688570abb84eafae38733d&amp;age=24&amp;gender=M&amp;zip=72758&amp;education=4&amp;security_hash={LINK_HASH}</li>
+<li>Fully Constructed Supplier Link with Security Hash: https://api.samplecompany.com/surveys/23423?id=46f8bb49ad288570abb84eafae38733d&amp;age=24&amp;gender=M&amp;zip=72758&amp;education=4&amp;security_hash=3d2d...</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>security_hash</td>
+<td>String</td>
+<td>HMAC-SHA1 security hash generated using the fully constructed Supplier Link less the {LINK_HASH} substitution value.</td>
+</tr>
+</tbody></table>
 <h1 id='callbacks'>Callbacks</h1><pre class="highlight ruby tab-ruby"><code>
 <span class="c1"># Sample redirect URL</span>
 <span class="n">redirect_url</span> <span class="o">=</span> <span class="s2">"https://www.tapresearch.com/router/customers/fdbe1666a0146f54d85dbc90a5f12552/cps/complete?tid=53b183dd1a729fa04acd9ba2283af896"</span>
@@ -2437,7 +2483,16 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='changelog'>Changelog</h1><h2 id='9-8-2021'>9/8/2021</h2>
+<h1 id='changelog'>Changelog</h1><h2 id='10-6-2021'>10/6/2021</h2>
+<ul>
+<li>Supplier Links
+
+<ul>
+<li>Added a separate section for Supplier Links to replace the supplier_link document found under Campaigns. </li>
+<li>Added a Security section to document the new optional substitution value {LINK_HASH} used for the purpose of appending an HMAC-SHA1 security hash to the end of the Supplier Link via the security_hash parameter.</li>
+</ul></li>
+</ul>
+<h2 id='9-8-2021'>9/8/2021</h2>
 <ul>
 <li>Campaign Exclusions
 
