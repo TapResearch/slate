@@ -135,43 +135,9 @@ cpi | Decimal | All CPIs are USD. This is the amount you will be charged per com
 
 ### supplier_link formatting
 
-**Transaction ID (required)**
-
-Specify where you want this ID to appear using {ID}:
-https://api.samplecompany.com/surveys/23423?id={ID}
-
-OR
-
-It will be automatically appended to the end of the URL:
-https://api.samplecompany.com/surveys/23423?&id=
-
-This value must be passed back in the [status callback URLs](#callbacks).
-
-**Respondent ID**
-
-https://api.samplecompany.com/surveys/23423?respondent_id={RESPONDENT_ID}&id={ID}
-
-This is the unique alphanumeric ID for this respondent.
-
-**Retarget Identifier**
-
-https://api.samplecompany.com/surveys/23423?retarget_id={RETARGET_IDENTIFIER}&id={ID}
-
-{RETARGET_IDENTIFIER} will be replaced with the retargeting_id as provided in [Campaign Retargeting](#campaign-retargeting).
-
-If a replacement_id is specified in [Campaign Retargeting](#campaign-retargeting), that value will be used instead.
-
-**Respondent Demographics**
-
-https://api.samplecompany.com/surveys/23423?id={ID}&age={AGE}&gender={GENDER}&zip={ZIP_CODE}&education={633}
-
-{AGE} will be an integer.
-
-{GENDER} will be either M (male) or F (female).
-
-{ZIP_CODE} will be an alphanumeric string. 
-
-Any {QUESTION_ID} from the [/qualifications](http://docs.tapresearch.com/#get-a-specific-qualification) route may now be used as a substitution value. Any invalid values will be safely ignored. The URL example above has been updated with an example using the Education Level question_id.
+<aside class=info>
+More information on supplier_link formatting may be found under <a href="http://docs.tapresearch.com/#supplier-links">Supplier Links</a>.
+</aside>
 
 ### Optional Parameters
 Parameter | Type | Description
