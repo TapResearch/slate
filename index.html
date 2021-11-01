@@ -190,6 +190,9 @@
             <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#11-1-2021" class="toc-h2 toc-link" data-title="11/1/2021">11/1/2021</a>
+                  </li>
+                  <li>
                     <a href="#10-6-2021" class="toc-h2 toc-link" data-title="10/6/2021">10/6/2021</a>
                   </li>
                   <li>
@@ -904,8 +907,10 @@ You can not update the country_language code after creating a campaign. Please c
   </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">273057</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Campaign Quota"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_global"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Campaign Quota"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
       </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
@@ -1365,8 +1370,9 @@ The optional parameters below may be passed as arrays in the body of the request
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_global"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
@@ -1399,8 +1405,9 @@ The optional parameters below may be passed as arrays in the body of the request
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_global"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age quota"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1448,16 +1455,6 @@ When creating a campaign quota, TapResearch will use the most granular location 
 <td>The number of completes required before the quota is closed.</td>
 </tr>
 <tr>
-<td>name</td>
-<td>String</td>
-<td>Name of the campaign quota.</td>
-</tr>
-<tr>
-<td>is_click_balanced</td>
-<td>Boolean</td>
-<td>Whether the campaign quota is <a href="http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts">click balanced</a>.</td>
-</tr>
-<tr>
 <td>campaign_qualifications</td>
 <td>Array</td>
 <td>A list of objects that describe the qualifying criteria for the quota.</td>
@@ -1482,6 +1479,30 @@ When creating a campaign quota, TapResearch will use the most granular location 
 <td>A list of accepted pre-codes or values. See <strong>Answer Types</strong> section.</td>
 </tr>
 </tbody></table>
+<h3 id='optional-parameters'>Optional Parameters</h3><h3 id='campaign-quota-2'>Campaign Quota</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of the campaign quota.</td>
+</tr>
+<tr>
+<td>is_click_balanced</td>
+<td>Boolean</td>
+<td>Whether the campaign quota is <a href="http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts">click balanced</a>.</td>
+</tr>
+<tr>
+<td>is_global</td>
+<td>Boolean</td>
+<td>Whether this quota should serve as a cap/be applied to all other quotas across the applicable campaign? More information may be found <a href="http://help.tapresearch.com/en/articles/4988110-caps">here</a>.</td>
+</tr>
+</tbody></table>
 <h2 id='update-a-campaign-quota'>Update a campaign quota</h2>
 <p>Update a quota for a specific campaign.</p>
 
@@ -1490,8 +1511,9 @@ When creating a campaign quota, TapResearch will use the most granular location 
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Updated Quota Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Quota Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_global"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
@@ -1528,7 +1550,7 @@ When creating a campaign quota, TapResearch will use the most granular location 
 Since we currently don't allow you to destroy a campaign_qualification, all campaign_qualifications will be replaced
 unless the campaign_qualifications array is empty.
 </aside>
-<h3 id='optional-parameters'>Optional Parameters</h3><h3 id='campaign-quota-2'>Campaign Quota</h3>
+<h3 id='optional-parameters-2'>Optional Parameters</h3><h3 id='campaign-quota-3'>Campaign Quota</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1550,6 +1572,11 @@ unless the campaign_qualifications array is empty.
 <td>is_click_balanced</td>
 <td>Boolean</td>
 <td>Whether the campaign quota is <a href="http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts">click balanced</a>.</td>
+</tr>
+<tr>
+<td>is_global</td>
+<td>Boolean</td>
+<td>Whether this quota should serve as a cap/be applied to all other quotas across the applicable campaign? More information may be found <a href="http://help.tapresearch.com/en/articles/4988110-caps">here</a>.</td>
 </tr>
 <tr>
 <td>campaign_qualifications</td>
@@ -1585,6 +1612,8 @@ unless the campaign_qualifications array is empty.
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">274771</span><span class="p">,</span><span class="w">
   </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_global"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Quota Name"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"is_click_balanced"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -2483,7 +2512,15 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='changelog'>Changelog</h1><h2 id='10-6-2021'>10/6/2021</h2>
+<h1 id='changelog'>Changelog</h1><h2 id='11-1-2021'>11/1/2021</h2>
+<ul>
+<li>Campaigns
+
+<ul>
+<li>Added a new boolean parameter is_global to the /campaign_quotas route. This will allow you to set a cap on a specific quota across all quotas in a campaign indicating that a max number of completes of a certain demographic is allowed. This value will also appear when fetching specific campaigns from /campaigns.</li>
+</ul></li>
+</ul>
+<h2 id='10-6-2021'>10/6/2021</h2>
 <ul>
 <li>Supplier Links
 
