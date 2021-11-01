@@ -247,8 +247,10 @@ See [Create Campaign](#create-a-campaign) for additional parameters
   "campaign_quotas": [
     {
       "id": 273057,
-      "name": "Test Campaign Quota",
       "num_respondents": 6,
+      "is_global": false,
+      "name": "Test Campaign Quota",
+      "is_click_balanced": false
       "campaign_qualifications": [
         {
           "question_id": 42,

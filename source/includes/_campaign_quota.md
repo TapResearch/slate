@@ -9,8 +9,9 @@ Create a quota for a specific campaign.
 ```json
 {
   "num_respondents": 32,
-  "name":"Age quota",
+  "name": "Age quota",
   "is_click_balanced": false,
+  "is_global": false,
   "campaign_qualifications": [
     {
       "question_id": 42,
@@ -44,8 +45,9 @@ Create a quota for a specific campaign.
 ```json
 {
   "id": 274771,
-  "name":"Age quota",
   "num_respondents": 32,
+  "is_global": false,
+  "name": "Age quota",
   "is_click_balanced": false,
   "campaign_qualifications": [
     {
@@ -89,8 +91,6 @@ When creating a campaign quota, TapResearch will use the most granular location 
 Parameter | Type | Description
 --------- | ---- | -----------
 num_respondents | Integer | The number of completes required before the quota is closed.
-name | String | Name of the campaign quota.
-is_click_balanced | Boolean | Whether the campaign quota is [click balanced](http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts).
 campaign_qualifications | Array | A list of objects that describe the qualifying criteria for the quota.
 
 ### Campaign Qualification
@@ -98,6 +98,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 question_id | Integer | The question id of the qualification you want to target on.
 pre_codes | Integer Array | A list of accepted pre-codes or values. See **Answer Types** section.
+
+### Optional Parameters
+
+### Campaign Quota
+Parameter | Type | Description
+--------- | ---- | -----------
+name | String | Name of the campaign quota.
+is_click_balanced | Boolean | Whether the campaign quota is [click balanced](http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts).
+is_global | Boolean | Whether this quota should serve as a cap/be applied to all other quotas across the applicable campaign? More information may be found [here](http://help.tapresearch.com/en/articles/4988110-caps).
 
 
 ## Update a campaign quota
@@ -109,8 +118,9 @@ Update a quota for a specific campaign.
 ```json
 {
   "num_respondents": 50,
-  "name":"Updated Quota Name",
+  "name": "Updated Quota Name",
   "is_click_balanced": true,
+  "is_global": true,
   "campaign_qualifications": [
     {
       "question_id": 45,
@@ -159,7 +169,9 @@ Parameter | Type | Description
 num_respondents | Integer | The number of completes required before the quota is closed.
 name | String | Name of the campaign quota.
 is_click_balanced | Boolean | Whether the campaign quota is [click balanced](http://help.tapresearch.com/en/articles/4924952-click-balancing-balanced-starts).
+is_global | Boolean | Whether this quota should serve as a cap/be applied to all other quotas across the applicable campaign? More information may be found [here](http://help.tapresearch.com/en/articles/4988110-caps).
 campaign_qualifications | Array | A list of objects that describe the qualifying criteria for the quota.
+
 
 ### Campaign Qualification
 Parameter | Type | Description
@@ -177,6 +189,8 @@ Get quota details along with associated campaign_qualifications.
 {
   "id": 274771,
   "num_respondents": 32,
+  "is_global": true,
+  "name": "Updated Quota Name",
   "is_click_balanced": true,
   "campaign_qualifications": [
     {
