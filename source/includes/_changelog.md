@@ -1,5 +1,9 @@
 # Changelog
 
+## 11/1/2021
+- Campaigns
+  - Added a new boolean parameter is_global to the /campaign_quotas route. This will allow you to set a cap on a specific quota across all quotas in a campaign indicating that a max number of completes of a certain demographic is allowed. This value will also appear when fetching specific campaigns from /campaigns.
+
 ## 10/6/2021
 - Supplier Links
   - Added a separate section for Supplier Links to replace the supplier_link document found under Campaigns. 
