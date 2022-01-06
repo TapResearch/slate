@@ -3,7 +3,7 @@
 ## 1/6/2022
 
 - Campaigns
-  - Added missing parameters to JSON response examples for the campaign endpoints.
+  - Added missing parameters (is_retarget, custom_campaign_qualifications, redirect_test_url) to JSON response examples for the campaign endpoints where applicable.
 
 ## 11/1/2021
 - Campaigns
