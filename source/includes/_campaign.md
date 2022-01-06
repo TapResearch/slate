@@ -5,36 +5,31 @@
 > Sample Response
 
 ```json
-[
-  {
-      "cpi": "3.15",
-      "days_in_field": 3,
-      "id": 14706,
-      "incidence": 10,
-      "length_of_interview": 20,
-      "name": "Test Survey 1",
-      "status": 2,
-      "supplier_link": "https://api.samplecompany.com/survey/1?id=",
-      "total_remaining": 6,
-      "max_daily_completes": null,
-      "renentry_interval": null,
-      "country_language_id": 1
-  },
-  {
-      "cpi": "3.69",
-      "days_in_field": 10,
-      "id": 14707,
-      "incidence": 20,
-      "length_of_interview": 15,
-      "name": "Test Survey 2",
-      "status": 2,
-      "supplier_link": "https://api.samplecompany.com/survey/2?id=",
-      "total_remaining": 37,
-      "max_daily_completes": null,
-      "renentry_interval": null
-      "country_language_id": 1
-  }
-]
+{
+    "id": 11611886,
+    "cpi": null,
+    "length_of_interview": 10,
+    "name": "Test Survey",
+    "total_remaining": 0,
+    "status": 5,
+    "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
+    "incidence": 50,
+    "reentry_interval": null,
+    "days_in_field": 3,
+    "max_daily_completes": null,
+    "is_retarget": false,
+    "is_maid_targeted": false,
+    "retarget_count": 0,
+    "supported_devices": [
+        0,
+        2
+    ],
+    "country_language_id": 1,
+    "custom_campaign_qualifications": [],
+    "campaign_quotas": [],
+    "campaign_relationships": [],
+    "redirect_test_url": "https://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test"
+}
 ```
 
 Get a list of campaigns that are accessible by the authenticated user.
@@ -93,21 +88,26 @@ retarget_count | Integer | Total number of recontact records associated with the
 
 ``` json
 {
-  "cpi": "2.5",
-  "days_in_field": 3,
-  "id": 14724,
-  "incidence": 50,
-  "length_of_interview": 10,
-  "name": "Test Survey",
-  "status": 5,
-  "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
-  "total_remaining": 0,
-  "max_daily_completes": null,
-  "country_language_id": 1,
-  "supported_devices": [
-      0,
-      2
-  ]
+    "id": 11598926,
+    "cpi": null,
+    "length_of_interview": 10,
+    "name": "Test Survey",
+    "total_remaining": 0,
+    "status": 5,
+    "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
+    "incidence": 50,
+    "reentry_interval": null,
+    "days_in_field": 3,
+    "max_daily_completes": null,
+    "is_retarget": false,
+    "is_maid_targeted": false,
+    "retarget_count": 0,
+    "supported_devices": [
+        0,
+        2
+    ],
+    "country_language_id": 1,
+    "custom_campaign_qualifications": []
 }
 ```
 
@@ -183,18 +183,26 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
 
 ```json
 {
-  "name": "Test Survey",
-  "days_in_field": 8
-  "cpi": "2.50",
-  "length_of_interview": 10,
-  "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
-  "incidence": 50,
-  "max_daily_completes": 250,
-  "reentry_interval": 7200,
-  "supported_devices": [
-    0,
-    2
-  ]
+    "id": 11611886,
+    "cpi": null,
+    "length_of_interview": 10,
+    "total_remaining": 0,
+    "status": 5,
+    "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
+    "name": "New Survey Name",
+    "incidence": 50,
+    "days_in_field": 3,
+    "is_retarget": false,
+    "max_daily_completes": null,
+    "reentry_interval": null,
+    "country_language_id": 1,
+    "is_maid_targeted": false,
+    "supported_devices": [
+        0,
+        2
+    ],
+    "redirect_test_url": "http://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test",
+    "retarget_count": 0
 }
 ```
 
@@ -221,64 +229,57 @@ See [Create Campaign](#create-a-campaign) for additional parameters
 
 ```json
 {
-  "cpi": "3.15",
-  "days_in_field": 12,
-  "id": 14706,
-  "incidence": 20,
-  "length_of_interview": 20,
-  "name": "Test Survey #123",
-  "status": 2,
-  "supplier_link": "https://api.samplecompany.com/surveys/234230?id=",
-  "total_remaining": 6,
-  "max_daily_completes": 250,
-  "country_language_id" : 1,
-  "supported_devices": [
-    0,
-    1,
-    2
-  ],
-  "campaign_relationships" : [
-    {
-      "campaign_id": 14706,
-      "related_campaign_id": 14709,
-      "id": 538
-    }
-  ]
-  "campaign_quotas": [
-    {
-      "id": 273057,
-      "num_respondents": 6,
-      "is_global": false,
-      "name": "Test Campaign Quota",
-      "is_click_balanced": false
-      "campaign_qualifications": [
+    "id": 11611886,
+    "cpi": null,
+    "length_of_interview": 10,
+    "name": "New Survey Name",
+    "total_remaining": 500,
+    "status": 5,
+    "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
+    "incidence": 50,
+    "reentry_interval": null,
+    "days_in_field": 3,
+    "max_daily_completes": null,
+    "is_retarget": false,
+    "is_maid_targeted": false,
+    "retarget_count": 0,
+    "supported_devices": [
+        0,
+        2
+    ],
+    "country_language_id": 1,
+    "custom_campaign_qualifications": [],
+    "campaign_quotas": [
         {
-          "question_id": 42,
-          "pre_codes": [
-            30,
-            31,
-            32,
-            33,
-            34,
-            35,
-            36,
-            37,
-            38,
-            39,
-            40
-          ]
-        },
-        {
-          "question_id": 43,
-          "pre_codes": [
-            1,
-            2
-          ]
+            "id": 54661616,
+            "num_respondents": 500,
+            "is_global": false,
+            "name": "LocationQuota",
+            "is_click_balanced": true,
+            "campaign_qualifications": [
+                {
+                    "question_id": 96,
+                    "pre_codes": [
+                        37
+                    ]
+                },
+                {
+                    "question_id": 97,
+                    "pre_codes": [
+                        650
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ],
-"redirect_test_url" : "https://www.tapresearch.com/api/v1/campaigns/:id/redirect_test"
+    ],
+    "campaign_relationships": [
+        {
+            "id": 56369643627,
+            "campaign_id": 11611886,
+            "related_campaign_id": 11598926
+        }
+    ],
+    "redirect_test_url": "https://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test"
 }
 ```
 
