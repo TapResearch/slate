@@ -67,7 +67,6 @@ country_language_id | Integer | Country language targeting for this campaign.
 retarget_count | Integer | Total number of recontact records associated with the campaign.
 buyer_account_id | Integer | ID associated wth creation of a buyer via the [/adhoc_accounts](#adhoc-accounts) route.
 
-
 ## Create a campaign
 
 > Sample Request Payload

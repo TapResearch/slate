@@ -42,6 +42,3 @@ Parameter | Type | Description
 id | Integer | ID to be passed in as the 'buyer_account_id' when using the [/campaigns](#campaigns) endpoint.
 buyer_name | String | Name of the buyer.
 buyer_identifier | String | Identifier of the buyer.
-
-
-
