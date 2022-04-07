@@ -26,6 +26,7 @@
     ],
     "country_language_id": 1,
     "custom_campaign_qualifications": [],
+    "buyer_account_id": 1,
     "campaign_quotas": [],
     "campaign_relationships": [],
     "redirect_test_url": "https://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test"
@@ -64,6 +65,8 @@ max_daily_completes | Integer | Total completes allowed per day.
 reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Days - number
 country_language_id | Integer | Country language targeting for this campaign. 
 retarget_count | Integer | Total number of recontact records associated with the campaign.
+buyer_account_id | Integer | ID associated wth creation of a buyer via the [/adhoc_accounts](#adhoc-accounts) route.
+
 
 ## Create a campaign
 
@@ -77,6 +80,7 @@ retarget_count | Integer | Total number of recontact records associated with the
   "supplier_link": "https://api.samplecompany.com/surveys/23423?id=",
   "incidence": 50,
   "country_language_id": 1,
+  "buyer_account_id": 1,
   "supported_devices": [
     0,
     2
@@ -107,7 +111,8 @@ retarget_count | Integer | Total number of recontact records associated with the
         2
     ],
     "country_language_id": 1,
-    "custom_campaign_qualifications": []
+    "custom_campaign_qualifications": [],
+    "buyer_account_id": 1
 }
 ```
 
@@ -146,7 +151,8 @@ is_retarget | Boolean | Set to true for the first wave of a multi-wave recontact
 days_in_field | Integer | Number of days this campaign will be in the field. This value will be used to estimate feasibility for each associated campaign quota. Default value is 5.
 supported_devices | Integer Array | Pass in 0 (tablet), 1 (mobile), and/or 2 (desktop).
 max_daily_completes | Integer | Number of completes that will be allowed per day for this campaign.
-reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Minutes - number
+reentry_interval | Integer | Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Minutes - number.
+buyer_account_id | Integer | ID associated wth creation of a buyer via the [/adhoc_accounts](#adhoc-accounts) route.
 
 ## Update a campaign
 
@@ -201,6 +207,9 @@ reentry_interval | Integer | Time allowed for a respondent to re-enter this camp
         0,
         2
     ],
+    "country_language_id": 1,
+    "custom_campaign_qualifications": [],
+    "buyer_account_id": 1
     "redirect_test_url": "http://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test",
     "retarget_count": 0
 }
@@ -249,6 +258,7 @@ See [Create Campaign](#create-a-campaign) for additional parameters
     ],
     "country_language_id": 1,
     "custom_campaign_qualifications": [],
+    "buyer_account_id": 1
     "campaign_quotas": [
         {
             "id": 54661616,
