@@ -208,7 +208,7 @@ buyer_account_id | Integer | ID associated wth creation of a buyer via the [/adh
     ],
     "country_language_id": 1,
     "custom_campaign_qualifications": [],
-    "buyer_account_id": 1
+    "buyer_account_id": 1,
     "redirect_test_url": "http://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test",
     "retarget_count": 0
 }
@@ -257,7 +257,7 @@ See [Create Campaign](#create-a-campaign) for additional parameters
     ],
     "country_language_id": 1,
     "custom_campaign_qualifications": [],
-    "buyer_account_id": 1
+    "buyer_account_id": 1,
     "campaign_quotas": [
         {
             "id": 54661616,
