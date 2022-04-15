@@ -1,5 +1,12 @@
 # Changelog
 
+## 4/8/2022
+
+- Adhoc Accounts
+  - Creation of a new route [/adhoc_accounts](#adhoc-accounts) that allows for the creation of buyers that can be attached to campaign records.
+- Campaigns
+  - Addition of a new parameter buyer_account_id, which can be optionally included in the request when creating a campaign.
+
 ## 1/6/2022
 
 - Campaigns
