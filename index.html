@@ -167,6 +167,14 @@
               </ul>
           </li>
           <li>
+            <a href="#adhoc-accounts" class="toc-h1 toc-link" data-title="Adhoc Accounts">Adhoc Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-an-adhoc-account" class="toc-h2 toc-link" data-title="Create an Adhoc Account">Create an Adhoc Account</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#answer-types" class="toc-h1 toc-link" data-title="Answer Types">Answer Types</a>
               <ul class="toc-list-h2">
                   <li>
@@ -189,6 +197,9 @@
           <li>
             <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#4-8-2022" class="toc-h2 toc-link" data-title="4/8/2022">4/8/2022</a>
+                  </li>
                   <li>
                     <a href="#1-6-2022" class="toc-h2 toc-link" data-title="1/6/2022">1/6/2022</a>
                   </li>
@@ -586,6 +597,7 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"custom_campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"buyer_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"campaign_relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"redirect_test_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test"</span><span class="w">
@@ -683,6 +695,11 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
 <td>Integer</td>
 <td>Total number of recontact records associated with the campaign.</td>
 </tr>
+<tr>
+<td>buyer_account_id</td>
+<td>Integer</td>
+<td>ID associated wth creation of a buyer via the <a href="#adhoc-accounts">/adhoc_accounts</a> route.</td>
+</tr>
 </tbody></table>
 <h2 id='create-a-campaign'>Create a campaign</h2>
 <blockquote>
@@ -695,6 +712,7 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
   </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="p">,</span><span class="w">
   </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
   </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"buyer_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"supported_devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="mi">2</span><span class="w">
@@ -724,7 +742,8 @@ Qualifications with an answer_type = 5 will have an empty qualification_answer a
         </span><span class="mi">2</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"custom_campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="s2">"custom_campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"buyer_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Create a campaign with campaign-only metadata. Quotas, exclusions, and qualifications will need to be added through other routes.</p>
@@ -808,7 +827,12 @@ More information on supplier_link formatting may be found under <a href="http://
 <tr>
 <td>reentry_interval</td>
 <td>Integer</td>
-<td>Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Minutes - number</td>
+<td>Time allowed for a respondent to re-enter this campaign. Never - null, Unlimited - 0, Minutes - number.</td>
+</tr>
+<tr>
+<td>buyer_account_id</td>
+<td>Integer</td>
+<td>ID associated wth creation of a buyer via the <a href="#adhoc-accounts">/adhoc_accounts</a> route.</td>
 </tr>
 </tbody></table>
 <h2 id='update-a-campaign'>Update a campaign</h2>
@@ -860,6 +884,9 @@ More information on supplier_link formatting may be found under <a href="http://
         </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="mi">2</span><span class="w">
     </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"custom_campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"buyer_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"redirect_test_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.tapresearch.com/api/v1/campaigns/11611886/redirect_test"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"retarget_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -912,6 +939,7 @@ You can not update the country_language code after creating a campaign. Please c
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"custom_campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"buyer_account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"campaign_quotas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">54661616</span><span class="p">,</span><span class="w">
@@ -2312,6 +2340,74 @@ When removing respondents from a retargeting campaign, you can specify one, seve
 <td>This the unique identifier of the campaign qualification.</td>
 </tr>
 </tbody></table>
+<h1 id='adhoc-accounts'>Adhoc Accounts</h1><h2 id='create-an-adhoc-account'>Create an Adhoc Account</h2>
+<p>Create an adhoc account also known as a buyer that can subsequently be provided in requests to the <a href="#campaigns">/campaigns</a> endpoint using the parameter &#39;buyer_account_id&#39;.</p>
+
+<blockquote>
+<p>Sample Request Payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"buyer_name"</span><span class="p">:</span><span class="s2">"buyer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"buyer_identifier"</span><span class="p">:</span><span class="s2">"buyer1234"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"buyer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buyer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"buyer_identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buyer1234"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://www.tapresearch.com/api/v1/adhoc_accounts</code></p>
+
+<aside class="info">
+While the below parameters are optional at least one of the two are required.
+</aside>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>buyer_name</td>
+<td>String</td>
+<td>Name of the buyer.</td>
+</tr>
+<tr>
+<td>buyer_identifier</td>
+<td>String</td>
+<td>Identifier of the buyer.</td>
+</tr>
+</tbody></table>
+<h3 id='response-parameters'>Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>ID to be passed in as the &#39;buyer_account_id&#39; when using the <a href="#campaigns">/campaigns</a> endpoint.</td>
+</tr>
+<tr>
+<td>buyer_name</td>
+<td>String</td>
+<td>Name of the buyer.</td>
+</tr>
+<tr>
+<td>buyer_identifier</td>
+<td>String</td>
+<td>Identifier of the buyer.</td>
+</tr>
+</tbody></table>
 <h1 id='answer-types'>Answer Types</h1>
 <p>When you make a request to our qualifications route, there will be an answer_type field returned with every object.
 The answer_type value will determine how the campaign_qualifications pre_codes array is constructed.</p>
@@ -2516,7 +2612,20 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='changelog'>Changelog</h1><h2 id='1-6-2022'>1/6/2022</h2>
+<h1 id='changelog'>Changelog</h1><h2 id='4-8-2022'>4/8/2022</h2>
+<ul>
+<li>Adhoc Accounts
+
+<ul>
+<li>Creation of a new route <a href="#adhoc-accounts">/adhoc_accounts</a> that allows for the creation of buyers that can be attached to campaign records.</li>
+</ul></li>
+<li>Campaigns
+
+<ul>
+<li>Addition of a new parameter buyer_account_id, which can be optionally included in the request when creating a campaign.</li>
+</ul></li>
+</ul>
+<h2 id='1-6-2022'>1/6/2022</h2>
 <ul>
 <li>Campaigns
 
