@@ -1,0 +1,24 @@
+test
+
+<script type="text/javascript">
+  !!function(e,t){window.TapResearch=t,t.loadLibrary=function(e){var o=document.createElement("script"),a=document.getElementsByTagName("head")[0];o.src=t.host+"/assets/sdk.js"+(e?"?ver="+e:""),o.async=!0,a.appendChild(o),t.loadTimeout=setTimeout(function(){t.handleTimeout()},t.config.load_timeout||2e3)},t.init=function(e){t.config=e,t.host="http://localhost:3000",t.loadLibrary()}}(document,window.TapResearch||[]);
+</script>
+<div style="margin: 30px 0;">
+<a id="offer-url" target="_blank"></a>
+</div>
+
+<script type="text/javascript">
+  TapResearch.init({
+    api_token: "907b10f7bad6bcb7da0a307b70e78755",
+    user_identifier: "sw7U1X9nr3N3oXtPnqgX",
+    has_survey_callback: function(data) {
+      // Add offer link (data.offer_url) to your page
+      const link = document.getElementById('offer-url');
+      link.href = data.offer_url;
+      link.innerHTML = "Take a Survey!"
+    },
+    no_survey_callback: function() {
+      // Optional: suppress any loading message
+    }
+  });
+</script>

@@ -189,6 +189,20 @@
             <a href="#supplier-links" class="toc-h1 toc-link" data-title="Supplier Links">Supplier Links</a>
           </li>
           <li>
+            <a href="#insights-api" class="toc-h1 toc-link" data-title="Insights API">Insights API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-organization-projects" class="toc-h2 toc-link" data-title="List organization projects">List organization projects</a>
+                  </li>
+                  <li>
+                    <a href="#get-the-csv-headers-for-a-campaign" class="toc-h2 toc-link" data-title="Get the CSV headers for a campaign">Get the CSV headers for a campaign</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-campaign-result-csv" class="toc-h2 toc-link" data-title="Get a campaign result CSV">Get a campaign result CSV</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#callbacks" class="toc-h1 toc-link" data-title="Callbacks">Callbacks</a>
           </li>
           <li>
@@ -2504,6 +2518,392 @@ Your API secret can be found via the dashboard after you log into your account o
 <td>HMAC-SHA1 security hash generated using the fully constructed Supplier Link less the {LINK_HASH} substitution value.</td>
 </tr>
 </tbody></table>
+<h1 id='insights-api'>Insights API</h1><h2 id='list-organization-projects'>List organization projects</h2>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects_list_683"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects_list"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"projects"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"87"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A one time project"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"project_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"one_time"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"478"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">478</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"complete_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-01T19:01:18.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/87/campaigns/478"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"columns_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/87/campaigns/478/columns"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"318"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">318</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A recurring project"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"project_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recurring"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"509"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">509</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"complete_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-01T19:01:18.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/509"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"columns_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/509/columns"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"510"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">510</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"complete_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-07T19:01:18.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/510"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"columns_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/510/columns"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"511"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"complete_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/511"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"columns_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/511/columns"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get a list of projects for the organization. Request identity/organization is derived from the <code>Authorization</code> header.</p>
+
+<p><strong>Note:</strong> Projects that are still in draft are not returned.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://www.tapresearch.com/insights_api/projects</code></p>
+<h3 id='required-parameters'>Required Parameters</h3>
+<p><code>NONE</code></p>
+<h3 id='optional-parameters'>Optional Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_type</td>
+<td><code>String</code></td>
+<td>Pass this parameter to return only projects of the specified type. Accepted values: <code>recurring</code> or <code>one_time</code></td>
+</tr>
+<tr>
+<td>page</td>
+<td><code>Integer</code></td>
+<td>Response is paginated, 30 projects per page. By default this endpoint returns the first page. If you have more than 30 projects, you will need to make subsequent requests using the <code>page</code> parameter.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<p>Response follows the <a href="https://jsonapi.org/format/">JSON:API specification</a>. Each resource type returns a top-level <code>data</code> key, and within that, an <code>attributes</code> field containing the data.</p>
+
+<h3 style="margin: 30px 0 10px;">Top-Level Fields</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Unique identifier in the format: <code>projects_list_&lt;Organization ID&gt;</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>Resource type: <code>projects_list</code></td>
+</tr>
+<tr>
+<td>attributes</td>
+<td><code>Object</code></td>
+<td>Object which contains the resource data (see below)</td>
+</tr>
+</tbody></table>
+
+<h3 id="projects-list- style="margin: 30px 0 10px;"><code style="font-size: 15px;">data.attributes</code> Fields</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td><code>Integer</code></td>
+<td>The current page being returned</td>
+</tr>
+<tr>
+<td>pages</td>
+<td><code>Integer</code></td>
+<td>The total number of pages for this resource</td>
+</tr>
+<tr>
+<td>projects</td>
+<td><code>Array of projects</code></td>
+<td>List of projects for the organization. If a <code>project_type</code> param was not specified, the list may contain both one-time and recurring projects (if they both exist). See below for <a href="#projects-item-fields">projects item attributes</a>.</td>
+</tr>
+</tbody></table>
+
+<h3 id="projects-item-fields" style="margin: 30px 0 10px;"><code style="font-size: 15px;">projects</code> Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>Integer</code></td>
+<td>Project ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>Project name</td>
+</tr>
+<tr>
+<td>project_type</td>
+<td><code>String</code></td>
+<td>Project type: <code>one_time</code> or <code>recurring</code></td>
+</tr>
+<tr>
+<td>campaigns</td>
+<td><code>Array of campaigns</code></td>
+<td>List of campaigns for the project. One-time projects will have only 1 campaign returned. Recurring project waves are in order using 0-based indexing where <code>wave_number = index + 1</code>. See below for <a href="#campaigns-item-fields">campaigns item attributes</a> and <a href="#campaigns-item-links">campaigns item links</a>.</td>
+</tr>
+</tbody></table>
+
+<h3 id="campaigns-item-fields" style="margin: 20px 0 10px;"><code style="font-size: 15px;">projects.campaigns</code> Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>Integer</code></td>
+<td>Campaign ID</td>
+</tr>
+<tr>
+<td>status</td>
+<td><code>String</code></td>
+<td>Campaign status: <code>active</code> / <code>paused</code> / <code>complete</code> / <code>archived</code></td>
+</tr>
+<tr>
+<td>complete_at</td>
+<td><code>String</code> or <code>null</code></td>
+<td>Date completed in RFC 3339 format, or null (when campaign is not complete)</td>
+</tr>
+</tbody></table>
+
+<h3 id="campaigns-item-links" style="margin: 20px 0 10px;"><code style="font-size: 15px;">projects.campaigns</code> Links</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>results_url</td>
+<td><code>String</code> or <code>null</code></td>
+<td>Endpoint URL that returns the results CSV file, or null (when there&#39;s no responses yet).</td>
+</tr>
+<tr>
+<td>columns_url</td>
+<td><code>String</code> or <code>null</code></td>
+<td>Endpoint URL that returns the CSV file headers mapping <code>{ column_id: &quot;Column title&quot; }</code></td>
+</tr>
+</tbody></table>
+<h2 id='get-the-csv-headers-for-a-campaign'>Get the CSV headers for a campaign</h2>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"columns_510"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign_columns"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Time"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"panelist_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Panelist ID"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"join_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Join date"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Status"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_42"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_101"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Division"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_97"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dma"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_113"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethnicity"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_43"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gender"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_122"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Region"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_633"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Education"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_2189"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Employment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_14785"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Household income"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_14785_non_bucketed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Household income (raw value)"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_96"</span><span class="p">:</span><span class="w"> </span><span class="s2">"State"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_45"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zip"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_50017"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Birthday"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pq_50020"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parent of children under 18"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tq_1325"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you ever travel internationally?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tq_1326"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Which of the following countries have you visited?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tq_1327"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rank the following countries in order of places you want to visit."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tq_1328"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Which of these factors is most important to you when considering international travel?"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><span id="csv-columns">Returns the CSV file header mapping for a given campaign.</span></p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.tapresearch.com/insights_api/:project_id/campaigns/:campaign_id/columns</code></p>
+<h3 id='required-parameters-2'>Required Parameters</h3>
+<p><code>NONE</code></p>
+
+<h3 id="base-columns" style="margin: 20px 0 10px;">Base Data Columns</h3>
+
+<table><thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Respondent session identifier</td>
+</tr>
+<tr>
+<td>time</td>
+<td>Session start timestamp</td>
+</tr>
+<tr>
+<td>panelist_id</td>
+<td>Unique respondent identifier</td>
+</tr>
+<tr>
+<td>join_date</td>
+<td>Respondent join date</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Respondent survey result status (usually <code>Complete</code>)</td>
+</tr>
+</tbody></table>
+
+<h3 id="demographic-columns" style="margin: 20px 0 10px;">Demographic Columns</h3>
+
+<table><thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>pq_&lt;Demographic ID&gt;</code></td>
+<td>These columns represent the various demographic data points returned.</td>
+</tr>
+</tbody></table>
+
+<h3 id="question-columns" style="margin: 20px 0 10px;">Survey Question Columns</h3>
+
+<table><thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>tq_&lt;Root Question ID&gt;</code></td>
+<td>These columns represent the answers to the survey questions.</td>
+</tr>
+</tbody></table>
+
+<aside style="font-size: 14px;"><b>Note:</b> <code style="font-size: 14px;">tq_*</code> columns always use the <b>root question ID</b>. This is critical for recurring projects, because the question IDs will remain constant across waves, <b>even if the question text is updated or changed</b>. This endpoint will return the specific version of the question text that was used for this wave/campaign.</aside>
+<h2 id='get-a-campaign-result-csv'>Get a campaign result CSV</h2>
+<p>Returns the CSV results export for a given campaign.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.tapresearch.com/insights_api/:project_id/campaigns/:campaign_id</code></p>
+<h3 id='required-parameters-3'>Required Parameters</h3>
+<p><code>NONE</code></p>
+<h3 id='response-2'>Response</h3>
+<h3 style="margin: 30px 0 10px;">HTTP Headers</h3>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td><code>text/csv</code></td>
+</tr>
+<tr>
+<td>Content-Disposition</td>
+<td><code>attachment; filename=&quot;campaign_result_&lt;Campaign ID&gt;.csv&quot;</code></td>
+</tr>
+</tbody></table>
+
+<h3 style="margin: 30px 0 10px;">CSV Format</h3>
+
+<p>Refer to the <a href="#get-the-csv-headers-for-a-campaign">CSV columns endpoint</a> to see the data returned for a campaign.</p>
 <h1 id='callbacks'>Callbacks</h1><pre class="highlight ruby tab-ruby"><code>
 <span class="c1"># Sample redirect URL</span>
 <span class="n">redirect_url</span> <span class="o">=</span> <span class="s2">"https://www.tapresearch.com/router/customers/fdbe1666a0146f54d85dbc90a5f12552/cps/complete?tid=53b183dd1a729fa04acd9ba2283af896"</span>
