@@ -26,6 +26,7 @@ includes:
   - adhoc_accounts
   - answer_type
   - supplier_link	
+  - insights_api
   - callback	
   - errors
   - changelog
