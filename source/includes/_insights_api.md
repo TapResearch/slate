@@ -156,7 +156,101 @@ complete_at | `String` or `null` | Date completed in RFC 3339 format, or null (w
 
 Parameter | Type | Description
 --------- | ---- | -----------
-results_url | `String` or `null` | Endpoint URL that returns the results CSV file, or null (when there's no responses yet). 
+results_url | `String` or `null` | Endpoint URL that returns the results CSV file, or null (when there's no responses yet).
+columns_url | `String` or `null` | Endpoint URL that returns the CSV file headers mapping `{ column_id: "Column title" }`
+
+## Get a specific project
+
+> Sample Response
+
+```json
+{
+  "data": {
+    "id": "318",
+    "type": "project",
+    "attributes": {
+      "id": 318,
+      "name": "A recurring project",
+      "project_type": "recurring",
+      "campaigns": {
+        "data": [
+          {
+            "id": "509",
+            "type": "campaign",
+            "attributes": {
+              "id": 509,
+              "status": "complete",
+              "complete_at": "2022-07-01T19:01:18.000Z",
+            },
+            "links": {
+              "results_url": "https://www.tapresearch.com/insights_api/projects/318/campaigns/509",
+              "columns_url": "https://www.tapresearch.com/insights_api/projects/318/campaigns/509/columns"
+            }
+          },
+          {
+            "id": "510",
+            "type": "campaign",
+            "attributes": {
+              "id": 510,
+              "status": "complete",
+              "complete_at": "2022-07-07T19:01:18.000Z",
+            },
+            "links": {
+              "results_url": "https://www.tapresearch.com/insights_api/projects/318/campaigns/510",
+              "columns_url": "https://www.tapresearch.com/insights_api/projects/318/campaigns/510/columns"
+            }
+          },
+          {
+            "id": "511",
+            "type": "campaign",
+            "attributes": {
+              "id": 511,
+              "status": "active",
+              "complete_at": null,
+            },
+            "links": {
+              "results_url": "https://www.tapresearch.com/insights_api/projects/318/campaigns/511",
+              "columns_url": "https://www.tapresearch.com/insights_api/projects/318/campaigns/511/columns"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+Get a specific project by ID with its associated campaigns.
+
+### HTTP Request
+
+`GET https://www.tapresearch.com/insights_api/projects/:project_id`
+
+### Required Parameters
+`NONE`
+
+### Response
+
+Parameter | Type | Description
+--------- | ---- | -----------
+id | `Integer` | Project ID
+name | `String` | Project name
+project_type | `String` | Project type: `one_time` or `recurring`
+campaigns | `Array of campaigns` | List of campaigns for the project. One-time projects will have only 1 campaign returned. Recurring project waves are in order using 0-based indexing where `wave_number = index + 1`. See below for [campaigns item attributes](#campaigns-item-fields) and [campaigns item links](#campaigns-item-links).
+
+<h3 id="campaigns-item-fields" style="margin: 20px 0 10px;"><code style="font-size: 15px;">campaigns.attributes</code></h3>
+
+Parameter | Type | Description
+--------- | ---- | -----------
+id | `Integer` | Campaign ID
+status | `String` | Campaign status: `active` / `paused` / `complete` / `archived`
+complete_at | `String` or `null` | Date completed in RFC 3339 format, or null (when campaign is not complete)
+
+<h3 id="campaigns-item-links" style="margin: 20px 0 10px;"><code style="font-size: 15px;">campaigns.links</code></h3>
+
+Parameter | Type | Description
+--------- | ---- | -----------
+results_url | `String` or `null` | Endpoint URL that returns the results CSV file, or null (when there's no responses yet).
 columns_url | `String` or `null` | Endpoint URL that returns the CSV file headers mapping `{ column_id: "Column title" }`
 
 ## Get the CSV headers for a campaign
@@ -246,7 +340,7 @@ Returns the CSV results export for a given campaign.
 ### Required Parameters
 `NONE`
 
-### Response 
+### Response
 
 <h3 style="margin: 30px 0 10px;">HTTP Headers</h3>
 
