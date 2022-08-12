@@ -195,6 +195,9 @@
                     <a href="#list-organization-projects" class="toc-h2 toc-link" data-title="List organization projects">List organization projects</a>
                   </li>
                   <li>
+                    <a href="#get-a-specific-project" class="toc-h2 toc-link" data-title="Get a specific project">Get a specific project</a>
+                  </li>
+                  <li>
                     <a href="#get-the-csv-headers-for-a-campaign" class="toc-h2 toc-link" data-title="Get the CSV headers for a campaign">Get the CSV headers for a campaign</a>
                   </li>
                   <li>
@@ -2773,6 +2776,146 @@ Your API secret can be found via the dashboard after you log into your account o
 <td>Endpoint URL that returns the CSV file headers mapping <code>{ column_id: &quot;Column title&quot; }</code></td>
 </tr>
 </tbody></table>
+<h2 id='get-a-specific-project'>Get a specific project</h2>
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"318"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">318</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A recurring project"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recurring"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"campaigns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"509"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">509</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"complete_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-01T19:01:18.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/509"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"columns_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/509/columns"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"510"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">510</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"complete_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-07T19:01:18.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/510"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"columns_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/510/columns"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"511"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaign"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"complete_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"results_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/511"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"columns_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.tapresearch.com/insights_api/projects/318/campaigns/511/columns"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get a specific project by ID with its associated campaigns.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.tapresearch.com/insights_api/projects/:project_id</code></p>
+<h3 id='required-parameters-2'>Required Parameters</h3>
+<p><code>NONE</code></p>
+<h3 id='response-2'>Response</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>Integer</code></td>
+<td>Project ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>Project name</td>
+</tr>
+<tr>
+<td>project_type</td>
+<td><code>String</code></td>
+<td>Project type: <code>one_time</code> or <code>recurring</code></td>
+</tr>
+<tr>
+<td>campaigns</td>
+<td><code>Array of campaigns</code></td>
+<td>List of campaigns for the project. One-time projects will have only 1 campaign returned. Recurring project waves are in order using 0-based indexing where <code>wave_number = index + 1</code>. See below for <a href="#campaigns-item-fields">campaigns item attributes</a> and <a href="#campaigns-item-links">campaigns item links</a>.</td>
+</tr>
+</tbody></table>
+
+<h3 id="campaigns-item-fields" style="margin: 20px 0 10px;"><code style="font-size: 15px;">campaigns.attributes</code></h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td><code>Integer</code></td>
+<td>Campaign ID</td>
+</tr>
+<tr>
+<td>status</td>
+<td><code>String</code></td>
+<td>Campaign status: <code>active</code> / <code>paused</code> / <code>complete</code> / <code>archived</code></td>
+</tr>
+<tr>
+<td>complete_at</td>
+<td><code>String</code> or <code>null</code></td>
+<td>Date completed in RFC 3339 format, or null (when campaign is not complete)</td>
+</tr>
+</tbody></table>
+
+<h3 id="campaigns-item-links" style="margin: 20px 0 10px;"><code style="font-size: 15px;">campaigns.links</code></h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>results_url</td>
+<td><code>String</code> or <code>null</code></td>
+<td>Endpoint URL that returns the results CSV file, or null (when there&#39;s no responses yet).</td>
+</tr>
+<tr>
+<td>columns_url</td>
+<td><code>String</code> or <code>null</code></td>
+<td>Endpoint URL that returns the CSV file headers mapping <code>{ column_id: &quot;Column title&quot; }</code></td>
+</tr>
+</tbody></table>
 <h2 id='get-the-csv-headers-for-a-campaign'>Get the CSV headers for a campaign</h2>
 <blockquote>
 <p>Sample Response</p>
@@ -2812,9 +2955,9 @@ Your API secret can be found via the dashboard after you log into your account o
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><span id="csv-columns">Returns the CSV file header mapping for a given campaign.</span></p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://www.tapresearch.com/insights_api/:project_id/campaigns/:campaign_id/columns</code></p>
-<h3 id='required-parameters-2'>Required Parameters</h3>
+<h3 id='required-parameters-3'>Required Parameters</h3>
 <p><code>NONE</code></p>
 
 <h3 id="base-columns" style="margin: 20px 0 10px;">Base Data Columns</h3>
@@ -2878,11 +3021,11 @@ Your API secret can be found via the dashboard after you log into your account o
 <aside style="font-size: 14px;"><b>Note:</b> <code style="font-size: 14px;">tq_*</code> columns always use the <b>root question ID</b>. This is critical for recurring projects, because the question IDs will remain constant across waves, <b>even if the question text is updated or changed</b>. This endpoint will return the specific version of the question text that was used for this wave/campaign.</aside>
 <h2 id='get-a-campaign-result-csv'>Get a campaign result CSV</h2>
 <p>Returns the CSV results export for a given campaign.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://www.tapresearch.com/insights_api/:project_id/campaigns/:campaign_id</code></p>
-<h3 id='required-parameters-3'>Required Parameters</h3>
+<h3 id='required-parameters-4'>Required Parameters</h3>
 <p><code>NONE</code></p>
-<h3 id='response-2'>Response</h3>
+<h3 id='response-3'>Response</h3>
 <h3 style="margin: 30px 0 10px;">HTTP Headers</h3>
 
 <table><thead>
