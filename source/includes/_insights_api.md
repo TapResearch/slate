@@ -267,7 +267,6 @@ columns_url | `String` or `null` | Endpoint URL that returns the CSV file header
         "id": "Id",
         "time": "Time",
         "panelist_id": "Panelist ID",
-        "join_date": "Join date",
         "status": "Status",
         "pq_42": "Age",
         "pq_101": "Division",
@@ -311,7 +310,6 @@ Column | Description
 id | Respondent session identifier
 time | Session start timestamp
 panelist_id | Unique respondent identifier
-join_date | Respondent join date
 status | Respondent survey result status (usually `Complete`)
 
 <h3 id="demographic-columns" style="margin: 20px 0 10px;">Demographic Columns</h3>
