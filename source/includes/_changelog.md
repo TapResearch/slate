@@ -1,5 +1,12 @@
 # Changelog
 
+## 11/11/2026
+
+- Getting Started
+  - The staging server (staging.tapresearch.com) has been retired. Use `https://www.tapresearch.com` with your API token for all routes, including testing.
+- Testing your integration
+  - Added a [Testing your integration](#testing-your-integration) section that explains how to test safely in production with Paused campaigns.
+
 ## 4/8/2022
 
 - Adhoc Accounts
