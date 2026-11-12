@@ -1,5 +1,11 @@
 # Changelog
 
+## 11/11/2026
+
+- Getting Started
+  - Our staging server (staging.tapresearch.com) has been shut down. Use `https://www.tapresearch.com` for all routes.
+  - Added a [Testing your integration](#testing-your-integration) section describing how to test safely in production.
+
 ## 4/8/2022
 
 - Adhoc Accounts
