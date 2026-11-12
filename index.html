@@ -44,6 +44,29 @@
           </li>
           <li>
             <a href="#testing-your-integration" class="toc-h1 toc-link" data-title="Testing your integration">Testing your integration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#campaign-statuses" class="toc-h2 toc-link" data-title="Campaign statuses">Campaign statuses</a>
+                  </li>
+                  <li>
+                    <a href="#step-1-check-feasibility" class="toc-h2 toc-link" data-title="Step 1: check feasibility">Step 1: check feasibility</a>
+                  </li>
+                  <li>
+                    <a href="#step-2-create-a-test-campaign" class="toc-h2 toc-link" data-title="Step 2: create a test campaign">Step 2: create a test campaign</a>
+                  </li>
+                  <li>
+                    <a href="#step-3-add-a-quota" class="toc-h2 toc-link" data-title="Step 3: add a quota">Step 3: add a quota</a>
+                  </li>
+                  <li>
+                    <a href="#step-4-read-and-update" class="toc-h2 toc-link" data-title="Step 4: read and update">Step 4: read and update</a>
+                  </li>
+                  <li>
+                    <a href="#step-5-try-the-respondent-redirect" class="toc-h2 toc-link" data-title="Step 5: try the respondent redirect">Step 5: try the respondent redirect</a>
+                  </li>
+                  <li>
+                    <a href="#step-6-clean-up" class="toc-h2 toc-link" data-title="Step 6: clean up">Step 6: clean up</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#lookups" class="toc-h1 toc-link" data-title="Lookups">Lookups</a>
@@ -285,16 +308,16 @@
 start/stop the flow of sample and reconcile completes.</p>
 <h1 id='getting-started'>Getting Started</h1>
 <p>Before you can begin consuming our API, you will need to contact <strong>api_support@tapresearch.com</strong> for an API token. This token will be used
- for authentication purposes described in the section below.</p>
+ for authentication purposes described in the section below. The API only accepts tokens for active users of active customer accounts.</p>
 
-<p>Use <code>https://www.tapresearch.com</code> as the base URL for all routes. There is no separate test server: you build and test your integration
-in production with the same token, following the steps in <a href="#testing-your-integration">Testing your integration</a>.</p>
+<p>Use <code>https://www.tapresearch.com</code> as the base URL for all routes. There is no separate staging server: you build and test your
+integration in production with the same token, as described in <a href="#testing-your-integration">Testing your integration</a>.</p>
 
-<p>When you are ready to go live, please follow the steps below:</p>
+<p>When you are ready to go live:</p>
 
 <ol>
-<li>Finish setting up your campaign: its quotas, qualifications and supplier_link.</li>
-<li>Update the campaign&#39;s status to 2 (Active). An active campaign is shown to real respondents, and you will be charged for each complete.</li>
+<li>Make sure your campaign has at least one quota with <code>num_respondents</code> greater than 0.</li>
+<li>Update the campaign&#39;s <code>status</code> to 2 (Active). From this point real respondents will start to enter your survey.</li>
 </ol>
 <h1 id='authentication'>Authentication</h1><pre class="highlight shell tab-shell"><code>
 Example Request
@@ -332,100 +355,155 @@ the value passed in the &#39;Authorization&#39; header to make sure you have acc
 The authorization header is **required** for every request.
 </aside>
 <h1 id='testing-your-integration'>Testing your integration</h1>
-<blockquote>
-<p>Create a test campaign</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST https://www.tapresearch.com/api/v1/campaigns <span class="se">\</span>
--H <span class="s2">"Authorization: Basic BASE64_ENCODED_EMAIL_ADDRESS_YOU_PROVIDED:API_TOKEN"</span> <span class="se">\</span>
--H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
--d <span class="s1">'{
-  "name": "TEST - my integration",
-  "length_of_interview": 10,
-  "incidence": 50,
-  "country_language_id": 1,
-  "supplier_link": "https://api.samplecompany.com/surveys/23423?id="
-}'</span>
-</code></pre>
-<blockquote>
-<p>Sample Response - the new campaign is paused (status 5)</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11598926</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST - my integration"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"length_of_interview"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"incidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country_language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"supplier_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.samplecompany.com/surveys/23423?id="</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>Retire the test campaign when you are done</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X PUT https://www.tapresearch.com/api/v1/campaigns/11598926 <span class="se">\</span>
--H <span class="s2">"Authorization: Basic BASE64_ENCODED_EMAIL_ADDRESS_YOU_PROVIDED:API_TOKEN"</span> <span class="se">\</span>
--H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
--d <span class="s1">'{"status": 3}'</span>
-</code></pre>
-<p>There is no separate test server. Test your integration in production, at <code>https://www.tapresearch.com</code>, with your existing API token,
-using HTTP basic authentication with your email address and API token as described in <a href="#authentication">Authentication</a>.</p>
+<p>You build and test your integration in production, at <code>https://www.tapresearch.com</code>,
+with the same API token you will use when you go live. Authenticate every request with HTTP basic authentication as
+described in <a href="#authentication">Authentication</a>.</p>
 
-<p>Production is live: an active campaign is shown to real respondents, and you will be charged for each complete. Follow the steps below
-so that a test campaign never goes live.</p>
+<p>This is safe because a campaign created through the API starts <strong>Paused</strong> (status 5), and a Paused campaign is never shown
+to respondents. As long as your test campaigns stay Paused, no respondent will enter them and you will not be charged for any completes.</p>
 
-<ol>
-<li>Name every test campaign with a <code>TEST</code> prefix (for example <code>TEST - my integration</code>), so it can be told apart from your real campaigns.</li>
-<li>Create the campaign with <code>POST https://www.tapresearch.com/api/v1/campaigns</code>. A campaign created through the API always starts paused
-(status 5), even if you pass a different status. Check for <code>&quot;status&quot;: 5</code> in the response.</li>
-<li>Exercise the routes your integration uses against your test campaign. Keep it paused the whole time.</li>
-<li>When you are done, set the campaign&#39;s status to 3 (Complete). Campaigns can not be deleted through the API; quotas can.
-Email <strong>api_support@tapresearch.com</strong> about test campaigns you no longer need.</li>
-</ol>
-
+<aside class="warning">
+Never set <code>status</code> to 2 (Active) on a test campaign. Active campaigns receive real respondents and you are charged for every complete.
+</aside>
+<h2 id='campaign-statuses'>Campaign statuses</h2>
 <table><thead>
 <tr>
-<th>Route</th>
-<th>What to test</th>
+<th>Status</th>
+<th>Name</th>
+<th>What it means</th>
 </tr>
 </thead><tbody>
 <tr>
-<td><code>POST https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility</code></td>
-<td><a href="#realtime-feasibility">Feasibility</a> for your settings and quotas, without creating a campaign.</td>
+<td>5</td>
+<td>Paused</td>
+<td>The status every new campaign starts in. No respondents enter the survey.</td>
 </tr>
 <tr>
-<td><code>GET https://www.tapresearch.com/api/v1/campaigns</code></td>
-<td><a href="#list-your-campaigns">List your campaigns</a>.</td>
+<td>2</td>
+<td>Active</td>
+<td>The campaign is live and receives real respondents.</td>
 </tr>
 <tr>
-<td><code>POST https://www.tapresearch.com/api/v1/campaigns</code></td>
-<td><a href="#create-a-campaign">Create a campaign</a>. It starts paused (status 5).</td>
-</tr>
-<tr>
-<td><code>GET https://www.tapresearch.com/api/v1/campaigns/:id</code></td>
-<td><a href="#get-a-specific-campaign">Get a specific campaign</a>.</td>
-</tr>
-<tr>
-<td><code>PUT https://www.tapresearch.com/api/v1/campaigns/:campaign_id</code></td>
-<td><a href="#update-a-campaign">Update a campaign</a>. Never set status 2 on a test campaign.</td>
-</tr>
-<tr>
-<td><code>POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas</code></td>
-<td><a href="#create-a-campaign-quota">Create a campaign quota</a>.</td>
-</tr>
-<tr>
-<td><code>GET</code>, <code>PUT</code> or <code>DELETE https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></td>
-<td><a href="#campaign-quotas">Get, update or delete a campaign quota</a>.</td>
-</tr>
-<tr>
-<td><code>GET https://www.tapresearch.com/api/v1/campaigns/:id/redirect_test</code></td>
-<td><a href="#redirect-url">Redirect URL</a>: try the respondent redirect. It works while the campaign is paused and records a test entry on the campaign.</td>
+<td>3</td>
+<td>Complete</td>
+<td>The campaign is finished. No respondents enter the survey.</td>
 </tr>
 </tbody></table>
 
-<aside class="warning">
-Never set the status of a test campaign to 2 (Active). As a safety net, a campaign can not be set to active until it has at least one quota
-with num_respondents greater than 0, but a test campaign that has quotas can still go live.
-</aside>
+<p>The API refuses to set a campaign to Active until it has at least one quota with <code>num_respondents</code> greater than 0. Treat
+this as a safety net, not as the way you keep a test campaign offline: once your test has added a quota, only the
+Paused status keeps it offline.</p>
+<h2 id='step-1-check-feasibility'>Step 1: check feasibility</h2>
+<blockquote>
+<p>Sample Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST -u <span class="s2">"EMAIL_ADDRESS_YOU_PROVIDED:API_TOKEN"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility <span class="se">\</span>
+  -d <span class="s1">'{"incidence": 50, "length_of_interview": 10, "cpi": 1.5, "country_language_id": 1,
+       "campaign_quotas": [{"num_respondents": 10,
+         "campaign_qualifications": [{"question_id": 42, "pre_codes": [18, 19, 20, 21, 22]}]}]}'</span>
+</code></pre>
+<p><code>POST https://www.tapresearch.com/api/v1/campaigns/realtime_feasibility</code></p>
+
+<p>Estimates how many completes you can get without creating a campaign. See <a href="#realtime-feasibility">Realtime Feasibility</a>
+for the parameters.</p>
+<h2 id='step-2-create-a-test-campaign'>Step 2: create a test campaign</h2>
+<blockquote>
+<p>Sample Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST -u <span class="s2">"EMAIL_ADDRESS_YOU_PROVIDED:API_TOKEN"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  https://www.tapresearch.com/api/v1/campaigns <span class="se">\</span>
+  -d <span class="s1">'{"name": "TEST My first API campaign", "length_of_interview": 10, "incidence": 50,
+       "cpi": 1.5, "country_language_id": 1,
+       "supplier_link": "https://api.samplecompany.com/surveys/23423?id="}'</span>
+</code></pre>
+<blockquote>
+<p>Sample Response (shortened)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11598926</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST My first API campaign"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>POST https://www.tapresearch.com/api/v1/campaigns</code></p>
+
+<p>Start the name of every test campaign with <code>TEST</code> so you and our team can tell it apart from real work. Check that the
+response shows <code>&quot;status&quot;: 5</code>. Keep the <code>id</code>: the next steps use it. See <a href="#create-a-campaign">Create a campaign</a> for every parameter.</p>
+<h2 id='step-3-add-a-quota'>Step 3: add a quota</h2>
+<blockquote>
+<p>Sample Request Payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"num_respondents"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST age quota"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>POST https://www.tapresearch.com/api/v1/campaigns/:campaign_id/campaign_quotas</code></p>
+
+<p>Quotas are nested under their campaign. The request body is the quota itself, not wrapped in another object. See
+<a href="#create-a-campaign-quota">Create a campaign quota</a> for every parameter, and <a href="#lookups">Lookups</a> for question ids and pre-codes.</p>
+<h2 id='step-4-read-and-update'>Step 4: read and update</h2>
+<table><thead>
+<tr>
+<th>Route</th>
+<th>What it does</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>GET /api/v1/campaigns</code></td>
+<td>Lists your campaigns.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/campaigns/:campaign_id</code></td>
+<td>Shows one campaign with its quotas.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/campaigns/:campaign_id</code></td>
+<td>Updates a campaign, for example its name or length of interview. Leave <code>status</code> out, or send 5.</td>
+</tr>
+<tr>
+<td><code>GET /api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></td>
+<td>Shows one quota.</td>
+</tr>
+<tr>
+<td><code>PUT /api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></td>
+<td>Updates a quota.</td>
+</tr>
+<tr>
+<td><code>DELETE /api/v1/campaigns/:campaign_id/campaign_quotas/:id</code></td>
+<td>Deletes a quota.</td>
+</tr>
+</tbody></table>
+<h2 id='step-5-try-the-respondent-redirect'>Step 5: try the respondent redirect</h2>
+<p><code>GET https://www.tapresearch.com/api/v1/campaigns/:campaign_id/redirect_test</code></p>
+
+<p>Works on a Paused campaign. It returns your <code>supplier_link</code> with test values filled in, so you can check that your survey
+accepts the respondent the way you expect without sending a real respondent. See <a href="#redirect-url">Redirect URL</a>.</p>
+<h2 id='step-6-clean-up'>Step 6: clean up</h2>
+<blockquote>
+<p>Sample Request Payload - Mark a test campaign Complete.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Campaigns cannot be deleted or archived through the API. When you are done with a test campaign:</p>
+
+<ol>
+<li>Set it to Complete with <code>PUT /api/v1/campaigns/:campaign_id</code> and <code>&quot;status&quot;: 3</code>.</li>
+<li>Delete any quotas you no longer need with <code>DELETE /api/v1/campaigns/:campaign_id/campaign_quotas/:id</code>.</li>
+<li>Email <strong>api_support@tapresearch.com</strong> with the ids of the test campaigns you no longer need.</li>
+</ol>
 <h1 id='lookups'>Lookups</h1><h2 id='list-all-country-languages'>List all country languages</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.tapresearch.com/api/v1/country_languages</code></p>
 
@@ -3248,8 +3326,12 @@ Your customer ID and API secret can be found via the dashboard after you log int
 <li>Getting Started
 
 <ul>
-<li>Our staging server (staging.tapresearch.com) has been shut down. Use <code>https://www.tapresearch.com</code> for all routes.</li>
-<li>Added a <a href="#testing-your-integration">Testing your integration</a> section describing how to test safely in production.</li>
+<li>The staging server (staging.tapresearch.com) has been retired. Use <code>https://www.tapresearch.com</code> with your API token for all routes, including testing.</li>
+</ul></li>
+<li>Testing your integration
+
+<ul>
+<li>Added a <a href="#testing-your-integration">Testing your integration</a> section that explains how to test safely in production with Paused campaigns.</li>
 </ul></li>
 </ul>
 <h2 id='4-8-2022'>4/8/2022</h2>
